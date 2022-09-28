@@ -18,6 +18,7 @@ target 'HEPI' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'HEPITests' do
     inherit! :search_paths
@@ -29,3 +30,4 @@ target 'HEPI' do
   end
 
 end
+

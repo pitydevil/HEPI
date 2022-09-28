@@ -10,13 +10,13 @@
 		153C2F17F89091E866F2BCAC /* Pods_HEPI_HEPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D12585D3CE7C9ED9BA7BEE1 /* Pods_HEPI_HEPIUITests.framework */; };
 		4B19F5E228E49E0500A72B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F5E128E49E0500A72B5C /* AppDelegate.swift */; };
 		4B19F5E428E49E0500A72B5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F5E328E49E0500A72B5C /* SceneDelegate.swift */; };
-		4B19F5E628E49E0500A72B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F5E528E49E0500A72B5C /* ViewController.swift */; };
-		4B19F5E928E49E0500A72B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B19F5E728E49E0500A72B5C /* Main.storyboard */; };
 		4B19F5EB28E49E0600A72B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B19F5EA28E49E0600A72B5C /* Assets.xcassets */; };
 		4B19F5EE28E49E0600A72B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B19F5EC28E49E0600A72B5C /* LaunchScreen.storyboard */; };
 		4B19F5F928E49E0600A72B5C /* HEPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F5F828E49E0600A72B5C /* HEPITests.swift */; };
 		4B19F60328E49E0600A72B5C /* HEPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F60228E49E0600A72B5C /* HEPIUITests.swift */; };
 		4B19F60528E49E0600A72B5C /* HEPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F60428E49E0600A72B5C /* HEPIUITestsLaunchTests.swift */; };
+		4B4CDEA528E4A47600253B2F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CDEA428E4A47600253B2F /* Extension.swift */; };
+		4B4CDEA728E4A47E00253B2F /* Helper Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CDEA628E4A47E00253B2F /* Helper Class.swift */; };
 		A1CBEB5120187B33DC9B499B /* Pods_HEPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C45514BC16E326FAE822B5 /* Pods_HEPI.framework */; };
 		BF044D9A9E94DDDD724DE738 /* Pods_HEPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2587A65E3FE4A83641139 /* Pods_HEPITests.framework */; };
 /* End PBXBuildFile section */
@@ -47,8 +47,6 @@
 		4B19F5DE28E49E0500A72B5C /* HEPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HEPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B19F5E128E49E0500A72B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B19F5E328E49E0500A72B5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4B19F5E528E49E0500A72B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4B19F5E828E49E0500A72B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B19F5EA28E49E0600A72B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B19F5ED28E49E0600A72B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B19F5EF28E49E0600A72B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +55,8 @@
 		4B19F5FE28E49E0600A72B5C /* HEPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HEPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B19F60228E49E0600A72B5C /* HEPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEPIUITests.swift; sourceTree = "<group>"; };
 		4B19F60428E49E0600A72B5C /* HEPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4B4CDEA428E4A47600253B2F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		4B4CDEA628E4A47E00253B2F /* Helper Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Class.swift"; sourceTree = "<group>"; };
 		58D2587A65E3FE4A83641139 /* Pods_HEPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28620AB1D8EE51649266CB /* Pods-HEPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F6CFAA50BF4965480023F05 /* Pods-HEPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.release.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,10 +116,14 @@
 		4B19F5E028E49E0500A72B5C /* HEPI */ = {
 			isa = PBXGroup;
 			children = (
-				4B19F5E128E49E0500A72B5C /* AppDelegate.swift */,
-				4B19F5E328E49E0500A72B5C /* SceneDelegate.swift */,
-				4B19F5E528E49E0500A72B5C /* ViewController.swift */,
-				4B19F5E728E49E0500A72B5C /* Main.storyboard */,
+				4B4CDE9828E4A3FB00253B2F /* Base */,
+				4B4CDEA328E4A44B00253B2F /* Utils */,
+				4B4CDE9F28E4A43500253B2F /* Model */,
+				4B4CDE9C28E4A42000253B2F /* Components */,
+				4B4CDE9B28E4A41500253B2F /* Views */,
+				4B4CDEA228E4A44500253B2F /* ViewModel */,
+				4B4CDE9A28E4A40F00253B2F /* Providers */,
+				4B4CDE9928E4A40600253B2F /* Services */,
 				4B19F5EA28E49E0600A72B5C /* Assets.xcassets */,
 				4B19F5EC28E49E0600A72B5C /* LaunchScreen.storyboard */,
 				4B19F5EF28E49E0600A72B5C /* Info.plist */,
@@ -144,6 +148,98 @@
 			path = HEPIUITests;
 			sourceTree = "<group>";
 		};
+		4B4CDE9828E4A3FB00253B2F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4B19F5E128E49E0500A72B5C /* AppDelegate.swift */,
+				4B19F5E328E49E0500A72B5C /* SceneDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		4B4CDE9928E4A40600253B2F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4B4CDE9A28E4A40F00253B2F /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		4B4CDE9B28E4A41500253B2F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4B4CDE9C28E4A42000253B2F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4B4CDE9E28E4A42E00253B2F /* Shared Layout */,
+				4B4CDE9D28E4A42700253B2F /* Specific Layout */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4B4CDE9D28E4A42700253B2F /* Specific Layout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Specific Layout";
+			sourceTree = "<group>";
+		};
+		4B4CDE9E28E4A42E00253B2F /* Shared Layout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Shared Layout";
+			sourceTree = "<group>";
+		};
+		4B4CDE9F28E4A43500253B2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B4CDEA128E4A43F00253B2F /* API Model */,
+				4B4CDEA028E4A43A00253B2F /* Class Model */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B4CDEA028E4A43A00253B2F /* Class Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Class Model";
+			sourceTree = "<group>";
+		};
+		4B4CDEA128E4A43F00253B2F /* API Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "API Model";
+			sourceTree = "<group>";
+		};
+		4B4CDEA228E4A44500253B2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B4CDEA328E4A44B00253B2F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4B4CDEA428E4A47600253B2F /* Extension.swift */,
+				4B4CDEA628E4A47E00253B2F /* Helper Class.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FF14E35A278343EA30FF23A5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +250,6 @@
 				5F28620AB1D8EE51649266CB /* Pods-HEPITests.debug.xcconfig */,
 				1B1D63E1F13F59D08CFDC59D /* Pods-HEPITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,7 +374,6 @@
 			files = (
 				4B19F5EE28E49E0600A72B5C /* LaunchScreen.storyboard in Resources */,
 				4B19F5EB28E49E0600A72B5C /* Assets.xcassets in Resources */,
-				4B19F5E928E49E0500A72B5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +501,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B19F5E628E49E0500A72B5C /* ViewController.swift in Sources */,
+				4B4CDEA528E4A47600253B2F /* Extension.swift in Sources */,
 				4B19F5E228E49E0500A72B5C /* AppDelegate.swift in Sources */,
 				4B19F5E428E49E0500A72B5C /* SceneDelegate.swift in Sources */,
+				4B4CDEA728E4A47E00253B2F /* Helper Class.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,14 +541,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4B19F5E728E49E0500A72B5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B19F5E828E49E0500A72B5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4B19F5EC28E49E0600A72B5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -27,24 +27,23 @@ sudo arch -x86_64 gem install ffi
 ```
 ### 2. Install cocoapod
 
-'''
+```
 sudo arch -x86_64 gem install cocoapod
-'''
+```
 
 ### 3. Install project dependency
 
-'''
+```
 sudo arch -x86_64 pod install
-'''
+```
 
 ### 4. Conflict Mitigation If Cocoapod Error
 
-'''
+```
 sudo arch -x86_64 pod deintegrate 
 sudo arch -x86_64 pod init
 sudo arch -x86_64 pod install
-'''
-
+```
 
 ### 5. Commit Message Convention
 

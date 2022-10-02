@@ -16,23 +16,37 @@ This repository ispacked with:
 -   SnapKit 5.0.0
 -   IQKeyboardManagerSwift
 
-## Getting Started
+# Getting Started
 
-### 1. Initialized Cocoapod package manager
+## Cocoapods dependency manager install, if you have installed it please just skip to step no. 3
 
-```
-pod init
-```
-
-### 2. Install project dependency
-
+### 1. Install ffi
 
 ```
-pod install
+sudo arch -x86_64 gem install ffi
 ```
+### 2. Install cocoapod
+
+'''
+sudo arch -x86_64 gem install cocoapod
+'''
+
+### 3. Install project dependency
+
+'''
+sudo arch -x86_64 pod install
+'''
+
+### 4. Conflict Mitigation If Cocoapod Error
+
+'''
+sudo arch -x86_64 pod deintegrate 
+sudo arch -x86_64 pod init
+sudo arch -x86_64 pod install
+'''
 
 
-### 3. Commit Message Convention
+### 5. Commit Message Convention
 
 This repository follows [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/)
 #### Format
@@ -50,7 +64,7 @@ Contoh: `feat(dashboard): add button`
 - test → update testing
 - perf → fix sesuatu yang bersifat cuma untuk performance issue (derived state, memo)
 
-### 4. Branch Naming Rules
+### 6. Branch Naming Rules
 > **IMPORTANT:**
 > - TERKONEKSI dengan JIRA maka gunakan format branch seperti format yang diberikan pada JIRA
 > - CONTOH NAMING RULES dari JIRA
@@ -58,7 +72,7 @@ Contoh: `feat(dashboard): add button`
 - MCMFF1-xx-lorem-ipsum-dolor-amit
 - MCMFF1-xx-MC2FF1-yy-MC2FF1-zz-lorem-ipsum
 
-### 5. Pull Request Title Naming Rules
+### 7. Pull Request Title Naming Rules
 > **IMPORTANT:**
 > - Agar Terintegrasi dengan JIRA maka gunakan format penamaan pull request seperti contoh dibawah
 > - Jika ingin menyelesaikan lebih dari 1 backlog di jira bisa dengan contoh urutan kedua dibawah
@@ -67,12 +81,12 @@ Contoh: `feat(dashboard): add button`
 - MCMFF1-xx-lorem-ipsum-dolor-amit
 - MCMFF1-xx-MC2FF1-yy-MC2FF1-zz-lorem-ipsum
 
-### 6. Variable case convention
+### 8. Variable case convention
 - Use `camelCase` for every situation
 - Use `PascalCase` for file name
 - Use 'snake_case' for metadata file
 
-### 7. Directory Structure
+### 9. Directory Structure
 > **IMPORTANT:**
 > - use PascalCase for folder name & View Controller Name
 > - use camelCase for Variables

@@ -19,6 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-XK-iM3">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eFn-lp-KSX" customClass="RoundedCard" customModule="HEPI" customModuleProvider="target">
                                 <rect key="frame" x="22" y="156" width="70" height="70"/>
@@ -58,12 +59,10 @@
                     <navigationItem key="navigationItem" title="Journals" id="j9N-MY-S3z">
                         <barButtonItem key="rightBarButtonItem" image="pencil" catalog="system" id="jdJ-lK-fUT">
                             <color key="tintColor" red="0.56862745100000001" green="0.43137254899999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="journalingTapButton:" destination="Y6W-OH-hqX" id="tGh-bC-3OI"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="jdJ-lK-fUT" id="CVK-0L-d5T"/>
                         <outlet property="dateLabel" destination="VUW-hs-Sfv" id="UcA-8m-SpY"/>
                         <outlet property="roundedCard" destination="eFn-lp-KSX" id="fxd-WR-Cyr"/>
                         <outlet property="tableView" destination="uVb-SY-KVB" id="5UZ-Nz-1pc"/>

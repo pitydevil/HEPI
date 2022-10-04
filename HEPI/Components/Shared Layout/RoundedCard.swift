@@ -21,7 +21,6 @@ class RoundedCard: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setBackground()
         loadXib()
     }
     
@@ -33,5 +32,6 @@ class RoundedCard: UIView {
         let viewFromXib = Bundle.main.loadNibNamed("RoundedCard", owner: self, options: nil)![0] as! UIView
         viewFromXib.frame = self.bounds
         addSubview(viewFromXib)
+       
     }
 }

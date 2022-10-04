@@ -15,14 +15,13 @@ class JournalingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var addButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    
     }
     
-    @IBAction func journalingTapButton(_ sender: Any) {
-    }
     
 }

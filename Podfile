@@ -6,15 +6,8 @@ target 'HEPI' do
   use_frameworks!
 
   # Pods for HEPI
-  pod 'Firebase/Core' , '7.2-M1'
-  pod 'Firebase/Firestore', '7.2-M1'
-  pod 'Firebase', '7.2-M1'
-  pod 'Firebase/Auth', '7.2-M1'
-  pod 'Firebase/Storage', '7.2-M1'
-  
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
-  pod 'SkeletonView'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SwiftyJSON', '~> 4.0'

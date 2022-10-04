@@ -347,6 +347,7 @@ PODS:
     - SDWebImage/Core (= 5.12.3)
   - SDWebImage/Core (5.12.3)
   - SkeletonView (1.29.2)
+  - SnapKit (5.0.1)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
@@ -360,6 +361,7 @@ DEPENDENCIES:
   - RxSwift
   - SDWebImage
   - SkeletonView
+  - SnapKit (~> 5.0.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -389,6 +391,7 @@ SPEC REPOS:
     - RxSwift
     - SDWebImage
     - SkeletonView
+    - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -417,8 +420,9 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
   SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 4c7bd67c7982c141296262de8ec90fed08b1202f
+PODFILE CHECKSUM: a670aef7bce18748391f79c7d0f2b9cb93d9749c
 
 COCOAPODS: 1.11.3

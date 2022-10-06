@@ -16,6 +16,7 @@ class NavigationController: UINavigationController {
             navigationBar.standardAppearance = navBarAppearance
             navigationBar.scrollEdgeAppearance = navBarAppearance
         }
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

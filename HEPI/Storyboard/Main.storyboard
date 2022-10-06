@@ -111,10 +111,20 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wzd-DF-glJ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.94117647058823528" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" red="0.96862745100000003" green="0.94117647059999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                            <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="qjO-vG-6g5" kind="relationship" relationship="viewControllers" id="tNb-rL-CsP"/>
+                        <segue destination="Dco-7q-hTb" kind="relationship" relationship="viewControllers" id="wLM-9E-xpi"/>
+                        <segue destination="Cmb-he-LIE" kind="relationship" relationship="viewControllers" id="dR8-t0-beS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5m-pr-SxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -129,9 +139,30 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rq1-DO-g8m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286" y="-213"/>
+            <point key="canvasLocation" x="285" y="-127"/>
+        </scene>
+        <!--Summary-->
+        <scene sceneID="dKK-gK-CKz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Summary" id="Dco-7q-hTb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="TYr-Mi-4fg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9UY-xE-tm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="-53"/>
+        </scene>
+        <!--Quote-->
+        <scene sceneID="aKg-Iz-5qv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Quote" id="Cmb-he-LIE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="HXZ-IV-aiA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jSl-mM-vuh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="-92"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.96862745100000003" green="0.92156862750000001" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
         <image name="Background" width="390" height="844"/>
         <image name="arrow.right" catalog="system" width="128" height="95"/>

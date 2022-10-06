@@ -16,7 +16,7 @@ class StarterViewModel {
     }
     
     func checkUser() {
-        if defaults.string(forKey: "namaUser") != nil {
+        if defaults.string(forKey: nameKeys) != nil {
             isSignedUp.accept(true)
         }else {
             isSignedUp.accept(false)
@@ -27,7 +27,7 @@ class StarterViewModel {
         if username == nil {
             completion(.tidakAdaText)
         }else {
-            defaults.set(username, forKey: "namaUser")
+            defaults.set(username, forKey: nameKeys)
             completion(.success)
         }
     }

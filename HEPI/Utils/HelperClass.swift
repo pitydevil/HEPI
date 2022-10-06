@@ -21,3 +21,10 @@ public func genericAlert(titleAlert : String, messageAlert : String, buttonText 
     alert.addAction(cancel)
     return alert
 }
+
+public func changeDateIntoStringDate(Date : Date) -> String {
+    let dateF = DateFormatter()
+    dateF.dateFormat = "dd MMM yyyy"
+    return dateF.string(from: Date)
+}
+

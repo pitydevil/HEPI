@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextfieldCard" customModule="HEPI" customModuleProvider="target">
+            <connections>
+                <outlet property="bgCard" destination="K5K-mf-WRD" id="ZIV-j5-qRH"/>
+                <outlet property="dateTextfield" destination="GcQ-9H-wys" id="mlM-jb-8hs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5K-mf-WRD">
+                    <rect key="frame" x="160" y="387" width="70" height="70"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GcQ-9H-wys">
+                            <rect key="frame" x="8" y="8" width="54" height="54"/>
+                            <color key="backgroundColor" red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="GcQ-9H-wys" firstAttribute="leading" secondItem="K5K-mf-WRD" secondAttribute="leading" constant="8" id="FxV-ua-C8i"/>
+                        <constraint firstItem="GcQ-9H-wys" firstAttribute="top" secondItem="K5K-mf-WRD" secondAttribute="top" constant="8" id="Ww1-Fx-hcf"/>
+                        <constraint firstAttribute="height" constant="70" id="ec7-Jc-uuh"/>
+                        <constraint firstAttribute="trailing" secondItem="GcQ-9H-wys" secondAttribute="trailing" constant="8" id="pYu-Zz-4PE"/>
+                        <constraint firstAttribute="bottom" secondItem="GcQ-9H-wys" secondAttribute="bottom" constant="8" id="x0z-CB-hs6"/>
+                        <constraint firstAttribute="width" constant="70" id="yIN-NF-XcK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="K5K-mf-WRD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ikx-B4-JgP"/>
+                <constraint firstItem="K5K-mf-WRD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mnD-9x-KW6"/>
+            </constraints>
+            <point key="canvasLocation" x="175" y="139"/>
+        </view>
+    </objects>
+</document>

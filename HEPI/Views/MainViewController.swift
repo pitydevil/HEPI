@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         starterViewModel.isSignedUpObservable.subscribe(onNext: { (value) in
             if value {
-                self.present(segueToMain(), animated: true)
+                self.present(segueToMain(), animated: false)
             }
         }).disposed(by: bags)
         
@@ -38,6 +38,8 @@ class MainViewController: UIViewController {
                         valueX.accept(true)
                     case .tidakAdaText:
                         self.present(genericAlert(titleAlert: "Nama Tidak Ada!" , messageAlert: "Silahkan isi nama anda terlebih dahulu", buttonText: "Ok"), animated: true)
+                    default:
+                        print("tidak ada")
                 }
             }
         }.disposed(by: bags)

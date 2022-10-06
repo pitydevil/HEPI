@@ -34,7 +34,7 @@ class QuotesViewController: UIViewController {
         quoteViewModel.quoteArrayObserver.subscribe(onNext: { (value) in
             self.quoteList.accept(value)
         },onError: { error in
-
+            self.present(errorAlert(), animated: true) 
         }).disposed(by: bags)
 
         //MARK: - Bind Journal List with Table View

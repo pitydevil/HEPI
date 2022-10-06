@@ -48,9 +48,8 @@ class SummaryViewController: UIViewController {
                 }
             }
         },onError: { error in
-          //  self.errorAlert()
+            self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
-        
         searchButton.rx.tap.bind {
             self.summaryViewModel.getSummaryMood(self.startDate, self.endDate) { result in
                 switch result {

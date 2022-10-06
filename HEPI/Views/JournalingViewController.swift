@@ -44,7 +44,7 @@ class JournalingViewController: UIViewController {
         journalViewModel.journalModelArrayObserver.subscribe(onNext: { (value) in
             self.journalList.accept(value)
         },onError: { error in
-          //  self.errorAlert()
+            self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
 
         //MARK: - Bind Journal List with Table View

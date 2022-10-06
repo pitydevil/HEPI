@@ -132,7 +132,7 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
         }
     }
     
-    func addReminder(_ titleJournal:String, _ descJournal: String, _ dateCreated : Date, _ moodImage : Data, _ moodDesc : String, completion: @escaping(_ result: Bool) -> Void) {
+    func addJournal(_ titleJournal:String, _ descJournal: String, _ dateCreated : Date, _ moodImage : Data, _ moodDesc : String, completion: @escaping(_ result: Bool) -> Void) {
 
         let taskContext = newTaskContext()
         taskContext.perform {

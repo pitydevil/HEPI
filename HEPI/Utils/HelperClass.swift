@@ -28,3 +28,11 @@ public func changeDateIntoStringDate(Date : Date) -> String {
     return dateF.string(from: Date)
 }
 
+public func errorAlert() -> UIAlertController {
+    let alert = UIAlertController(title: "Reactive Unexpected Error", message: "Please try again later", preferredStyle: .alert)
+    let cancel = UIAlertAction(title: "Ok", style: .cancel)
+    alert.addAction(cancel)
+    return alert
+}
+
+

@@ -30,11 +30,12 @@ class MoodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         moodCollectionView.register(UINib(nibName: "MoodCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "moodCollectionView")
+        
         moodViewModel.fetchMoodData()
         moodViewModel.moodArrayObservable.subscribe(onNext: { (value) in
             self.moodArray.accept(value)
         },onError: { error in
-            
+            self.present(errorAlert(), animated: true) 
         }).disposed(by: bags)
         
         moodArray.bind(to: moodCollectionView.rx.items(cellIdentifier: "moodCollectionView", cellType: MoodCollectionViewCell.self)) { row, model, cell in

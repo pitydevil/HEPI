@@ -38,7 +38,6 @@ class SummaryViewController: UIViewController {
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let summary):
-                        print("kesini?")
                         self.summaryImage.image = UIImage(data: summary.overallMoodImage ?? Data())
                         self.descTextView.text  = summary.overallSuggestion ?? ""
                         self.titleLabel.text    = summary.overallTitleMood ?? ""
@@ -50,6 +49,7 @@ class SummaryViewController: UIViewController {
         },onError: { error in
             self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
+        
         searchButton.rx.tap.bind {
             self.summaryViewModel.getSummaryMood(self.startDate, self.endDate) { result in
                 switch result {

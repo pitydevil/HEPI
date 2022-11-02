@@ -12,8 +12,8 @@ import RxSwift
 @available(iOS 16.0, *)
 class JournalingViewController: UIViewController {
 
-    @IBOutlet var roundedCard: RoundedCard!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var roundedCard: RoundedCard!
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var addButton: UIBarButtonItem!

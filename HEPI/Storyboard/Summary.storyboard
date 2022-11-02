@@ -22,7 +22,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggestion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH8-FT-1Gc">
-                                <rect key="frame" x="16" y="422" width="133" height="26.333333333333314"/>
+                                <rect key="frame" x="16" y="394.66666666666669" width="133" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.56862745100000001" green="0.43137254899999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -70,23 +70,21 @@
                                     <constraint firstAttribute="width" constant="77" id="iD3-E6-SIe"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlW-mi-Ysb">
-                                <rect key="frame" x="81" y="251" width="228" height="55"/>
-                                <string key="text">Your mood this week 
-is mostly happy!</string>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlW-mi-Ysb">
+                                <rect key="frame" x="81" y="250.99999999999997" width="228" height="27.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" systemColor="systemBrownColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nm4-sq-21a">
-                                <rect key="frame" x="145" y="314" width="100" height="100"/>
+                                <rect key="frame" x="145" y="286.66666666666669" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1tB-IL-olc"/>
                                     <constraint firstAttribute="width" constant="100" id="Ofd-Ci-TwP"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LvI-UO-qJr">
-                                <rect key="frame" x="16" y="456.33333333333326" width="358" height="296.66666666666674"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LvI-UO-qJr">
+                                <rect key="frame" x="16" y="429" width="358" height="324"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.81568627449999997" blue="0.72156862749999995" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.92156862750000001" green="0.81568627449999997" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.56862745100000001" green="0.43137254899999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>

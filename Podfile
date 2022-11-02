@@ -6,8 +6,9 @@ target 'HEPI' do
   use_frameworks!
 
   # Pods for HEPI
-  pod 'IQKeyboardManagerSwift'
+
   pod 'SDWebImage'
+  pod 'IQKeyboardManagerSwift'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SwiftyJSON', '~> 4.0'

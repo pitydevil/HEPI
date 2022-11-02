@@ -18,7 +18,6 @@
 		4B194F4128EDBADA00F17FC9 /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F4028EDBADA00F17FC9 /* Summary.storyboard */; };
 		4B194F4328EEAD1300F17FC9 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B194F4228EEAD1300F17FC9 /* SummaryViewController.swift */; };
 		4B194F4528EEADD900F17FC9 /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B194F4428EEADD900F17FC9 /* Summary.swift */; };
-		4B194F4728EEAE2C00F17FC9 /* SumaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B194F4628EEAE2C00F17FC9 /* SumaryViewModel.swift */; };
 		4B194F4B28EEBCB200F17FC9 /* TextfieldCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B194F4A28EEBCB200F17FC9 /* TextfieldCard.swift */; };
 		4B194F4F28EEBCF900F17FC9 /* TextfieldCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F4E28EEBCF900F17FC9 /* TextfieldCard.xib */; };
 		4B19F5E228E49E0500A72B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F5E128E49E0500A72B5C /* AppDelegate.swift */; };
@@ -53,6 +52,7 @@
 		4B78DB4328EC27F500744386 /* RoundedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B78DB4228EC27F500744386 /* RoundedCard.swift */; };
 		4B78DB4828EC298000744386 /* RoundedCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B78DB4728EC298000744386 /* RoundedCard.xib */; };
 		4B78DB4A28EC2BD800744386 /* JournalingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B78DB4928EC2BD800744386 /* JournalingViewController.swift */; };
+		4B8174242912B6930056D7F6 /* SumaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8174232912B6930056D7F6 /* SumaryViewModel.swift */; };
 		4BB4935328EC362800F3A482 /* StarterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935228EC362800F3A482 /* StarterViewModel.swift */; };
 		4BB4935B28EC40B000F3A482 /* Class Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935A28EC40B000F3A482 /* Class Extension.swift */; };
 		4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC80EE828EC33E5005C19FF /* MainViewController.swift */; };
@@ -93,7 +93,6 @@
 		4B194F4028EDBADA00F17FC9 /* Summary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
 		4B194F4228EEAD1300F17FC9 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		4B194F4428EEADD900F17FC9 /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
-		4B194F4628EEAE2C00F17FC9 /* SumaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SumaryViewModel.swift; path = ../../../SumaryViewModel.swift; sourceTree = "<group>"; };
 		4B194F4A28EEBCB200F17FC9 /* TextfieldCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldCard.swift; sourceTree = "<group>"; };
 		4B194F4E28EEBCF900F17FC9 /* TextfieldCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextfieldCard.xib; sourceTree = "<group>"; };
 		4B19F5DE28E49E0500A72B5C /* HEPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HEPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +131,7 @@
 		4B78DB4228EC27F500744386 /* RoundedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCard.swift; sourceTree = "<group>"; };
 		4B78DB4728EC298000744386 /* RoundedCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedCard.xib; sourceTree = "<group>"; };
 		4B78DB4928EC2BD800744386 /* JournalingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalingViewController.swift; sourceTree = "<group>"; };
+		4B8174232912B6930056D7F6 /* SumaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SumaryViewModel.swift; sourceTree = "<group>"; };
 		4BB4935228EC362800F3A482 /* StarterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewModel.swift; sourceTree = "<group>"; };
 		4BB4935A28EC40B000F3A482 /* Class Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class Extension.swift"; sourceTree = "<group>"; };
 		4BC80EE828EC33E5005C19FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -274,12 +274,12 @@
 		4B78DB0628EAD6C000744386 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B8174232912B6930056D7F6 /* SumaryViewModel.swift */,
 				4BB4935228EC362800F3A482 /* StarterViewModel.swift */,
 				4B6A8F5E28EC4A1C0088960F /* JournalViewModel.swift */,
 				4B334ABB28EC6807002A475B /* MoodViewModel.swift */,
 				4B50DEA428EC909A00EC0290 /* DetailJournalViewModel.swift */,
 				4B194F3A28EDAAC400F17FC9 /* QuoteViewModel.swift */,
-				4B194F4628EEAE2C00F17FC9 /* SumaryViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -680,7 +680,7 @@
 				4B194F4B28EEBCB200F17FC9 /* TextfieldCard.swift in Sources */,
 				4B6A8F6428EC4F590088960F /* Journal.swift in Sources */,
 				4B50DEA528EC909A00EC0290 /* DetailJournalViewModel.swift in Sources */,
-				4B194F4728EEAE2C00F17FC9 /* SumaryViewModel.swift in Sources */,
+				4B8174242912B6930056D7F6 /* SumaryViewModel.swift in Sources */,
 				4B78DB4A28EC2BD800744386 /* JournalingViewController.swift in Sources */,
 				4B19F5E228E49E0500A72B5C /* AppDelegate.swift in Sources */,
 				4B6A8F6628EC50C60088960F /* Protocol.swift in Sources */,

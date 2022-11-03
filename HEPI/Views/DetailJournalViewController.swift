@@ -104,7 +104,7 @@ class DetailJournalViewController: UIViewController {
                     }
                 }
             }else {
-                detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, self.moodDesc.text ?? "", moodImage: self.moodImageView.image?.pngData() ?? Data()) { result in
+                detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, self.journalObject!.value.dateCreated! ,self.moodDesc.text ?? "", moodImage: self.moodImageView.image?.pngData() ?? Data()) { result in
                     DispatchQueue.main.async {
                         switch result {
                             case .success:

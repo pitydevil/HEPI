@@ -36,9 +36,9 @@ class DetailJournalViewModel {
         }
     }
     
-    func updateJournal(_ titleJournal : String, _ descJournal : String, _ moodDesc : String, moodImage : Data? , completion: @escaping(_ result: typeError)-> Void ) {
+    func updateJournal(_ titleJournal : String, _ descJournal : String, _ date : Date ,_ moodDesc : String, moodImage : Data? , completion: @escaping(_ result: typeError)-> Void ) {
         if titleJournal.count != 0 && descJournal.count != 0 && moodImage != Data() {
-            provider.updateExisting(titleJournal, descJournal, Date(), moodImage!, moodDesc) { result in
+            provider.updateExisting(titleJournal, descJournal, date, moodImage!, moodDesc) { result in
                 switch result {
                     case true:
                         completion(.success)

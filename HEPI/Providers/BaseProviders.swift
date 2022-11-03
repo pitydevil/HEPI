@@ -102,14 +102,13 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
     }
     
     func updateExisting(_ titleJournal:String, _ descJournal: String, _ dateCreated : Date, _ moodImage : Data, _ moodDesc : String, completion: @escaping(_ result: Bool) -> Void) {
-
         let taskContext = newTaskContext()
-        taskContext.perform {
             do {
                 if NSEntityDescription.entity(forEntityName: "Journaling", in: taskContext) != nil {
                     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Journaling")
                     fetchRequest.fetchLimit = 1
-                    fetchRequest.predicate = NSPredicate(format: "titleJournal == %@", titleJournal)
+                    fetchRequest.predicate = NSPredicate(format: "dateCreated = %@", dateCreated as NSDate)
+                    
                     if let results = try? taskContext.fetch(fetchRequest).first {
                         var journaling : Journaling?
                         journaling = results as? Journaling
@@ -124,12 +123,15 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
                             completion(false)
                             print("Could not save: \(error.userInfo)")
                         }
+                    }else {
+                        completion(false)
                     }
                 }
             } catch let error as NSError {
+                print(error.localizedDescription)
                 completion(false)
             }
-        }
+    
     }
     
     func addJournal(_ titleJournal:String, _ descJournal: String, _ dateCreated : Date, _ moodImage : Data, _ moodDesc : String, completion: @escaping(_ result: Bool) -> Void) {

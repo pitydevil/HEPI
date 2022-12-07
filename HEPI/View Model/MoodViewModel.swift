@@ -11,11 +11,17 @@ import RxCocoa
 
 class MoodViewModel {
     
+    //MARK: - Object Declaration
     private var moodArray = BehaviorRelay<[Mood]>(value: [])
+    
+    //MARK: - Object Observation Declaration
     var moodArrayObservable: Observable<[Mood]> {
         return moodArray.asObservable()
     }
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
     func fetchMoodData() {
         var imMoodArray : [Mood] = []
         imMoodArray.append(Mood(moodDesc: "Very Happy", moodImage: UIImage(named: "veryHappy")!.pngData()))

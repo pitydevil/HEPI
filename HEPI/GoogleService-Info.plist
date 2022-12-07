@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>100614452559-lfnrh7r9t94lbaf6fn6c140pb30nine0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.100614452559-lfnrh7r9t94lbaf6fn6c140pb30nine0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBWPJgxHgzJfShwuyYKsvc8tScH0AJa57g</string>
+	<key>GCM_SENDER_ID</key>
+	<string>100614452559</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>hepi-product.HEPI</string>
+	<key>PROJECT_ID</key>
+	<string>hepi-67074</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hepi-67074.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:100614452559:ios:ea71814ae850e298b3013a</string>
+</dict>
+</plist>

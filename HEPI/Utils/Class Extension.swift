@@ -7,10 +7,19 @@
 
 import UIKit
 
+//MARK: - Extension UIKit
 extension UIView {
+    
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
     func setBaseRoundedView() {
         self.layer.cornerRadius = 8
     }
+    
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
     func setShadowCard() {
         self.layer.shadowOpacity = 0.15
         self.layer.shadowRadius  = 2.0
@@ -21,13 +30,21 @@ extension UIView {
     }
 }
 
+//MARK: - Extension UIViewController
 extension UIViewController {
+    
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }

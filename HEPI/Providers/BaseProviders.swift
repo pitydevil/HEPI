@@ -11,6 +11,13 @@ import RxSwift
 import RxCocoa
 
 class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
+    
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     func callDatabase<T: Codable>() -> Observable<T>  {
         return Observable<T>.create { observer in
             let taskContext = self.newTaskContext()
@@ -33,6 +40,12 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
         }
     }
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     lazy var persistContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "HEPI")
         
@@ -49,15 +62,25 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
         return container
     }()
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     private func newTaskContext() -> NSManagedObjectContext {
         let taskContext = persistContainer.newBackgroundContext()
         taskContext.undoManager = nil
-        
         taskContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        
         return taskContext
     }
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     func deleteJournal(_ dateCreated: Date, completion: @escaping(_ result: Bool)->Void) {
         let taskContext = newTaskContext()
         taskContext.perform {
@@ -76,6 +99,12 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
         }
     }
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     func querySummary<T>(_ startDate: Date, _ endDate: Date) -> Observable<T> where T : Decodable, T : Encodable {
         return Observable<T>.create { observer in
             let taskContext = self.newTaskContext()
@@ -101,6 +130,12 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
         }
     }
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     func updateExisting(_ titleJournal:String, _ descJournal: String, _ dateCreated : Date, _ moodImage : Data, _ moodDesc : String, completion: @escaping(_ result: Bool) -> Void) {
         let taskContext = newTaskContext()
             do {
@@ -127,13 +162,17 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
                         completion(false)
                     }
                 }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-                completion(false)
-            }
-    
+            } catch {
+            completion(false)
+        }
     }
     
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     func addJournal(_ titleJournal:String, _ descJournal: String, _ dateCreated : Date, _ moodImage : Data, _ moodDesc : String, completion: @escaping(_ result: Bool) -> Void) {
 
         let taskContext = newTaskContext()
@@ -155,7 +194,7 @@ class BaseProviders : databaseRequestProtocol, querySummaryProtocol{
                         print("Could not save: \(error.userInfo)")
                     }
                 }
-            } catch let error as NSError {
+            } catch  {
                 completion(false)
             }
         }

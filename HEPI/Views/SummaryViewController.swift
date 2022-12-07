@@ -11,6 +11,7 @@ import RxCocoa
 
 class SummaryViewController: UIViewController {
 
+    //MARK: - Layout Subviews
     @IBOutlet weak var leftDateCard : TextfieldCard!
     @IBOutlet weak var rightDateCard : TextfieldCard!
     @IBOutlet weak var titleLabel : UILabel!
@@ -18,31 +19,42 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var descTextView : UITextView!
     @IBOutlet weak var searchButton : UIBarButtonItem!
     
+    //MARK: Object Declaration
     private var startDate = Date()
     private var endDate   = Date()
     private let summaryViewModel = SummaryViewModel()
    
+    //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
         leftDateCard?.delegate = self
-        leftDateCard.identifier = .start
         rightDateCard?.delegate = self
+        leftDateCard.identifier = .start
         rightDateCard.identifier = .end
     }
     
+    //MARK: - View Did Layout
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
         
-        summaryViewModel.journalModelArrayObserver.skip(1).subscribe(onNext: { (value) in
-            self.summaryViewModel.calculateSummary(value) { result in
-                DispatchQueue.main.async {
+        //MARK: - Responder to Dismiss any Keyboard Event
+        hideKeyboardWhenTappedAround()
+        
+        //MARK: - Observe Summary View Model Journal Object Value
+        /// Observe Summary View Model Journal Object Value, if there are ny changes update the neccessary UI.
+        summaryViewModel.journalModelArrayObserver.skip(1).subscribe(onNext: { [self] (value) in
+            //MARK: - Summary View Model Calculate Summary
+            /// Returns Summary Object that's used to update the neccessary UI.
+            /// - Parameters:
+            ///     - journalList: array of journal thatt the function will use to determine mood summary.
+            summaryViewModel.calculateSummary(value) { (result) in
+                DispatchQueue.main.async { [self] in
                     switch result {
                     case .success(let summary):
-                        self.summaryImage.image = UIImage(data: summary.overallMoodImage ?? Data())
-                        self.descTextView.text  = summary.overallSuggestion ?? ""
-                        self.titleLabel.text    = summary.overallTitleMood ?? ""
+                        summaryImage.image = UIImage(data: summary.overallMoodImage ?? Data())
+                        descTextView.text  = summary.overallSuggestion ?? ""
+                        titleLabel.text    = summary.overallTitleMood ?? ""
                     case .failure(_):
-                        self.present(genericAlert(titleAlert: "Data Inkonklusif!", messageAlert: "Data yang diberikan tidak dapat ditarik kesimpulan.", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "Data Inkonklusif!", messageAlert: "Data yang diberikan tidak dapat ditarik kesimpulan.", buttonText: "Ok"), animated: true)
                     }
                 }
             }
@@ -50,15 +62,23 @@ class SummaryViewController: UIViewController {
             self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
         
-        searchButton.rx.tap.bind {
-            self.summaryViewModel.getSummaryMood(self.startDate, self.endDate) { result in
+        
+        //MARK: - Search Button Response Function
+        searchButton.rx.tap.bind { [self] in
+            //MARK: - Summary View Model Get Summary Mood Function
+            /// Returns mood summary
+            /// from the given components.
+            /// - Parameters:
+            ///     - startDate: date object that determine starting date for the date interval query
+            ///     - endDate: date object that determine ending date for the date interval query
+            summaryViewModel.getSummaryMood(startDate, endDate) { [self] (result) in
                 switch result {
                 case .dataTidakAda(errorMessage: ""):
-                    self.present(genericAlert(titleAlert: "Data Tidak Ada!", messageAlert: "Kamu tidak membuat journal direntang hari tersebut.", buttonText: "Ok"), animated: true)
+                    present(genericAlert(titleAlert: "Data Tidak Ada!", messageAlert: "Kamu tidak membuat journal direntang hari tersebut.", buttonText: "Ok"), animated: true)
                 case .tanggalLebihTua(errorMessage: ""):
-                    self.present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal Akhir tidak bisa lebih muda daripada tanggal awalannya.", buttonText: "Ok"), animated: true)
+                    present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal Akhir tidak bisa lebih muda daripada tanggal awalannya.", buttonText: "Ok"), animated: true)
                 case .tanggalLebihMuda(errorMessage: ""):
-                    self.present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal awal tidak bisa lebih tua daripada tanggal akhirannya.", buttonText: "Ok"), animated: true)
+                    present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal awal tidak bisa lebih tua daripada tanggal akhirannya.", buttonText: "Ok"), animated: true)
                 default:
                     print("test")
                 }
@@ -67,7 +87,16 @@ class SummaryViewController: UIViewController {
     }
 }
 
+//MARK: - Pass Data Delegate Function
+/// Returns boolean true or false
+/// from the given components.
 extension SummaryViewController : passData {
+    //MARK: - Observe Journal Array
+    /// Returns boolean true or false
+    /// from the given components.
+    /// - Parameters:
+    ///     - allowedCharacter: character subset that's allowed to use on the textfield
+    ///     - text: set of character/string that would like  to be checked.
     func passData(_ date: Date, _ identifier: datePass) {
         switch identifier {
             case .end:

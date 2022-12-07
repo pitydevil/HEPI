@@ -7,8 +7,10 @@
 
 import Foundation
 import RxSwift
+import TensorFlowLiteTaskText
 
-public let defaults = UserDefaults.standard
+//MARK: - Object Declaration
 public let bags = DisposeBag()
-
+public var classifier: TFLNLClassifier?
 public let nameKeys = "namaUser"
+public let defaults = UserDefaults.standard

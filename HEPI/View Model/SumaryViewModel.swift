@@ -11,11 +11,13 @@ import RxCocoa
 
 class SummaryViewModel {
     
+    //MARK: - Object Declaration
     private var provider = BaseProviders()
     private var journalArray: Observable<[Journal]>?
     private let journalModelArray = BehaviorRelay<[Journal]>(value: [])
-    
     var dateObject : BehaviorRelay<Date> = BehaviorRelay(value: Date())
+    
+    //MARK: - Object Observation Declaration
     var dateObservable: Observable<Date> {
         return dateObject.asObservable()
     }
@@ -24,10 +26,17 @@ class SummaryViewModel {
         return journalModelArray.asObservable()
     }
 
+    //MARK: - Init Class
     init() {
         self.provider = { return BaseProviders()}()
     }
     
+    //MARK: - Get Mood Summary Function
+    /// Returns Summary Error Enumeration
+    /// from the given components.
+    /// - Parameters:
+    ///     - startDate: date object that determine starting date for the date interval query
+    ///     - endDate: date object that determine ending date for the date interval query
     func getSummaryMood(_ startDate : Date, _ endDate : Date, completion: @escaping(_ result : summaryError) ->Void )  {
         if startDate > endDate || endDate < startDate{
             if startDate > endDate {
@@ -45,13 +54,18 @@ class SummaryViewModel {
                 }
                 self.journalModelArray.accept(journalModel)
             }, onError: { (error) in
-                _ = self.journalModelArrayObserver.catchError { (error) in
+                _ = self.journalModelArrayObserver.catch { (error) in
                     Observable.empty()
                 }
             }).disposed(by: bags)
         }
     }
     
+    //MARK: - Calculate Summary Function
+    /// Returns object of summary struct and summaryGenerate Enumeration
+    /// from the given components.
+    /// - Parameters:
+    ///     - journal: array of journal to get the summary off
     func calculateSummary(_ journal : [Journal], completion: @escaping(_ result : Result<Summary, summaryGenerate>) ->Void)  {
         if journal.isEmpty {
             completion(.failure(.dataTidakAda(errorMessage: "dataTidakExist")))

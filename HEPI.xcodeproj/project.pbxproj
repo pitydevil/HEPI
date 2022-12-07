@@ -55,6 +55,9 @@
 		4B8174242912B6930056D7F6 /* SumaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8174232912B6930056D7F6 /* SumaryViewModel.swift */; };
 		4BB4935328EC362800F3A482 /* StarterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935228EC362800F3A482 /* StarterViewModel.swift */; };
 		4BB4935B28EC40B000F3A482 /* Class Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935A28EC40B000F3A482 /* Class Extension.swift */; };
+		4BB80B74293C60AC001FEC01 /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B73293C60AC001FEC01 /* ModelLoader.swift */; };
+		4BB80B76293C61F3001FEC01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */; };
+		4BB80B7A293C7EC5001FEC01 /* ClassificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */; };
 		4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC80EE828EC33E5005C19FF /* MainViewController.swift */; };
 		A1CBEB5120187B33DC9B499B /* Pods_HEPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C45514BC16E326FAE822B5 /* Pods_HEPI.framework */; };
 		BF044D9A9E94DDDD724DE738 /* Pods_HEPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2587A65E3FE4A83641139 /* Pods_HEPITests.framework */; };
@@ -134,6 +137,9 @@
 		4B8174232912B6930056D7F6 /* SumaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SumaryViewModel.swift; sourceTree = "<group>"; };
 		4BB4935228EC362800F3A482 /* StarterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewModel.swift; sourceTree = "<group>"; };
 		4BB4935A28EC40B000F3A482 /* Class Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class Extension.swift"; sourceTree = "<group>"; };
+		4BB80B73293C60AC001FEC01 /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
+		4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationResult.swift; sourceTree = "<group>"; };
 		4BC80EE828EC33E5005C19FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		58D2587A65E3FE4A83641139 /* Pods_HEPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28620AB1D8EE51649266CB /* Pods-HEPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 		4B19F5E028E49E0500A72B5C /* HEPI */ = {
 			isa = PBXGroup;
 			children = (
+				4BB80B72293C60A0001FEC01 /* Model */,
 				4B78DB1628EAD75C00744386 /* Miscellaneous */,
 				4B78DB1328EAD72D00744386 /* Providers */,
 				4B78DB0C28EAD70600744386 /* Components */,
@@ -209,6 +216,7 @@
 				4B19F5EC28E49E0600A72B5C /* LaunchScreen.storyboard */,
 				4B19F5EF28E49E0600A72B5C /* Info.plist */,
 				4B6A8F6028EC4AE90088960F /* HEPI.xcdatamodeld */,
+				4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */,
 			);
 			path = HEPI;
 			sourceTree = "<group>";
@@ -369,6 +377,14 @@
 			path = XIB;
 			sourceTree = "<group>";
 		};
+		4BB80B72293C60A0001FEC01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4BB80B73293C60AC001FEC01 /* ModelLoader.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4BC8119328EAD526000A7E42 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +409,7 @@
 				4B50DEA228EC8DB000EC0290 /* Mood.swift */,
 				4B194F3E28EDB09F00F17FC9 /* Quote.swift */,
 				4B194F4428EEADD900F17FC9 /* Summary.swift */,
+				4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */,
 			);
 			path = "Class Model";
 			sourceTree = "<group>";
@@ -534,6 +551,7 @@
 				4B78DB3F28EC1F7200744386 /* Journal.storyboard in Resources */,
 				4B78DB3D28EC1ACD00744386 /* Main.storyboard in Resources */,
 				4B19F5EE28E49E0600A72B5C /* LaunchScreen.storyboard in Resources */,
+				4BB80B76293C61F3001FEC01 /* GoogleService-Info.plist in Resources */,
 				4B194F4F28EEBCF900F17FC9 /* TextfieldCard.xib in Resources */,
 				4B194F3128ED904B00F17FC9 /* Quote.storyboard in Resources */,
 				4B78DB4828EC298000744386 /* RoundedCard.xib in Resources */,
@@ -679,6 +697,8 @@
 				4B6A8F5D28EC44BC0088960F /* enumFile.swift in Sources */,
 				4B194F4B28EEBCB200F17FC9 /* TextfieldCard.swift in Sources */,
 				4B6A8F6428EC4F590088960F /* Journal.swift in Sources */,
+				4BB80B7A293C7EC5001FEC01 /* ClassificationResult.swift in Sources */,
+				4BB80B74293C60AC001FEC01 /* ModelLoader.swift in Sources */,
 				4B50DEA528EC909A00EC0290 /* DetailJournalViewModel.swift in Sources */,
 				4B8174242912B6930056D7F6 /* SumaryViewModel.swift in Sources */,
 				4B78DB4A28EC2BD800744386 /* JournalingViewController.swift in Sources */,
@@ -871,6 +891,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 38437W4ZU8;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HEPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -900,6 +921,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 38437W4ZU8;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HEPI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -7,9 +7,8 @@
 
 import UIKit
 
-//MARK: - Observe Journal Array
-/// Returns boolean true or false
-/// from the given components.
+//MARK: - Segue To Main Function
+/// Change UIStoryBoard to main programatically
 public func segueToMain() -> UIViewController {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let viewController =  storyboard.instantiateViewController(withIdentifier: "mainTabbar")
@@ -17,12 +16,12 @@ public func segueToMain() -> UIViewController {
     return viewController
 }
 
-//MARK: - Observe Journal Array
-/// Returns boolean true or false
-/// from the given components.
+//MARK: - Generic Alert Function
+/// Returns UIAlert Controller with given parameter
 /// - Parameters:
-///     - allowedCharacter: character subset that's allowed to use on the textfield
-///     - text: set of character/string that would like  to be checked.
+///     - titlAlert: title alert text for the UIAlertController Title
+///     - messageAlert: message alert text for the UIAlertController messageText
+///     - buttonText:  button text for the UIAlertController button text
 public func genericAlert(titleAlert : String, messageAlert : String, buttonText : String) -> UIAlertController {
     let alert = UIAlertController(title: titleAlert, message: messageAlert, preferredStyle: .alert)
     let cancel = UIAlertAction(title: buttonText, style: .cancel)
@@ -30,21 +29,19 @@ public func genericAlert(titleAlert : String, messageAlert : String, buttonText 
     return alert
 }
 
-//MARK: - Observe Journal Array
-/// Returns boolean true or false
+//MARK: - Change Date Object into String Function
+/// Returns string date in dd MMM YYYY format
 /// from the given components.
 /// - Parameters:
-///     - allowedCharacter: character subset that's allowed to use on the textfield
-///     - text: set of character/string that would like  to be checked.
+///     - Date: date object that's gonna be converted to string
 public func changeDateIntoStringDate(Date : Date) -> String {
     let dateF = DateFormatter()
     dateF.dateFormat = "dd MMM yyyy"
     return dateF.string(from: Date)
 }
 
-//MARK: - Observe Journal Array
-/// Returns boolean true or false
-/// from the given components.
+//MARK: - Error Alert Function
+/// Returns Error UIAlert Controller
 public func errorAlert() -> UIAlertController {
     let alert = UIAlertController(title: "Reactive Unexpected Error", message: "Please try again later", preferredStyle: .alert)
     let cancel = UIAlertAction(title: "Ok", style: .cancel)

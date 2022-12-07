@@ -15,13 +15,16 @@ class RoundedCard: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        setBackground()
+        loadXib()
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-       
+        super.init(coder: coder)       
         loadXib()
     }
+
 
     private func loadXib() {
         let viewFromXib = Bundle.main.loadNibNamed("RoundedCard", owner: self, options: nil)![0] as! UIView

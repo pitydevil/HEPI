@@ -343,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				4B78DB1728EAD77600744386 /* Style Guide.swift */,
+				4B45754428EC2DD5007DB4A0 /* Extension.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -385,6 +386,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+
 		4BC8119328EAD526000A7E42 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				4B194F3D28EDAF5500F17FC9 /* QuoteModel.swift in Sources */,
 				4B6A8F6228EC4AE90088960F /* HEPI.xcdatamodeld in Sources */,
 				4B6A8F5928EC42720088960F /* Shared Object.swift in Sources */,

@@ -16,8 +16,7 @@ class JournalingTableViewCell: UITableViewCell {
     @IBOutlet weak var bgCard : UIView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        
+        super.awakeFromNib()        
         self.bgCard.setBaseRoundedView()
         self.bgCard.setShadowCard()
         

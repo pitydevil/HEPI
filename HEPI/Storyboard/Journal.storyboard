@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ua5-hf-SDY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ua5-hf-SDY">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -329,7 +329,7 @@
                         <outlet property="moodDesc" destination="lJ5-cl-23T" id="HGu-FD-wPX"/>
                         <outlet property="moodImageView" destination="ZdV-6N-xsR" id="Jjo-hC-qiy"/>
                         <outlet property="moodLabel" destination="g4X-VV-xhs" id="ZoL-xs-IVg"/>
-                        <outlet property="moodRoundedCard" destination="b64-g4-byf" id="xgg-PF-4mc"/>
+                        <outlet property="moodRoundedCard" destination="b64-g4-byf" id="o0u-VL-ucx"/>
                         <outlet property="writeButtonPressed" destination="XkB-Th-zm8" id="2zT-8y-V2i"/>
                         <segue destination="KYT-7D-8CA" kind="presentation" identifier="goToFeeling" id="ZZ1-mI-Cfg"/>
                     </connections>

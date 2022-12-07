@@ -16,7 +16,7 @@ class RoundedCard: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setBackground()
+        setBaseRoundedView()
         loadXib()
     }
     

@@ -34,11 +34,7 @@ class DetailJournalViewController: UIViewController {
         return textView
     }()
     
-    @IBOutlet var moodRoundedCard: UIView! = {
-        let view = UIView()
-        view.setBaseRoundedView()
-        return view
-    }()
+    @IBOutlet var moodRoundedCard: UIView!
     
     //MARK: Object Declaration
     private var detailJournalViewModel = DetailJournalViewModel()
@@ -53,7 +49,7 @@ class DetailJournalViewController: UIViewController {
    
     //MARK: - View Will Layout Subviews
     override func viewWillLayoutSubviews() {
-        let tapped = UITapGestureRecognizer(target: DetailJournalViewController.self, action: #selector(moodTapped(_:)))
+        let tapped = UITapGestureRecognizer(target: self, action: #selector(moodTapped(_:)))
         moodRoundedCard.isUserInteractionEnabled = true
         moodRoundedCard.addGestureRecognizer(tapped)
     }

@@ -44,12 +44,6 @@ class JournalingViewController: UIViewController {
         //MARK: - Get Misc Information from ViewModel
 //        welcomeLabel.text = "Welcome, \(journalViewModel.getUsername()) !"
 //        dateLabel.text    = journalViewModel.getTodayDate()
-
-
-//        let yourBackImage = UIImage(named: "bac")
-//        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
-//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
-//        self.navigationController?.navigationBar.backItem?.title = "Custom"
         
         //MARK: - Observe Journal Array
         /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes

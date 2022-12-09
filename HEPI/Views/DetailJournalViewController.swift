@@ -13,24 +13,12 @@ import RxCocoa
 class DetailJournalViewController: UIViewController {
 
     //MARK: - Layout Subviews
-
     @IBOutlet var writeButtonPressed: UIBarButtonItem!
     @IBOutlet var deleteButtonPressed: UIBarButtonItem!
-    
-    //MARK: Computed SubViews Declaration
-    @IBOutlet var journalTitleTextfield: UITextField! = {
-        let textfield = UITextField()
-        textfield.setBaseRoundedView()
-        return textfield
-    }()
-    @IBOutlet var descriptionTextview: UITextView! = {
-        let textView = UITextView()
-        textView.setBaseRoundedView()
-        return textView
-    }()
-    
-    @IBOutlet var moodRoundedCard: UIView!
-    
+    @IBOutlet var journalTitleTextfield: UITextField!
+    @IBOutlet weak var dateTextfield: UITextField!
+    @IBOutlet var descriptionTextview: UITextView!
+
     //MARK: Object Declaration
     private var detailJournalViewModel = DetailJournalViewModel()
     var delegate : sendBackData?
@@ -44,9 +32,9 @@ class DetailJournalViewController: UIViewController {
    
     //MARK: - View Will Layout Subviews
     override func viewWillLayoutSubviews() {
-        let tapped = UITapGestureRecognizer(target: self, action: #selector(moodTapped(_:)))
-        moodRoundedCard.isUserInteractionEnabled = true
-        moodRoundedCard.addGestureRecognizer(tapped)
+        journalTitleTextfield.setBaseRoundedView()
+        journalTitleTextfield.setLeftPaddingPoints(8)
+        descriptionTextview.setBaseRoundedView()
     }
     
     //MARK: - View Will Appear
@@ -58,22 +46,18 @@ class DetailJournalViewController: UIViewController {
         //MARK: Check Journal Object State
         if journalObject != nil {
             deleteButtonPressed.isHidden = false
-            
+            title = "Edit Journal"
             //MARK: - Observe Journal Object Value
             /// Change UI Object based on journal value
             journalObjectObservable.subscribe(onNext: { [self] (value) in
-                dateDesc.text = changeDateIntoStringDate(Date: value.dateCreated!)
-                moodDesc.text = value.moodDesc
+                dateTextfield.text = changeDateIntoStringDate(Date: value.dateCreated!)
                 journalTitleTextfield.text = value.titleJournal
                 descriptionTextview.text   = value.descJournal
-                moodImageView.image = UIImage(data: value.moodImage!)
             }).disposed(by: bags)
         }else {
-            dateDesc.text                = nil
-            moodDesc.text                = nil
+            title = "Create Journal"
             journalTitleTextfield.text   = nil
             descriptionTextview.text     = nil
-            moodImageView.image          = nil
             deleteButtonPressed.isHidden = true
         }
     }
@@ -86,12 +70,7 @@ class DetailJournalViewController: UIViewController {
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-//        self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
-//        let backButton = UIBarButtonItem(image: UIImage(named: "backBTN"), style: .plain, target: self, action: #selector(goBack))
-//           navigationItem.leftBarButtonItem = backButton
-        
+    
         //MARK: - Responder to Dismiss any Keyboard Event
         hideKeyboardWhenTappedAround()
         
@@ -129,7 +108,7 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                detailJournalViewModel.addJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, moodDesc.text ?? "", moodImage: moodImageView.image?.pngData() ?? Data()) { (result) in
+                detailJournalViewModel.addJournal(journalTitleTextfield.text ?? "", descriptionTextview.text,  "", moodImage:  Data()) { (result) in
                     DispatchQueue.main.async { [self] in
                         switch result {
                             case .success:
@@ -153,7 +132,7 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, journalObject!.value.dateCreated! ,moodDesc.text ?? "", moodImage: moodImageView.image?.pngData() ?? Data()) { result in
+                detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, journalObject!.value.dateCreated! ,  "", moodImage: Data()) { result in
                     DispatchQueue.main.async { [self] in
                         switch result {
                             case .success:
@@ -202,7 +181,7 @@ extension DetailJournalViewController : sendBackData {
     ///     - data: generic object that's gonna be converted as Mood
     func sendData<T>(_ data: T) {
         let mood = data as? Mood
-        moodDesc.text = mood!.moodDesc
-        moodImageView.image = UIImage(data: mood!.moodImage ?? Data())
+       // moodDesc.text = mood!.moodDesc
+      //  moodImageView.image = UIImage(data: mood!.moodImage ?? Data())
     }
 }

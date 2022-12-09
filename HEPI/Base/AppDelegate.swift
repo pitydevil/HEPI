@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         FirebaseApp.configure()
-        UITabBar.appearance().tintColor = UIColor(red: 145/255.0, green: 110/255.0, blue: 90/255.0, alpha: 1.0)
+        //UITabBar.appearance().tintColor = UIColor(red: 145/255.0, green: 110/255.0, blue: 90/255.0, alpha: 1.0)
 
         return true
     }

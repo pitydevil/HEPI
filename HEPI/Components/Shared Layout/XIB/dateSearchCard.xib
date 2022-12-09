@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="dateSearchCard" customModule="HEPI" customModuleProvider="target">
+            <connections>
+                <outlet property="dateTextfield" destination="URl-XZ-Uyg" id="wHM-mO-XOF"/>
+                <outlet property="searchButton" destination="Kfw-2r-dZr" id="s3r-Rt-8EZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6q6-Dv-Uz0">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfw-2r-dZr">
+                    <rect key="frame" x="16" y="123" width="361" height="48"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="6l5-fa-TWp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Search">
+                        <color key="titleColor" red="0.34509803919999998" green="0.70196078429999997" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1 Juni - 20 Juni" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="URl-XZ-Uyg">
+                    <rect key="frame" x="16" y="75" width="361" height="34"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="3NR-0p-Dfn"/>
+            <color key="backgroundColor" name="primaryMain"/>
+            <constraints>
+                <constraint firstItem="Kfw-2r-dZr" firstAttribute="top" secondItem="URl-XZ-Uyg" secondAttribute="bottom" constant="14" id="DjT-Ib-gXZ"/>
+                <constraint firstItem="URl-XZ-Uyg" firstAttribute="top" secondItem="3NR-0p-Dfn" secondAttribute="top" constant="16" id="LVy-DF-Pn8"/>
+                <constraint firstItem="URl-XZ-Uyg" firstAttribute="leading" secondItem="3NR-0p-Dfn" secondAttribute="leading" constant="16" id="Xo3-pn-WJW"/>
+                <constraint firstItem="3NR-0p-Dfn" firstAttribute="trailing" secondItem="URl-XZ-Uyg" secondAttribute="trailing" constant="16" id="dWo-E8-jm4"/>
+                <constraint firstItem="Kfw-2r-dZr" firstAttribute="leading" secondItem="3NR-0p-Dfn" secondAttribute="leading" constant="16" id="rkU-g4-TsK"/>
+                <constraint firstItem="3NR-0p-Dfn" firstAttribute="trailing" secondItem="Kfw-2r-dZr" secondAttribute="trailing" constant="16" id="v5L-z2-4PQ"/>
+            </constraints>
+            <point key="canvasLocation" x="-993.12977099236639" y="-549.29577464788736"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="primaryMain">
+            <color red="0.34509803921568627" green="0.70196078431372544" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

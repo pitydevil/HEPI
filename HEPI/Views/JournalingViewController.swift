@@ -14,11 +14,9 @@ class JournalingViewController: UIViewController {
 
     //MARK: - Layout Subviews
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var roundedCard: RoundedCard!
-    @IBOutlet var welcomeLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var addButton: UIBarButtonItem!
     
+    @IBOutlet weak var dateSearchCard: dateSearchCard!
     //MARK: Object Declaration
     private let journalViewModel = JournalViewModel()
     private let journalList = BehaviorRelay<[Journal]>(value: [])
@@ -42,10 +40,16 @@ class JournalingViewController: UIViewController {
         
         //MARK: - Register TableView
         tableView.register(UINib(nibName: "JournalingTableViewCell", bundle: nil), forCellReuseIdentifier: "journalingCell")
-        
+ 
         //MARK: - Get Misc Information from ViewModel
-        welcomeLabel.text = "Welcome, \(journalViewModel.getUsername()) !"
-        dateLabel.text    = journalViewModel.getTodayDate()
+//        welcomeLabel.text = "Welcome, \(journalViewModel.getUsername()) !"
+//        dateLabel.text    = journalViewModel.getTodayDate()
+
+
+//        let yourBackImage = UIImage(named: "bac")
+//        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
+//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+//        self.navigationController?.navigationBar.backItem?.title = "Custom"
         
         //MARK: - Observe Journal Array
         /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes
@@ -80,4 +84,7 @@ class JournalingViewController: UIViewController {
             navigationController?.pushViewController(detailController ?? DetailJournalViewController(), animated: true)
         }.disposed(by: bags)
     }
+    
+   
+ 
 }

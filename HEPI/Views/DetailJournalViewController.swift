@@ -13,14 +13,9 @@ import RxCocoa
 class DetailJournalViewController: UIViewController {
 
     //MARK: - Layout Subviews
-    @IBOutlet var dateDesc: UILabel!
-    @IBOutlet var moodDesc: UILabel!
-    @IBOutlet var moodLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
+
     @IBOutlet var writeButtonPressed: UIBarButtonItem!
     @IBOutlet var deleteButtonPressed: UIBarButtonItem!
-    @IBOutlet var moodImageView: UIImageView!
-    @IBOutlet var dateRoundedCard: RoundedCard!
     
     //MARK: Computed SubViews Declaration
     @IBOutlet var journalTitleTextfield: UITextField! = {
@@ -91,6 +86,11 @@ class DetailJournalViewController: UIViewController {
     //MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+//        self.navigationController?.navigationBar.topItem?.backButtonTitle = ""
+//        let backButton = UIBarButtonItem(image: UIImage(named: "backBTN"), style: .plain, target: self, action: #selector(goBack))
+//           navigationItem.leftBarButtonItem = backButton
         
         //MARK: - Responder to Dismiss any Keyboard Event
         hideKeyboardWhenTappedAround()
@@ -186,6 +186,10 @@ class DetailJournalViewController: UIViewController {
         dismiss(animated: true) { [self] in
             navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    @objc func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

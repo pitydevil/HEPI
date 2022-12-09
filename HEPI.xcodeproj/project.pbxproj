@@ -53,6 +53,8 @@
 		4B78DB4828EC298000744386 /* RoundedCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B78DB4728EC298000744386 /* RoundedCard.xib */; };
 		4B78DB4A28EC2BD800744386 /* JournalingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B78DB4928EC2BD800744386 /* JournalingViewController.swift */; };
 		4B8174242912B6930056D7F6 /* SumaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8174232912B6930056D7F6 /* SumaryViewModel.swift */; };
+		4B952E8D294371D100A7616A /* dateSearchCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B952E8C294371D100A7616A /* dateSearchCard.xib */; };
+		4B952E8F294373E300A7616A /* dateSearchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B952E8E294373E300A7616A /* dateSearchCard.swift */; };
 		4BB4935328EC362800F3A482 /* StarterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935228EC362800F3A482 /* StarterViewModel.swift */; };
 		4BB4935B28EC40B000F3A482 /* Class Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935A28EC40B000F3A482 /* Class Extension.swift */; };
 		4BB80B74293C60AC001FEC01 /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B73293C60AC001FEC01 /* ModelLoader.swift */; };
@@ -135,6 +137,8 @@
 		4B78DB4728EC298000744386 /* RoundedCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedCard.xib; sourceTree = "<group>"; };
 		4B78DB4928EC2BD800744386 /* JournalingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalingViewController.swift; sourceTree = "<group>"; };
 		4B8174232912B6930056D7F6 /* SumaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SumaryViewModel.swift; sourceTree = "<group>"; };
+		4B952E8C294371D100A7616A /* dateSearchCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateSearchCard.xib; sourceTree = "<group>"; };
+		4B952E8E294373E300A7616A /* dateSearchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateSearchCard.swift; sourceTree = "<group>"; };
 		4BB4935228EC362800F3A482 /* StarterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewModel.swift; sourceTree = "<group>"; };
 		4BB4935A28EC40B000F3A482 /* Class Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class Extension.swift"; sourceTree = "<group>"; };
 		4BB80B73293C60AC001FEC01 /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 				4B6A8F6928EC5ED10088960F /* MoodCollectionViewCell.swift */,
 				4B194F4A28EEBCB200F17FC9 /* TextfieldCard.swift */,
 				4B78DB4228EC27F500744386 /* RoundedCard.swift */,
+				4B952E8E294373E300A7616A /* dateSearchCard.swift */,
 			);
 			path = "Shared Layout";
 			sourceTree = "<group>";
@@ -343,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				4B78DB1728EAD77600744386 /* Style Guide.swift */,
-				4B45754428EC2DD5007DB4A0 /* Extension.swift */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 		4B78DB4428EC294C00744386 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				4B952E8C294371D100A7616A /* dateSearchCard.xib */,
 				4B78DB4728EC298000744386 /* RoundedCard.xib */,
 				4B6A8F6A28EC5ED10088960F /* MoodCollectionViewCell.xib */,
 				4B194F3528ED919200F17FC9 /* QuoteTableViewCell.xib */,
@@ -386,7 +391,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-
 		4BC8119328EAD526000A7E42 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +561,7 @@
 				4B194F4F28EEBCF900F17FC9 /* TextfieldCard.xib in Resources */,
 				4B194F3128ED904B00F17FC9 /* Quote.storyboard in Resources */,
 				4B78DB4828EC298000744386 /* RoundedCard.xib in Resources */,
+				4B952E8D294371D100A7616A /* dateSearchCard.xib in Resources */,
 				4B19F5EB28E49E0600A72B5C /* Assets.xcassets in Resources */,
 				4B194F3728ED919200F17FC9 /* QuoteTableViewCell.xib in Resources */,
 				4B194F4128EDBADA00F17FC9 /* Summary.storyboard in Resources */,
@@ -687,7 +692,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				4B194F3D28EDAF5500F17FC9 /* QuoteModel.swift in Sources */,
 				4B6A8F6228EC4AE90088960F /* HEPI.xcdatamodeld in Sources */,
 				4B6A8F5928EC42720088960F /* Shared Object.swift in Sources */,
@@ -723,6 +727,7 @@
 				4B194F3628ED919200F17FC9 /* QuoteTableViewCell.swift in Sources */,
 				4B78DB1828EAD77600744386 /* Style Guide.swift in Sources */,
 				4B45754228EC2C99007DB4A0 /* JournalingTableViewCell.swift in Sources */,
+				4B952E8F294373E300A7616A /* dateSearchCard.swift in Sources */,
 				4B6A8F6828EC51170088960F /* BaseProviders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,7 +826,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -875,7 +880,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -897,6 +902,8 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HEPI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HEPI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -927,6 +934,8 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HEPI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HEPI;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -13,13 +13,7 @@ class DetailJournalViewModel {
     
     //MARK: - Object Declaration
     private var provider = BaseProviders()
-    var moodObject : BehaviorRelay<Mood> = BehaviorRelay<Mood>(value: Mood())
-    
-    //MARK: - Object Observation Declaration
-    var moodObjectObservable : Observable<Mood> {
-        return moodObject.asObservable()
-    }
-
+   
     //MARK: - Init Class
     init() {
         self.provider = { return BaseProviders()}()

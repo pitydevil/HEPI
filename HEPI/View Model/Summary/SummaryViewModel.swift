@@ -70,19 +70,21 @@ class SummaryViewModel {
         if journal.isEmpty {
             completion(.failure(.dataTidakAda(errorMessage: "dataTidakExist")))
         }else {
-            var arrayScore = [0,0,0,0,0]
+            var arrayScore = [0,0,0,0,0,0]
             for item in journal {
                 switch item.moodDesc {
-                    case "Very Happy":
+                    case "Anger":
                         arrayScore[0] += 1
-                    case "Happy":
+                    case "Fear":
                         arrayScore[1] += 1
-                    case "Neutral":
+                    case "Joy":
                         arrayScore[2] += 1
-                    case "Sad":
+                    case "Love":
                         arrayScore[3] += 1
-                    case "Very Sad":
+                    case "Neutral":
                         arrayScore[4] += 1
+                    case "Sad":
+                        arrayScore[5] += 1
                     default:
                         print("error")
                 }
@@ -91,15 +93,17 @@ class SummaryViewModel {
                 if let index = arrayScore.firstIndex(where: {$0 == maxNumber}) {
                     switch index {
                     case 0:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "veryHappy")!.pngData(), overallTitleMood: "Your Overall Mood is Very Happy", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Anger")!.pngData(), overallTitleMood: "Anger", overallSuggestion: "")))
                     case 1:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "happy")!.pngData(), overallTitleMood: "Your Overall Mood is Happy", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Fear")!.pngData(), overallTitleMood: "Fear", overallSuggestion: "")))
                     case 2:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "neutral")!.pngData(), overallTitleMood: "Your Overall Mood is Neutral", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Joy")!.pngData(), overallTitleMood: "Joy", overallSuggestion: "")))
                     case 3:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "sad")!.pngData(), overallTitleMood: "Your Overall Mood is Sad", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Love")!.pngData(), overallTitleMood: "Love", overallSuggestion: "")))
                     case 4:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "verySad")!.pngData(), overallTitleMood: "Your Overall Mood is Very Sad", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Neutral")!.pngData(), overallTitleMood: " Neutral", overallSuggestion: "")))
+                    case 5:
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Sad")!.pngData(), overallTitleMood: "Sad", overallSuggestion: "")))
                     default:
                         print("print?")
                     }

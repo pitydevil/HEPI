@@ -58,4 +58,20 @@ class JournalViewModel {
             }
         }).disposed(by: bags)
     }
+    
+    func getSummaryMood(_ startDate : Date, _ endDate : Date) {
+        journalArray = provider.querySummary(startDate, endDate)
+        journalArray?.subscribe(onNext: { (value) in
+            var journalModel = [Journal]()
+            for index in 0..<value.count {
+                let user = value[index]
+                journalModel.append(user)
+            }
+            self.journalModelArray.accept(journalModel)
+        }, onError: { (error) in
+            _ = self.journalModelArrayObserver.catch { (error) in
+                Observable.empty()
+            }
+        }).disposed(by: bags)
+    }
 }

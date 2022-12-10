@@ -38,6 +38,7 @@ class QuotesViewController: UIViewController {
         /// Returns boolean true or false
         /// from the given components.
         quoteViewModel.fetchQuoteList()
+        quoteActivityIndicator.startAnimating()
         
         //MARK: - Register Quote TableView with quoteCell
         quoteTableView.register(UINib(nibName: "QuoteTableViewCell", bundle: nil), forCellReuseIdentifier: "quoteCell")
@@ -63,7 +64,6 @@ class QuotesViewController: UIViewController {
     /// Response when refresh control is pulled
     @objc func refresh(_ sender: AnyObject) {
         quoteList.accept([])
-        quoteActivityIndicator.startAnimating()
         quoteViewModel.fetchQuoteList()
     }
 }

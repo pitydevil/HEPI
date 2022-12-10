@@ -8,5 +8,5 @@
 import Foundation
 
 struct CheckIn {
-    let checkInDate, checkOutDate : String
+    let checkInDate, checkOutDate : Date
 }

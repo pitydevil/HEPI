@@ -21,11 +21,3 @@ protocol APIRequestProtocol {
 protocol querySummaryProtocol {
     func querySummary<T: Codable>(_ startDate: Date, _ endDate : Date) -> Observable<T>
 }
-
-protocol sendBackData {
-    func sendData<T> (_ data : T)
-}
-
-protocol passData {
-    func passData(_ date : Date, _ identifier : datePass)
-}

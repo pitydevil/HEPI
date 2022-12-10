@@ -22,7 +22,7 @@ class JournalingViewController: UIViewController {
     private let journalViewModel = JournalViewModel()
     private let journalList = BehaviorRelay<[Journal]>(value: [])
     private var detailController : DetailJournalViewController?
-    private var checkFinalObject = BehaviorRelay<CheckIn>(value:CheckIn(checkInDate: "", checkOutDate: ""))
+    private var checkFinalObject = BehaviorRelay<CheckIn>(value:CheckIn(checkInDate: Date(), checkOutDate: Date()))
     
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +57,7 @@ class JournalingViewController: UIViewController {
         journalViewModel.journalModelArrayObserver.subscribe(onNext: { [self] (value) in
             journalList.accept(value)
             DispatchQueue.main.async { [self] in
-                resultLabel.text = "Showing \() Results for \()"
+                resultLabel.text = "Showing \(value.count) Results for: \(changeDateIntoDDMM(checkFinalObject.value.checkInDate)) - \(changeDateIntoDDMM(checkFinalObject.value.checkOutDate))"
             }
         },onError: { error in
             self.present(errorAlert(), animated: true)
@@ -91,12 +91,30 @@ class JournalingViewController: UIViewController {
         //MARK: - Journal Button Response Function
         /// Segue to Detail Journal View Controller.
         dateSearchCard.searchButton.rx.tap.bind { [self] in
-            print("dateSearch tapped")
+            journalViewModel.getSummaryMood(checkFinalObject.value.checkInDate, checkFinalObject.value.checkOutDate)
         }.disposed(by: bags)
     }
     
+    //MARK: - Bind Did Select Row with Rx Item Selected
+    /// TableView Did Select delegate function and response accordingnly.
     @objc private func responseTanggal(_ gesture: UITapGestureRecognizer) {
-        print("response")
+        let vc = ModalCheckInOutViewController()
+        vc.modalPresentationStyle = .pageSheet
+        //MARK: - Bind Journal List with Table View
+        /// Returns boolean true or false
+        /// from the given components.
+        /// - Parameters:
+        ///     - allowedCharacter: character subset that's allowed to use on the textfield
+        ///     - text: set of character/string that would like  to be checked.
+        vc.checkFinalObjectObserver.skip(1).subscribe(onNext: { [self] (value) in
+            checkFinalObject.accept(value)
+            DispatchQueue.main.async { [self] in
+                dateSearchCard.dateTextfield.text = "\(changeDateIntoDDMM(checkFinalObject.value.checkInDate)) - \(changeDateIntoDDMM(checkFinalObject.value.checkOutDate))"
+            }
+        },onError: { error in
+            self.present(errorAlert(), animated: true)
+        }).disposed(by: bags)
+        self.present(vc, animated: true)
     }
 }
 

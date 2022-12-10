@@ -16,12 +16,11 @@ class DetailJournalViewController: UIViewController {
     @IBOutlet var writeButtonPressed: UIBarButtonItem!
     @IBOutlet var deleteButtonPressed: UIBarButtonItem!
     @IBOutlet var journalTitleTextfield: UITextField!
-    @IBOutlet weak var dateTextfield: UITextField!
+    @IBOutlet var dateTextfield: UITextField!
     @IBOutlet var descriptionTextview: UITextView!
 
     //MARK: Object Declaration
     private var detailJournalViewModel = DetailJournalViewModel()
-    var delegate : sendBackData?
     var journalObject : BehaviorRelay<Journal>?
     
     //MARK: Object Observer Declaration
@@ -38,7 +37,6 @@ class DetailJournalViewController: UIViewController {
     
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
-              
         //MARK: Check Journal Object State
         if journalObject != nil {
             deleteButtonPressed.isHidden = false
@@ -46,12 +44,13 @@ class DetailJournalViewController: UIViewController {
             //MARK: - Observe Journal Object Value
             /// Change UI Object based on journal value
             journalObjectObservable.subscribe(onNext: { [self] (value) in
-                dateTextfield.text = changeDateIntoStringDate(Date: value.dateCreated!)
+                dateTextfield.text         = changeDateIntoStringDate(Date: value.dateCreated!)
                 journalTitleTextfield.text = value.titleJournal
                 descriptionTextview.text   = value.descJournal
             }).disposed(by: bags)
         }else {
             title = "Create Journal"
+            dateTextfield.text           = changeDateIntoStringDate(Date: Date())
             journalTitleTextfield.text   = nil
             descriptionTextview.text     = nil
             deleteButtonPressed.isHidden = true
@@ -157,19 +156,5 @@ class DetailJournalViewController: UIViewController {
     
     @objc func goBack() {
         self.navigationController?.popViewController(animated: true)
-    }
-}
-
-//MARK: - Send Back Data Delegate
-@available(iOS 16.0, *)
-extension DetailJournalViewController : sendBackData {
-    
-    //MARK: - Send Back Data Delegate Function
-    /// - Parameters:
-    ///     - data: generic object that's gonna be converted as Mood
-    func sendData<T>(_ data: T) {
-        let mood = data as? Mood
-       // moodDesc.text = mood!.moodDesc
-      //  moodImageView.image = UIImage(data: mood!.moodImage ?? Data())
     }
 }

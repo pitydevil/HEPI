@@ -40,6 +40,17 @@ public func changeDateIntoStringDate(Date : Date) -> String {
     return dateF.string(from: Date)
 }
 
+//MARK: - Change Date Into DD MM
+/// Returns string date in dd MMM YYYY format
+/// from the given components.
+/// - Parameters:
+///     - Date: date object that's gonna be converted to string
+public func changeDateIntoDDMM(_ Date : Date) -> String {
+    let dateF = DateFormatter()
+    dateF.dateFormat = "dd MMM"
+    return dateF.string(from: Date)
+}
+
 //MARK: - Error Alert Function
 /// Returns Error UIAlert Controller
 public func errorAlert() -> UIAlertController {

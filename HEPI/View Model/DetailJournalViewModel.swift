@@ -33,9 +33,8 @@ class DetailJournalViewModel {
     ///     - descJournal: journal description for the journal object
     ///     - moodDesc: journal mood description for the journal object
     ///     - moodImage: journal mood image for the journal object
-    func addJournal(_ titleJournal : String, _ descJournal : String, _ moodDesc : String, moodImage : Data? , completion: @escaping(_ result: typeError)-> Void ) {
-        if titleJournal.count != 0 && descJournal.count != 0 && moodImage != Data() {
-            
+    func addJournal(_ titleJournal : String, _ descJournal : String , completion: @escaping(_ result: typeError)-> Void ) {
+        if titleJournal.count != 0 && descJournal.count != 0 {
             //MARK: - Add Journal Provider Function
             /// Returns summaryGenerate enumeration
             /// from the given components.
@@ -45,7 +44,8 @@ class DetailJournalViewModel {
             ///     - moodDesc: journal mood description for the journal object
             ///     - moodImage: journal mood image for the journal object
             ///     - dateCreated: journal date creatiion for the journal object
-            provider.addJournal(titleJournal, descJournal, Date(), moodImage!,String(describing: classify(text: descJournal))) { result in
+            let classifiedMood = String(describing: classify(text: descJournal))
+            provider.addJournal(titleJournal, descJournal, Date(), UIImage(named: classifiedMood)!.pngData()!, classifiedMood) { result in
                 switch result {
                     case true:
                         completion(.success)
@@ -66,8 +66,8 @@ class DetailJournalViewModel {
     ///     - descJournal: journal description for the journal object
     ///     - moodDesc: journal mood description for the journal object
     ///     - moodImage: journal mood image for the journal object
-    func updateJournal(_ titleJournal : String, _ descJournal : String, _ date : Date ,_ moodDesc : String, moodImage : Data? , completion: @escaping(_ result: typeError)-> Void ) {
-        if titleJournal.count != 0 && descJournal.count != 0 && moodImage != Data() {
+    func updateJournal(_ titleJournal : String, _ descJournal : String, _ date : Date, completion: @escaping(_ result: typeError)-> Void ) {
+        if titleJournal.count != 0 && descJournal.count != 0 {
             //MARK: - Update Existing Provider Function
             /// Returns summaryGenerate enumeration
             /// from the given components.
@@ -77,7 +77,8 @@ class DetailJournalViewModel {
             ///     - moodDesc: journal mood description for the journal object
             ///     - moodImage: journal mood image for the journal object
             ///     - dateCreated: journal date creatiion for the journal object
-            provider.updateExisting(titleJournal, descJournal, date, moodImage!, String(describing: classify(text: descJournal))) { result in
+            let classifiedMood = String(describing: classify(text: descJournal))
+            provider.updateExisting(titleJournal, descJournal, date, UIImage(named: classifiedMood)!.pngData()!, classifiedMood) { result in
                 switch result {
                     case true:
                         completion(.success)

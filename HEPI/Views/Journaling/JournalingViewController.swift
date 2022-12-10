@@ -13,14 +13,16 @@ import RxSwift
 class JournalingViewController: UIViewController {
 
     //MARK: - Layout Subviews
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet var addButton: UIBarButtonItem!
-    
     @IBOutlet weak var dateSearchCard: dateSearchCard!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet var addButton: UIBarButtonItem!
+
     //MARK: Object Declaration
     private let journalViewModel = JournalViewModel()
     private let journalList = BehaviorRelay<[Journal]>(value: [])
     private var detailController : DetailJournalViewController?
+    private var checkFinalObject = BehaviorRelay<CheckIn>(value:CheckIn(checkInDate: "", checkOutDate: ""))
     
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +37,12 @@ class JournalingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: - Set Touch Responder to Textfield
+        dateSearchCard.dateTextfield.addTarget(self, action: #selector(responseTanggal), for: .allTouchEvents)
+        
+        //MARK: - Delegate Registration
+        dateSearchCard.dateTextfield.delegate = self
+        
         //MARK: - Register Controller
         detailController = UIStoryboard(name: "Journal", bundle: nil).instantiateViewController(identifier: "detailViewController") as DetailJournalViewController
         
@@ -42,13 +50,15 @@ class JournalingViewController: UIViewController {
         tableView.register(UINib(nibName: "JournalingTableViewCell", bundle: nil), forCellReuseIdentifier: "journalingCell")
  
         //MARK: - Get Misc Information from ViewModel
-//        welcomeLabel.text = "Welcome, \(journalViewModel.getUsername()) !"
-//        dateLabel.text    = journalViewModel.getTodayDate()
+        title = "Welcome, \(journalViewModel.getUsername()) !"
         
         //MARK: - Observe Journal Array
         /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes
         journalViewModel.journalModelArrayObserver.subscribe(onNext: { [self] (value) in
             journalList.accept(value)
+            DispatchQueue.main.async { [self] in
+                resultLabel.text = "Showing \() Results for \()"
+            }
         },onError: { error in
             self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
@@ -77,8 +87,29 @@ class JournalingViewController: UIViewController {
             detailController?.journalObject = nil
             navigationController?.pushViewController(detailController ?? DetailJournalViewController(), animated: true)
         }.disposed(by: bags)
+        
+        //MARK: - Journal Button Response Function
+        /// Segue to Detail Journal View Controller.
+        dateSearchCard.searchButton.rx.tap.bind { [self] in
+            print("dateSearch tapped")
+        }.disposed(by: bags)
     }
     
-   
- 
+    @objc private func responseTanggal(_ gesture: UITapGestureRecognizer) {
+        print("response")
+    }
+}
+
+//MARK: - UITextfield Delegate
+extension JournalingViewController : UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == dateSearchCard.dateTextfield {
+            return false
+        }
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 }

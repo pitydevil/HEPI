@@ -34,6 +34,7 @@
 		4B50DEA128EC844E00EC0290 /* DetailJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50DEA028EC844E00EC0290 /* DetailJournalViewController.swift */; };
 		4B50DEA328EC8DB000EC0290 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50DEA228EC8DB000EC0290 /* Mood.swift */; };
 		4B50DEA528EC909A00EC0290 /* DetailJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50DEA428EC909A00EC0290 /* DetailJournalViewModel.swift */; };
+		4B622DAC294455DF00E42DAE /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B622DAB294455DF00E42DAE /* CheckIn.swift */; };
 		4B6A8F5928EC42720088960F /* Shared Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A8F5828EC42720088960F /* Shared Object.swift */; };
 		4B6A8F5B28EC42F80088960F /* HelperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A8F5A28EC42F80088960F /* HelperClass.swift */; };
 		4B6A8F5D28EC44BC0088960F /* enumFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6A8F5C28EC44BC0088960F /* enumFile.swift */; };
@@ -118,6 +119,7 @@
 		4B50DEA028EC844E00EC0290 /* DetailJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJournalViewController.swift; sourceTree = "<group>"; };
 		4B50DEA228EC8DB000EC0290 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		4B50DEA428EC909A00EC0290 /* DetailJournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJournalViewModel.swift; sourceTree = "<group>"; };
+		4B622DAB294455DF00E42DAE /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		4B6A8F5828EC42720088960F /* Shared Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shared Object.swift"; sourceTree = "<group>"; };
 		4B6A8F5A28EC42F80088960F /* HelperClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClass.swift; sourceTree = "<group>"; };
 		4B6A8F5C28EC44BC0088960F /* enumFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumFile.swift; sourceTree = "<group>"; };
@@ -270,10 +272,27 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4B622DA9294455C200E42DAE /* Journaling */ = {
+			isa = PBXGroup;
+			children = (
+				4B622DAA294455C900E42DAE /* Domain */,
+				4B78DB4928EC2BD800744386 /* JournalingViewController.swift */,
+			);
+			path = Journaling;
+			sourceTree = "<group>";
+		};
+		4B622DAA294455C900E42DAE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4B622DAB294455DF00E42DAE /* CheckIn.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		4B78DB0328EAD6B500744386 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4B78DB4928EC2BD800744386 /* JournalingViewController.swift */,
+				4B622DA9294455C200E42DAE /* Journaling */,
 				4BC80EE828EC33E5005C19FF /* MainViewController.swift */,
 				4B334AB928EC6653002A475B /* MoodViewController.swift */,
 				4B50DEA028EC844E00EC0290 /* DetailJournalViewController.swift */,
@@ -713,6 +732,7 @@
 				4B6A8F6628EC50C60088960F /* Protocol.swift in Sources */,
 				4B194F3928EDAA6100F17FC9 /* QuotesViewController.swift in Sources */,
 				4B78DB4328EC27F500744386 /* RoundedCard.swift in Sources */,
+				4B622DAC294455DF00E42DAE /* CheckIn.swift in Sources */,
 				4B334ABA28EC6653002A475B /* MoodViewController.swift in Sources */,
 				4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */,
 				4B50DEA328EC8DB000EC0290 /* Mood.swift in Sources */,

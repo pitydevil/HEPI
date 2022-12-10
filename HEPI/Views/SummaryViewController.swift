@@ -12,24 +12,18 @@ import RxCocoa
 class SummaryViewController: UIViewController {
 
     //MARK: - Layout Subviews
-    @IBOutlet weak var leftDateCard : TextfieldCard!
-    @IBOutlet weak var rightDateCard : TextfieldCard!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var summaryImage : UIImageView!
     @IBOutlet weak var descTextView : UITextView!
-    @IBOutlet weak var searchButton : UIBarButtonItem!
+    @IBOutlet weak var moodImageView: UIImageView!
+    @IBOutlet weak var dateSearchCard: dateSearchCard!
     
     //MARK: Object Declaration
-    private var startDate = Date()
-    private var endDate   = Date()
     private let summaryViewModel = SummaryViewModel()
    
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
-        leftDateCard?.delegate = self
-        rightDateCard?.delegate = self
-        leftDateCard.identifier = .start
-        rightDateCard.identifier = .end
+        descTextView.setBaseRoundedView()
     }
     
     //MARK: - View Did Layout
@@ -64,26 +58,26 @@ class SummaryViewController: UIViewController {
         
         
         //MARK: - Search Button Response Function
-        searchButton.rx.tap.bind { [self] in
-            //MARK: - Summary View Model Get Summary Mood Function
-            /// Returns mood summary
-            /// from the given components.
-            /// - Parameters:
-            ///     - startDate: date object that determine starting date for the date interval query
-            ///     - endDate: date object that determine ending date for the date interval query
-            summaryViewModel.getSummaryMood(startDate, endDate) { [self] (result) in
-                switch result {
-                case .dataTidakAda(errorMessage: ""):
-                    present(genericAlert(titleAlert: "Data Tidak Ada!", messageAlert: "Kamu tidak membuat journal direntang hari tersebut.", buttonText: "Ok"), animated: true)
-                case .tanggalLebihTua(errorMessage: ""):
-                    present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal Akhir tidak bisa lebih muda daripada tanggal awalannya.", buttonText: "Ok"), animated: true)
-                case .tanggalLebihMuda(errorMessage: ""):
-                    present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal awal tidak bisa lebih tua daripada tanggal akhirannya.", buttonText: "Ok"), animated: true)
-                default:
-                    print("test")
-                }
-            }
-        }.disposed(by: bags)
+//        searchButton.rx.tap.bind { [self] in
+//            //MARK: - Summary View Model Get Summary Mood Function
+//            /// Returns mood summary
+//            /// from the given components.
+//            /// - Parameters:
+//            ///     - startDate: date object that determine starting date for the date interval query
+//            ///     - endDate: date object that determine ending date for the date interval query
+//            summaryViewModel.getSummaryMood(startDate, endDate) { [self] (result) in
+//                switch result {
+//                case .dataTidakAda(errorMessage: ""):
+//                    present(genericAlert(titleAlert: "Data Tidak Ada!", messageAlert: "Kamu tidak membuat journal direntang hari tersebut.", buttonText: "Ok"), animated: true)
+//                case .tanggalLebihTua(errorMessage: ""):
+//                    present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal Akhir tidak bisa lebih muda daripada tanggal awalannya.", buttonText: "Ok"), animated: true)
+//                case .tanggalLebihMuda(errorMessage: ""):
+//                    present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal awal tidak bisa lebih tua daripada tanggal akhirannya.", buttonText: "Ok"), animated: true)
+//                default:
+//                    print("test")
+//                }
+//            }
+//        }.disposed(by: bags)
     }
 }
 
@@ -98,11 +92,6 @@ extension SummaryViewController : passData {
     ///     - allowedCharacter: character subset that's allowed to use on the textfield
     ///     - text: set of character/string that would like  to be checked.
     func passData(_ date: Date, _ identifier: datePass) {
-        switch identifier {
-            case .end:
-                self.endDate  = date
-            case .start:
-                self.startDate = date
-        }
+        
     }
 }

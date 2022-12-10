@@ -25,9 +25,6 @@ class JournalingTableViewCell: UITableViewCell {
         self.imageCard.clipsToBounds = true
         self.imageCard.setBaseRoundedView()
         self.subtitleCard.setBaseRoundedView()
-        //minxminy = atas kiri
-        //minxmaxy = bawah kiri
-        
         self.imageCard.layer.maskedCorners = [.layerMinXMaxYCorner ,.layerMaxXMinYCorner]
         self.subtitleCard.layer.maskedCorners = [ .layerMaxXMaxYCorner]
         self.backgroundColor = .clear
@@ -41,8 +38,9 @@ class JournalingTableViewCell: UITableViewCell {
     }
     
     func configureCell(journal : Journal) {
-        self.journalTitleLabel.text = journal.titleJournal
         self.journalDateLabel.text  = changeDateIntoStringDate(Date: journal.dateCreated!)
         self.moodImageView.image    = UIImage(data: journal.moodImage!)
+        self.subtitleLabel.text     = journal.descJournal!
+        self.journalTitleLabel.text = journal.titleJournal
     }
 }

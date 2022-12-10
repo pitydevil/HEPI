@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-XK-iM3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-XK-iM3">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,6 +54,7 @@
                             <constraint firstItem="MF2-bh-dt2" firstAttribute="leading" secondItem="MRd-XK-iM3" secondAttribute="leading" id="MkF-22-Xvm"/>
                             <constraint firstItem="MF2-bh-dt2" firstAttribute="centerX" secondItem="SNh-9Q-I5o" secondAttribute="centerX" id="Xk1-Vi-mnv"/>
                             <constraint firstItem="MF2-bh-dt2" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Z1G-PM-y9F"/>
+                            <constraint firstItem="MRd-XK-iM3" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="agT-bd-y12"/>
                             <constraint firstItem="MF2-bh-dt2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ddy-eN-uXz"/>
                             <constraint firstItem="SNh-9Q-I5o" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="gek-rR-MSN"/>
                             <constraint firstItem="uVb-SY-KVB" firstAttribute="top" secondItem="SNh-9Q-I5o" secondAttribute="bottom" constant="8" id="k1M-di-ISo"/>
@@ -67,6 +68,7 @@
                     <connections>
                         <outlet property="addButton" destination="jdJ-lK-fUT" id="CVK-0L-d5T"/>
                         <outlet property="dateSearchCard" destination="MF2-bh-dt2" id="ezJ-zS-H40"/>
+                        <outlet property="resultLabel" destination="SNh-9Q-I5o" id="blI-09-HPW"/>
                         <outlet property="tableView" destination="uVb-SY-KVB" id="5UZ-Nz-1pc"/>
                         <segue destination="5hK-hc-tMx" kind="show" identifier="goToJournalMood" id="E9d-mz-tGb"/>
                     </connections>
@@ -74,64 +76,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.1538461538462" y="3.5545023696682461"/>
-        </scene>
-        <!--Mood Check In-->
-        <scene sceneID="vmu-B2-P3i">
-            <objects>
-                <viewController storyboardIdentifier="feelingController" hidesBottomBarWhenPushed="YES" id="KYT-7D-8CA" customClass="MoodViewController" customModule="HEPI" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qDx-na-5k9">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="xzJ-cG-qba">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gag-Ra-j1r">
-                                <rect key="frame" x="16" y="97" width="358" height="492"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d0g-Na-Hwj">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Your Feeling Below:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mly-hq-gz0">
-                                <rect key="frame" x="97" y="63" width="196" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <color key="textColor" red="0.56862745100000001" green="0.43137254899999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="KRk-Dv-Ndj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="xzJ-cG-qba" firstAttribute="leading" secondItem="KRk-Dv-Ndj" secondAttribute="leading" id="BA9-5o-SVg"/>
-                            <constraint firstItem="KRk-Dv-Ndj" firstAttribute="trailing" secondItem="gag-Ra-j1r" secondAttribute="trailing" constant="16" id="Bl4-ju-YPH"/>
-                            <constraint firstItem="Mly-hq-gz0" firstAttribute="top" secondItem="KRk-Dv-Ndj" secondAttribute="top" constant="16" id="Hf9-KJ-LmY"/>
-                            <constraint firstItem="Mly-hq-gz0" firstAttribute="leading" secondItem="KRk-Dv-Ndj" secondAttribute="leading" constant="97" id="JHZ-Z8-OuU"/>
-                            <constraint firstItem="KRk-Dv-Ndj" firstAttribute="bottom" secondItem="gag-Ra-j1r" secondAttribute="bottom" constant="198" id="Rid-dR-LAV"/>
-                            <constraint firstItem="gag-Ra-j1r" firstAttribute="leading" secondItem="KRk-Dv-Ndj" secondAttribute="leading" constant="16" id="ZWh-Tf-JN2"/>
-                            <constraint firstItem="xzJ-cG-qba" firstAttribute="top" secondItem="qDx-na-5k9" secondAttribute="top" id="bVO-7J-X3Y"/>
-                            <constraint firstItem="KRk-Dv-Ndj" firstAttribute="trailing" secondItem="Mly-hq-gz0" secondAttribute="trailing" constant="97" id="gCF-u2-Xw8"/>
-                            <constraint firstItem="gag-Ra-j1r" firstAttribute="top" secondItem="Mly-hq-gz0" secondAttribute="bottom" constant="16" id="hfk-wB-DSr"/>
-                            <constraint firstItem="xzJ-cG-qba" firstAttribute="trailing" secondItem="KRk-Dv-Ndj" secondAttribute="trailing" id="mwX-Ft-C0q"/>
-                            <constraint firstAttribute="bottom" secondItem="xzJ-cG-qba" secondAttribute="bottom" id="ng0-N4-DVg"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Mood Check In" largeTitleDisplayMode="never" id="eIm-rw-loe">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.right" catalog="system" id="Pjq-hL-Hmd"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="arrowRightButton" destination="Pjq-hL-Hmd" id="T3g-gf-2pq"/>
-                        <outlet property="moodCollectionView" destination="gag-Ra-j1r" id="Du9-48-pea"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="swa-2x-FIQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1064.6153846153845" y="777.7251184834123"/>
         </scene>
         <!--Journal-->
         <scene sceneID="f1W-EP-35L">
@@ -250,25 +194,23 @@
                         <outlet property="descriptionTextview" destination="9nN-HX-hXD" id="QY6-KH-dN5"/>
                         <outlet property="journalTitleTextfield" destination="Ge5-Cq-yKN" id="xJb-q5-R23"/>
                         <outlet property="writeButtonPressed" destination="XkB-Th-zm8" id="2zT-8y-V2i"/>
-                        <segue destination="KYT-7D-8CA" kind="presentation" identifier="goToFeeling" id="ZZ1-mI-Cfg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caZ-IH-EnD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844.6153846153845" y="777.7251184834123"/>
+            <point key="canvasLocation" x="1066" y="746"/>
         </scene>
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Background" width="390" height="844"/>
-        <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="back" width="120" height="120"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
         <image name="trash.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="backgroundText">
-            <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="baseGray">
             <color red="0.44705882352941179" green="0.44705882352941179" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

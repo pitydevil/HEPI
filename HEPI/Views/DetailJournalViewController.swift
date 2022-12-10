@@ -22,7 +22,6 @@ class DetailJournalViewController: UIViewController {
     //MARK: Object Declaration
     private var detailJournalViewModel = DetailJournalViewModel()
     var delegate : sendBackData?
-    var moodViewController : MoodViewController?
     var journalObject : BehaviorRelay<Journal>?
     
     //MARK: Object Observer Declaration
@@ -32,17 +31,14 @@ class DetailJournalViewController: UIViewController {
    
     //MARK: - View Will Layout Subviews
     override func viewWillLayoutSubviews() {
-        journalTitleTextfield.setBaseRoundedView()
         journalTitleTextfield.setLeftPaddingPoints(8)
+        journalTitleTextfield.setBaseRoundedView()
         descriptionTextview.setBaseRoundedView()
     }
     
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
-        
-        //MARK: - Register Controller
-        moodViewController =  UIStoryboard(name: "Journal", bundle: nil).instantiateViewController(identifier: "feelingController") as MoodViewController
-        
+              
         //MARK: Check Journal Object State
         if journalObject != nil {
             deleteButtonPressed.isHidden = false
@@ -108,7 +104,7 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                detailJournalViewModel.addJournal(journalTitleTextfield.text ?? "", descriptionTextview.text,  "", moodImage:  Data()) { (result) in
+                detailJournalViewModel.addJournal(journalTitleTextfield.text ?? "", descriptionTextview.text) { (result) in
                     DispatchQueue.main.async { [self] in
                         switch result {
                             case .success:
@@ -132,7 +128,7 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, journalObject!.value.dateCreated! ,  "", moodImage: Data()) { result in
+                detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, journalObject!.value.dateCreated!) { result in
                     DispatchQueue.main.async { [self] in
                         switch result {
                             case .success:
@@ -149,14 +145,6 @@ class DetailJournalViewController: UIViewController {
                 }
             }
         }.disposed(by: bags)
-    }
-        
-    //MARK: - Journal Button Response Function
-    /// Returns boolean true or false
-    /// from the given components.
-    @objc private func moodTapped(_ gesture : UITapGestureRecognizer) {
-        moodViewController?.delegate = self
-        present(moodViewController!, animated: true)
     }
     
     //MARK: - Dismiss View to Root View Controller

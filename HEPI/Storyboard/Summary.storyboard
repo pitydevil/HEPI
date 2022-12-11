@@ -51,7 +51,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggestion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZH8-FT-1Gc">
-                                <rect key="frame" x="16" y="360" width="122.66666666666666" height="26.333333333333314"/>
+                                <rect key="frame" x="16.000000000000007" y="360" width="122.66666666666669" height="26.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26.333333333333314" id="AjG-be-mdE"/>
                                 </constraints>

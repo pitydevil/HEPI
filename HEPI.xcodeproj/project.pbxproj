@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		153C2F17F89091E866F2BCAC /* Pods_HEPI_HEPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D12585D3CE7C9ED9BA7BEE1 /* Pods_HEPI_HEPIUITests.framework */; };
 		4B194F3128ED904B00F17FC9 /* Quote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F3028ED904B00F17FC9 /* Quote.storyboard */; };
 		4B194F3628ED919200F17FC9 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B194F3428ED919200F17FC9 /* QuoteTableViewCell.swift */; };
 		4B194F3728ED919200F17FC9 /* QuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F3528ED919200F17FC9 /* QuoteTableViewCell.xib */; };
@@ -59,8 +58,9 @@
 		4BB80B76293C61F3001FEC01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */; };
 		4BB80B7A293C7EC5001FEC01 /* ClassificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */; };
 		4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC80EE828EC33E5005C19FF /* MainViewController.swift */; };
-		A1CBEB5120187B33DC9B499B /* Pods_HEPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C45514BC16E326FAE822B5 /* Pods_HEPI.framework */; };
-		BF044D9A9E94DDDD724DE738 /* Pods_HEPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D2587A65E3FE4A83641139 /* Pods_HEPITests.framework */; };
+		8368F6FEFB0ED14246014FBE /* Pods_HEPI_HEPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4037C54FC73DEB42860DD078 /* Pods_HEPI_HEPIUITests.framework */; };
+		A2C2A496C40C59E34276CC3C /* Pods_HEPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E3552AC80D0DA2B56D7813 /* Pods_HEPITests.framework */; };
+		D14E50E8C27003A4103CF6A0 /* Pods_HEPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB85CABC0C2E06D4808DE094 /* Pods_HEPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,11 +81,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B1D63E1F13F59D08CFDC59D /* Pods-HEPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.release.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.release.xcconfig"; sourceTree = "<group>"; };
-		26230790A5FC7C2B748DBCD8 /* Pods-HEPI-HEPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2BA31A4AFFEB97A96B41D354 /* Pods-HEPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.debug.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.debug.xcconfig"; sourceTree = "<group>"; };
-		2D12585D3CE7C9ED9BA7BEE1 /* Pods_HEPI_HEPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI_HEPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49C45514BC16E326FAE822B5 /* Pods_HEPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		326E58000799E665838F7AE6 /* Pods-HEPI-HEPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4037C54FC73DEB42860DD078 /* Pods_HEPI_HEPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI_HEPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43AA7C71DA3AE73FAF05C998 /* Pods-HEPI-HEPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.release.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4B194F3028ED904B00F17FC9 /* Quote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quote.storyboard; sourceTree = "<group>"; };
 		4B194F3428ED919200F17FC9 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
 		4B194F3528ED919200F17FC9 /* QuoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -141,10 +139,12 @@
 		4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationResult.swift; sourceTree = "<group>"; };
 		4BC80EE828EC33E5005C19FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		58D2587A65E3FE4A83641139 /* Pods_HEPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F28620AB1D8EE51649266CB /* Pods-HEPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.debug.xcconfig"; sourceTree = "<group>"; };
-		5F6CFAA50BF4965480023F05 /* Pods-HEPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.release.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.release.xcconfig"; sourceTree = "<group>"; };
-		DD50D97BA5192A5187A0DC1B /* Pods-HEPI-HEPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.release.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9C29EBD61C4032B1E189FA62 /* Pods-HEPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.release.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.release.xcconfig"; sourceTree = "<group>"; };
+		AB85CABC0C2E06D4808DE094 /* Pods_HEPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B065A671F230869EC6B89E0A /* Pods-HEPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.debug.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.debug.xcconfig"; sourceTree = "<group>"; };
+		BD5C5EC0530E19A13AE6DB83 /* Pods-HEPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C7E3552AC80D0DA2B56D7813 /* Pods_HEPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2A5F226BC29FC94378D0FE9 /* Pods-HEPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.release.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1CBEB5120187B33DC9B499B /* Pods_HEPI.framework in Frameworks */,
+				D14E50E8C27003A4103CF6A0 /* Pods_HEPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF044D9A9E94DDDD724DE738 /* Pods_HEPITests.framework in Frameworks */,
+				A2C2A496C40C59E34276CC3C /* Pods_HEPITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				153C2F17F89091E866F2BCAC /* Pods_HEPI_HEPIUITests.framework in Frameworks */,
+				8368F6FEFB0ED14246014FBE /* Pods_HEPI_HEPIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +183,7 @@
 				4B19F60128E49E0600A72B5C /* HEPIUITests */,
 				4B19F5DF28E49E0500A72B5C /* Products */,
 				FF14E35A278343EA30FF23A5 /* Pods */,
-				FF81EE9EA106D96BD053875C /* Frameworks */,
+				5494BF917C3A0FBDDFA76EE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -478,27 +478,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5494BF917C3A0FBDDFA76EE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB85CABC0C2E06D4808DE094 /* Pods_HEPI.framework */,
+				4037C54FC73DEB42860DD078 /* Pods_HEPI_HEPIUITests.framework */,
+				C7E3552AC80D0DA2B56D7813 /* Pods_HEPITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF14E35A278343EA30FF23A5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2BA31A4AFFEB97A96B41D354 /* Pods-HEPI.debug.xcconfig */,
-				5F6CFAA50BF4965480023F05 /* Pods-HEPI.release.xcconfig */,
-				26230790A5FC7C2B748DBCD8 /* Pods-HEPI-HEPIUITests.debug.xcconfig */,
-				DD50D97BA5192A5187A0DC1B /* Pods-HEPI-HEPIUITests.release.xcconfig */,
-				5F28620AB1D8EE51649266CB /* Pods-HEPITests.debug.xcconfig */,
-				1B1D63E1F13F59D08CFDC59D /* Pods-HEPITests.release.xcconfig */,
+				B065A671F230869EC6B89E0A /* Pods-HEPI.debug.xcconfig */,
+				9C29EBD61C4032B1E189FA62 /* Pods-HEPI.release.xcconfig */,
+				326E58000799E665838F7AE6 /* Pods-HEPI-HEPIUITests.debug.xcconfig */,
+				43AA7C71DA3AE73FAF05C998 /* Pods-HEPI-HEPIUITests.release.xcconfig */,
+				BD5C5EC0530E19A13AE6DB83 /* Pods-HEPITests.debug.xcconfig */,
+				F2A5F226BC29FC94378D0FE9 /* Pods-HEPITests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		FF81EE9EA106D96BD053875C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				49C45514BC16E326FAE822B5 /* Pods_HEPI.framework */,
-				2D12585D3CE7C9ED9BA7BEE1 /* Pods_HEPI_HEPIUITests.framework */,
-				58D2587A65E3FE4A83641139 /* Pods_HEPITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,11 +508,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B19F60828E49E0600A72B5C /* Build configuration list for PBXNativeTarget "HEPI" */;
 			buildPhases = (
-				E4DA105E28692571168F80B0 /* [CP] Check Pods Manifest.lock */,
+				0262622E4D28AA24E5C4B0B4 /* [CP] Check Pods Manifest.lock */,
 				4B19F5DA28E49E0500A72B5C /* Sources */,
 				4B19F5DB28E49E0500A72B5C /* Frameworks */,
 				4B19F5DC28E49E0500A72B5C /* Resources */,
-				9200367D64F9DFE3598409C0 /* [CP] Embed Pods Frameworks */,
+				CF050FC9BBA88B437CC67D3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -527,7 +527,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B19F60B28E49E0600A72B5C /* Build configuration list for PBXNativeTarget "HEPITests" */;
 			buildPhases = (
-				E8DDBC4D7C07783AFAE6C4CF /* [CP] Check Pods Manifest.lock */,
+				54633B1785F313EDA47ADD15 /* [CP] Check Pods Manifest.lock */,
 				4B19F5F028E49E0600A72B5C /* Sources */,
 				4B19F5F128E49E0600A72B5C /* Frameworks */,
 				4B19F5F228E49E0600A72B5C /* Resources */,
@@ -546,11 +546,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B19F60E28E49E0600A72B5C /* Build configuration list for PBXNativeTarget "HEPIUITests" */;
 			buildPhases = (
-				2AB5EC2B0157277E2AB169BB /* [CP] Check Pods Manifest.lock */,
+				3ADAB1ABB4A87731DE52205B /* [CP] Check Pods Manifest.lock */,
 				4B19F5FA28E49E0600A72B5C /* Sources */,
 				4B19F5FB28E49E0600A72B5C /* Frameworks */,
 				4B19F5FC28E49E0600A72B5C /* Resources */,
-				12B72B281BE8BD9864E4F016 /* [CP] Embed Pods Frameworks */,
+				7B26E568B40840DDC392024A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -641,63 +641,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12B72B281BE8BD9864E4F016 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2AB5EC2B0157277E2AB169BB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HEPI-HEPIUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9200367D64F9DFE3598409C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HEPI/Pods-HEPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HEPI/Pods-HEPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HEPI/Pods-HEPI-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E4DA105E28692571168F80B0 /* [CP] Check Pods Manifest.lock */ = {
+		0262622E4D28AA24E5C4B0B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -719,7 +663,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E8DDBC4D7C07783AFAE6C4CF /* [CP] Check Pods Manifest.lock */ = {
+		3ADAB1ABB4A87731DE52205B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HEPI-HEPIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54633B1785F313EDA47ADD15 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -739,6 +705,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B26E568B40840DDC392024A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF050FC9BBA88B437CC67D3D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HEPI/Pods-HEPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HEPI/Pods-HEPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HEPI/Pods-HEPI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -948,7 +948,7 @@
 		};
 		4B19F60928E49E0600A72B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BA31A4AFFEB97A96B41D354 /* Pods-HEPI.debug.xcconfig */;
+			baseConfigurationReference = B065A671F230869EC6B89E0A /* Pods-HEPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -963,8 +963,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -972,15 +972,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "hepi-product.HEPI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4B19F60A28E49E0600A72B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F6CFAA50BF4965480023F05 /* Pods-HEPI.release.xcconfig */;
+			baseConfigurationReference = 9C29EBD61C4032B1E189FA62 /* Pods-HEPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -995,8 +998,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1004,15 +1007,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "hepi-product.HEPI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		4B19F60C28E49E0600A72B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F28620AB1D8EE51649266CB /* Pods-HEPITests.debug.xcconfig */;
+			baseConfigurationReference = BD5C5EC0530E19A13AE6DB83 /* Pods-HEPITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1033,7 +1039,7 @@
 		};
 		4B19F60D28E49E0600A72B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B1D63E1F13F59D08CFDC59D /* Pods-HEPITests.release.xcconfig */;
+			baseConfigurationReference = F2A5F226BC29FC94378D0FE9 /* Pods-HEPITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1054,7 +1060,7 @@
 		};
 		4B19F60F28E49E0600A72B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26230790A5FC7C2B748DBCD8 /* Pods-HEPI-HEPIUITests.debug.xcconfig */;
+			baseConfigurationReference = 326E58000799E665838F7AE6 /* Pods-HEPI-HEPIUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1073,7 +1079,7 @@
 		};
 		4B19F61028E49E0600A72B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD50D97BA5192A5187A0DC1B /* Pods-HEPI-HEPIUITests.release.xcconfig */;
+			baseConfigurationReference = 43AA7C71DA3AE73FAF05C998 /* Pods-HEPI-HEPIUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

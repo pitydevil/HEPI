@@ -6,7 +6,6 @@ target 'HEPI' do
   use_frameworks!
 
   # Pods for HEPI
-
   pod 'SDWebImage'
   pod 'IQKeyboardManagerSwift'
   pod 'RxSwift'
@@ -15,7 +14,6 @@ target 'HEPI' do
   pod 'FirebaseCore'
   pod 'FirebaseMLModelDownloader', '9.3.0-beta'
   pod 'TensorFlowLiteTaskText', '~> 0.2.0'
-
 
   target 'HEPITests' do
     inherit! :search_paths

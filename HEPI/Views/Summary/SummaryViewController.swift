@@ -92,7 +92,6 @@ class SummaryViewController: UIViewController {
     @objc private func responseTanggal(_ gesture: UITapGestureRecognizer) {
         let vc = ModalCheckInOutViewController()
         vc.modalPresentationStyle = .pageSheet
-        
         //MARK: - Bind Journal List with Table View
         /// Returns boolean true or false
         /// from the given components.

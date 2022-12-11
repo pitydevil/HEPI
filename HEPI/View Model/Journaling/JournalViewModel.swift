@@ -59,6 +59,9 @@ class JournalViewModel {
         }).disposed(by: bags)
     }
     
+    //MARK: - Get All Journal Function
+    /// Returns array of journal object, that's gonna be pased on journalModelArray observer
+    /// from the given components.
     func getSummaryMood(_ startDate : Date, _ endDate : Date) {
         journalArray = provider.querySummary(startDate, endDate)
         journalArray?.subscribe(onNext: { (value) in

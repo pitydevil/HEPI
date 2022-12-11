@@ -16,6 +16,7 @@ enum emotionCase : String {
   case Neutral = "4"
   case Sad     = "5"
 }
+
 enum typeError {
   case tidakAdaText, success, inputTidakLengkap, gagalAddData
 }

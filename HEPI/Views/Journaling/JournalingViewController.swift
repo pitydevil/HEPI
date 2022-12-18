@@ -19,6 +19,7 @@ class JournalingViewController: UIViewController {
     @IBOutlet var addButton: UIBarButtonItem!
 
     //MARK: Object Declaration
+    private let detailJournalViewModel = DetailJournalViewModel()
     private let journalViewModel = JournalViewModel()
     private let journalList = BehaviorRelay<[Journal]>(value: [])
     private var detailController : DetailJournalViewController?
@@ -115,6 +116,40 @@ class JournalingViewController: UIViewController {
             self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
         self.present(vc, animated: true)
+    }
+}
+
+extension JournalingViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    
+        let delete = UIContextualAction(style: .destructive, title: "Hapus") { [self] (action, sourceView, completionHandler) in
+            //MARK: - Delete Journal Provider Function
+            /// Returns summaryGenerate Enumeration
+            /// - Parameters:
+            ///     - dateCreated: date object that's gonna be passed to the provider, so the provider can query the journal based on the given date.
+            popupAlert(title: "Apakah anda ingin menghapus jurnal ini?", message: nil, actionTitles: ["Hapus", "Batal"], actionsStyle: [UIAlertAction.Style.destructive, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+                detailJournalViewModel.deleteJournal(journalList.value[indexPath.row].dateCreated!) { result in
+                    DispatchQueue.main.async { [self] in
+                        switch result {
+                        case .success:
+                            popupAlert(title: "Sukses", message: "Berhasil Menghapus Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [nil])
+                        case .gagalAddData:
+                            present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Menghapus Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
+                        default:
+                            print("gagal")
+                        }
+                    }
+                }
+            },nil])
+        }
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
     }
 }
 

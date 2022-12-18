@@ -20,7 +20,7 @@ class DetailJournalViewController: UIViewController {
     @IBOutlet var descriptionTextview: UITextView!
 
     //MARK: Object Declaration
-    private var detailJournalViewModel = DetailJournalViewModel()
+    private let detailJournalViewModel = DetailJournalViewModel()
     var journalObject : BehaviorRelay<Journal>?
     
     //MARK: Object Observer Declaration
@@ -71,6 +71,7 @@ class DetailJournalViewController: UIViewController {
         
         //MARK: - Delete Button Response Function
         deleteButtonPressed.rx.tap.bind { [self] in
+            
             //MARK: - Delete Journal Provider Function
             /// Returns summaryGenerate Enumeration
             /// - Parameters:

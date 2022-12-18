@@ -71,24 +71,26 @@ class DetailJournalViewController: UIViewController {
         
         //MARK: - Delete Button Response Function
         deleteButtonPressed.rx.tap.bind { [self] in
-            
             //MARK: - Delete Journal Provider Function
             /// Returns summaryGenerate Enumeration
             /// - Parameters:
             ///     - dateCreated: date object that's gonna be passed to the provider, so the provider can query the journal based on the given date.
-            detailJournalViewModel.deleteJournal(journalObject!.value.dateCreated!) { result in
-                DispatchQueue.main.async { [self] in
-                    switch result {
-                    case .success:
-                        present(genericAlert(titleAlert: "Sukses!", messageAlert: "Berhasil Menghapus Jurnal!", buttonText: "Ok"), animated: true)
-                        dismissView()
-                    case .gagalAddData:
-                        present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Menghapus Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
-                    default:
-                        print("gagal")
+            popupAlert(title: "Apakah anda ingin menghapus jurnal ini?", message: nil, actionTitles: ["Hapus", "Batal"], actionsStyle: [UIAlertAction.Style.destructive, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+                detailJournalViewModel.deleteJournal(journalObject!.value.dateCreated!) { result in
+                    DispatchQueue.main.async { [self] in
+                        switch result {
+                        case .success:
+                            popupAlert(title: "Sukses", message: "Berhasil Menghapus Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
+                                navigationController?.popViewController(animated: true)
+                            }])
+                        case .gagalAddData:
+                            present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Menghapus Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
+                        default:
+                            print("gagal")
+                        }
                     }
                 }
-            }
+            },nil])
         }.disposed(by: bags)
   
         //MARK: - Write Button Response Function
@@ -103,21 +105,24 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                detailJournalViewModel.addJournal(journalTitleTextfield.text ?? "", descriptionTextview.text) { (result) in
-                    DispatchQueue.main.async { [self] in
-                        switch result {
-                            case .success:
-                                present(genericAlert(titleAlert: "Sukses!", messageAlert: "Berhasil Menambahkan Jurnal!", buttonText: "Ok"), animated: true)
-                                dismissView()
-                            case .gagalAddData:
-                                present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
-                            case .inputTidakLengkap:
-                                present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
-                            default:
-                                present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
+                popupAlert(title: "Apakah anda ingin menyimpan buku harian ini?", message: nil, actionTitles: ["Simpan", "Batal"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+                    detailJournalViewModel.addJournal(journalTitleTextfield.text ?? "", descriptionTextview.text) { (result) in
+                        DispatchQueue.main.async { [self] in
+                            switch result {
+                                case .success:
+                                popupAlert(title: "Sukses", message: "Berhasil Menambah Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
+                                    navigationController?.popViewController(animated: true)
+                                }])
+                                case .gagalAddData:
+                                    present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
+                                case .inputTidakLengkap:
+                                    present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
+                                default:
+                                    present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
+                                }
                             }
                         }
-                    }
+                },nil])
             }else {
                 //MARK: - Detail Journal View Model Update Function
                 /// Returns  typeError Enumeration
@@ -127,34 +132,25 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, journalObject!.value.dateCreated!) { result in
-                    DispatchQueue.main.async { [self] in
-                        switch result {
-                            case .success:
-                                present(genericAlert(titleAlert: "Sukses!", messageAlert: "Berhasil Mengupdate Jurnal!", buttonText: "Ok"), animated: true)
-                                dismissView()
-                            case .gagalAddData:
-                                present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Pembaharuan Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
-                            case .inputTidakLengkap:
-                                present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
-                            default:
-                                present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Pembaharuan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
+                popupAlert(title: "Apakah anda ingin menyunting buku harian ini?", message: nil, actionTitles: ["Simpan", "Batal"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+                    detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, journalObject!.value.dateCreated!) { result in
+                        DispatchQueue.main.async { [self] in
+                            switch result {
+                                case .success:
+                                popupAlert(title: "Sukses", message: "Berhasil Menyunting Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
+                                    navigationController?.popViewController(animated: true)
+                                }])
+                                case .gagalAddData:
+                                    present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Pembaharuan Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
+                                case .inputTidakLengkap:
+                                    present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
+                                default:
+                                    present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Pembaharuan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
+                            }
                         }
                     }
-                }
+                },nil])
             }
         }.disposed(by: bags)
-    }
-    
-    //MARK: - Dismiss View to Root View Controller
-    /// Dismiss All View to Root View Controller
-    private func dismissView() {
-        dismiss(animated: true) { [self] in
-            navigationController?.popToRootViewController(animated: true)
-        }
-    }
-    
-    @objc func goBack() {
-        self.navigationController?.popViewController(animated: true)
     }
 }

@@ -17,12 +17,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var signUpButton   : UIButton!
     
     //MARK: Object Declaration
-    private let starterViewModel = StarterViewModel()
+    private let mainViewModel = MainViewModel()
     
     //MARK: - View Will Layout Subviews
     override func viewWillLayoutSubviews() {
         backgroundCard.setBaseRoundedView()
-        starterViewModel.checkUser()
+        mainViewModel.checkUser()
     }
     
     override func viewDidLoad() {
@@ -30,21 +30,21 @@ class MainViewController: UIViewController {
         
         //MARK: - Download Tensorflow Lite Model From Firebase Server
         /// Download tflite model from firebase server.
-        starterViewModel.downloadModel()
+        mainViewModel.downloadModel()
 
         //MARK: - Check User Sign In Status
         /// Observe sign up status from view model, and segue to main view controller if there are any changes.
-        starterViewModel.isSignedUpObservable.subscribe(onNext: { [self] (value) in
+        mainViewModel.isSignedUpObservable.subscribe(onNext: { [self] (value) in
             value ? present(segueToMain(), animated: false) : print("false")
         }).disposed(by: bags)
         
         //MARK: - Sign Up Button Response Function
         /// Check Sign In state from view model function.
         signUpButton.rx.tap.bind { [self] in
-            starterViewModel.setupUserName(nameTextfield.text) { [self] (result) in
+            mainViewModel.setupUserName(nameTextfield.text ?? "") { [self] (result) in
                 switch result {
                     case .success:
-                        starterViewModel.isSignedUp.accept(true)
+                        mainViewModel.isSignedUp.accept(true)
                     case .tidakAdaText:
                         present(genericAlert(titleAlert: "Nama Tidak Ada!" , messageAlert: "Silahkan isi nama anda terlebih dahulu", buttonText: "Ok"), animated: true)
                     default:

@@ -52,7 +52,7 @@
 		4B8174242912B6930056D7F6 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8174232912B6930056D7F6 /* SummaryViewModel.swift */; };
 		4B952E8D294371D100A7616A /* dateSearchCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B952E8C294371D100A7616A /* dateSearchCard.xib */; };
 		4B952E8F294373E300A7616A /* dateSearchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B952E8E294373E300A7616A /* dateSearchCard.swift */; };
-		4BB4935328EC362800F3A482 /* StarterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935228EC362800F3A482 /* StarterViewModel.swift */; };
+		4BB4935328EC362800F3A482 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935228EC362800F3A482 /* MainViewModel.swift */; };
 		4BB4935B28EC40B000F3A482 /* ClassExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4935A28EC40B000F3A482 /* ClassExtension.swift */; };
 		4BB80B74293C60AC001FEC01 /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B73293C60AC001FEC01 /* ModelLoader.swift */; };
 		4BB80B76293C61F3001FEC01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */; };
@@ -133,7 +133,7 @@
 		4B8174232912B6930056D7F6 /* SummaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		4B952E8C294371D100A7616A /* dateSearchCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dateSearchCard.xib; sourceTree = "<group>"; };
 		4B952E8E294373E300A7616A /* dateSearchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateSearchCard.swift; sourceTree = "<group>"; };
-		4BB4935228EC362800F3A482 /* StarterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewModel.swift; sourceTree = "<group>"; };
+		4BB4935228EC362800F3A482 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4BB4935A28EC40B000F3A482 /* ClassExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassExtension.swift; sourceTree = "<group>"; };
 		4BB80B73293C60AC001FEC01 /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
 		4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -386,7 +386,7 @@
 				4B622DBD2944D8BF00E42DAE /* Quote */,
 				4B622DBB2944D89600E42DAE /* Journaling */,
 				4B622DBA2944D88F00E42DAE /* Summary */,
-				4BB4935228EC362800F3A482 /* StarterViewModel.swift */,
+				4BB4935228EC362800F3A482 /* MainViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -752,7 +752,7 @@
 				4B6A8F6228EC4AE90088960F /* HEPI.xcdatamodeld in Sources */,
 				4B6A8F5928EC42720088960F /* SharedObjects.swift in Sources */,
 				4B194F4328EEAD1300F17FC9 /* SummaryViewController.swift in Sources */,
-				4BB4935328EC362800F3A482 /* StarterViewModel.swift in Sources */,
+				4BB4935328EC362800F3A482 /* MainViewModel.swift in Sources */,
 				4B50DEA128EC844E00EC0290 /* DetailJournalViewController.swift in Sources */,
 				4B622DB12944597F00E42DAE /* ReusableTabBar.swift in Sources */,
 				4B194F3B28EDAAC400F17FC9 /* QuoteViewModel.swift in Sources */,

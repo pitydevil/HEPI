@@ -44,6 +44,21 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    //MARK: - Custom Alert Function
+    /// Returns UIAlert Controller with given parameter
+    /// - Parameters:
+    ///     - titlAlert: title alert text for the UIAlertController Title
+    ///     - messageAlert: message alert text for the UIAlertController messageText
+    ///     - buttonText:  button text for the UIAlertController button text
+    func popupAlert(title: String?, message: String?, actionTitles:[String?], actionsStyle : [UIAlertAction.Style], actions:[((UIAlertAction) -> Void)?]) {
+           let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           for (index, title) in actionTitles.enumerated() {
+               let action = UIAlertAction(title: title, style: actionsStyle[index], handler: actions[index])
+               alert.addAction(action)
+           }
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension UITextField{

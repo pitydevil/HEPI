@@ -50,7 +50,7 @@ class JournalingViewController: UIViewController {
         tableView.register(UINib(nibName: "JournalingTableViewCell", bundle: nil), forCellReuseIdentifier: "journalingCell")
  
         //MARK: - Get Misc Information from ViewModel
-        title = "Welcome, \(journalViewModel.getUsername()) !"
+        navigationController?.navigationBar.topItem?.title = "Welcome, \(journalViewModel.getUsername())!"
         
         //MARK: - Observe Journal Array
         /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes

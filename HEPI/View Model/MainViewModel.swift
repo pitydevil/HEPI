@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import TensorFlowLiteTaskText
 
-class StarterViewModel {
+class MainViewModel {
     
     //MARK: - Object Declaration
     var isSignedUp: BehaviorRelay<Bool> = BehaviorRelay(value: false)
@@ -51,8 +51,8 @@ class StarterViewModel {
     /// from the given components.
     /// - Parameters:
     ///     - username: character subset that's gonna be saved on to user defaults,
-    func setupUserName(_ username : String?, completion: @escaping(_ result: typeError)-> Void) {
-        if username == nil {
+    func setupUserName(_ username : String, completion: @escaping(_ result: typeError)-> Void) {
+        if username.isEmpty {
             completion(.tidakAdaText)
         }else {
             defaults.set(username, forKey: nameKeys)

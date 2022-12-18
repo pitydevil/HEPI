@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ua5-hf-SDY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ua5-hf-SDY">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -210,6 +210,9 @@
                                 <imageReference key="image" image="trash.circle.fill" catalog="system" symbolScale="large"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
+                            <barButtonItem title="Item" image="arrow.clockwise.circle.fill" catalog="system" id="Z8L-LD-qpd">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -217,6 +220,7 @@
                         <outlet property="deleteButtonPressed" destination="huZ-1I-z3j" id="Lzf-Hl-I72"/>
                         <outlet property="descriptionTextview" destination="9nN-HX-hXD" id="QY6-KH-dN5"/>
                         <outlet property="journalTitleTextfield" destination="Ge5-Cq-yKN" id="xJb-q5-R23"/>
+                        <outlet property="refreshButton" destination="Z8L-LD-qpd" id="HI8-nh-dek"/>
                         <outlet property="writeButtonPressed" destination="XkB-Th-zm8" id="2zT-8y-V2i"/>
                     </connections>
                 </viewController>
@@ -228,6 +232,7 @@
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Background" width="390" height="844"/>
+        <image name="arrow.clockwise.circle.fill" catalog="system" width="128" height="123"/>
         <image name="back" width="120" height="120"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>

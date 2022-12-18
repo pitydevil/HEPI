@@ -17,7 +17,7 @@ class JournalingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet var addButton: UIBarButtonItem!
-
+    
     //MARK: Object Declaration
     private let detailJournalViewModel = DetailJournalViewModel()
     private let journalViewModel = JournalViewModel()
@@ -33,6 +33,7 @@ class JournalingViewController: UIViewController {
     //MARK: - View Will Layout Subviews
     override func viewWillLayoutSubviews() {
         tableView.separatorStyle = .none
+        tableView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -69,18 +70,6 @@ class JournalingViewController: UIViewController {
         journalList.bind(to: tableView.rx.items(cellIdentifier: "journalingCell", cellType: JournalingTableViewCell.self)) { row, model, cell in
             cell.configureCell(journal: model)
         }.disposed(by: bags)
-
-        //MARK: - Bind Did Select Row with Rx Item Selected
-        /// TableView Did Select delegate function and response accordingnly.
-        tableView.rx.itemSelected.subscribe(onNext: { [self] (indexPath) in
-            tableView.deselectRow(at: indexPath, animated: true)
-            detailController?.journalObject = BehaviorRelay(value: Journal())
-            detailController?.journalObject!.accept(journalList.value[indexPath.row])
-            detailController?.journalObjectObservable.subscribe(onNext: { [self] _ in
-                tableView.reloadData()
-            }).disposed(by: bags)
-            navigationController?.pushViewController(detailController ?? DetailJournalViewController(), animated: true)
-        }).disposed(by: bags)
         
         //MARK: - Journal Button Response Function
         /// Segue to Detail Journal View Controller.
@@ -94,6 +83,7 @@ class JournalingViewController: UIViewController {
         dateSearchCard.searchButton.rx.tap.bind { [self] in
             journalViewModel.getSummaryMood(checkFinalObject.value.checkInDate, checkFinalObject.value.checkOutDate)
         }.disposed(by: bags)
+        
     }
     
     //MARK: - Bind Did Select Row with Rx Item Selected
@@ -121,10 +111,6 @@ class JournalingViewController: UIViewController {
 
 extension JournalingViewController : UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     
         let delete = UIContextualAction(style: .destructive, title: "Hapus") { [self] (action, sourceView, completionHandler) in
@@ -148,8 +134,17 @@ extension JournalingViewController : UITableViewDelegate {
             },nil])
         }
         let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
-        swipeActionConfig.performsFirstActionWithFullSwipe = false
         return swipeActionConfig
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        detailController?.journalObject = BehaviorRelay(value: Journal())
+        detailController?.journalObject!.accept(journalList.value[indexPath.row])
+        detailController?.journalObjectObservable.subscribe(onNext: {  _ in
+            tableView.reloadData()
+        }).disposed(by: bags)
+        navigationController?.pushViewController(detailController ?? DetailJournalViewController(), animated: true)
     }
 }
 

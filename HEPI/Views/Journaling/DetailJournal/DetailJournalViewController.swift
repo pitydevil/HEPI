@@ -18,7 +18,8 @@ class DetailJournalViewController: UIViewController {
     @IBOutlet var journalTitleTextfield: UITextField!
     @IBOutlet var dateTextfield: UITextField!
     @IBOutlet var descriptionTextview: UITextView!
-
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
     //MARK: Object Declaration
     private let detailJournalViewModel = DetailJournalViewModel()
     var journalObject : BehaviorRelay<Journal>?
@@ -41,6 +42,7 @@ class DetailJournalViewController: UIViewController {
         if journalObject != nil {
             deleteButtonPressed.isHidden = false
             title = "Edit Journal"
+            
             //MARK: - Observe Journal Object Value
             /// Change UI Object based on journal value
             journalObjectObservable.subscribe(onNext: { [self] (value) in
@@ -152,6 +154,14 @@ class DetailJournalViewController: UIViewController {
                     }
                 },nil])
             }
+        }.disposed(by: bags)
+        
+        //MARK: - Detail Journal View Model Update Function
+        /// Returns  typeError Enumeration
+        /// from the given components.
+        refreshButton.rx.tap.bind { [self] in
+            journalTitleTextfield.text = nil
+            descriptionTextview.text   = nil
         }.disposed(by: bags)
     }
 }

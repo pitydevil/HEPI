@@ -59,5 +59,3 @@ public func errorAlert() -> UIAlertController {
     alert.addAction(cancel)
     return alert
 }
-
-

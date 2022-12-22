@@ -93,17 +93,17 @@ class SummaryViewModel {
                 if let index = arrayScore.firstIndex(where: {$0 == maxNumber}) {
                     switch index {
                     case 0:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "Anger")!.pngData(), overallTitleMood: "Anger", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Anger")!.pngData(), overallTitleMood: "Anger", overallSuggestion: "Kamu keliatannya lagi sering marah-marah ya belakangan, aku pengen ngasih tips nih untuk kamu, marah merupakan emosi yang wajar.\n\nKetika suasana hati sedang buruk, sebaiknya menjauh sebentar dari lingkungan yang membuat suasana hati kita buruk, alihkan perhatian dan pikiran pada hal yang lebih menyenangkan. Kamu bisa coba memperbanyakn melakukan aktivitas fisik seperti olahraga dapat membuat mood menjadi lebih baik. Inget olahraga akan membuat tubuh menghasilkan hormon endorfin yang membuat pikiran menjadi lebih rileks.")))
                     case 1:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "Fear")!.pngData(), overallTitleMood: "Fear", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Fear")!.pngData(), overallTitleMood: "Fear", overallSuggestion: "Aduh, keliatannya kamu sedang ketakutan ya belakangan ini. Aku punya beberapa tips nih untuk mengatasinya.\n\nCaranya mudah kok kamu harus hanya bisa melawan ketakutannya. Menghadapi rasa takut dapat dilatih dengan mengontrol pikiran dengan berpikir positif, mengontrol emosi dengan relaksasi, dan mengontrol perilaku dengan melawan rasa takut itu sendiri.")))
                     case 2:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "Joy")!.pngData(), overallTitleMood: "Joy", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Joy")!.pngData(), overallTitleMood: "Joy", overallSuggestion: "Wih asik nih! Tampaknya kamu sedang bersenang-senang selama rentang waktu ini, kamu mempunyai perasaan yang positif terhadap kehidupan sekitar kamu. Tetap pertahankan perasaan tersebut, jangan lupa untuk melakukan aktivitas-aktivitas positif kedepannya ya!")))
                     case 3:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "Love")!.pngData(), overallTitleMood: "Love", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Love")!.pngData(), overallTitleMood: "Love", overallSuggestion: "Cieeee.. ada yang jatuh cinta nih!\n\nKamu keliatannya lagi punya perasaan terbunga-bunga nih terhadap kehidupan sekitar kamu. Jangan lupa ya untuk tetap aktif berolahraga, beraktivitas positif, dan mengontrol emosi biar emosi kamu kedepannya tetap berbunga-bunga.")))
                     case 4:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "Neutral")!.pngData(), overallTitleMood: " Neutral", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Neutral")!.pngData(), overallTitleMood: "Neutral", overallSuggestion: "Wah keliatannya kamu sedang flat ya, aku punya beberapa tips nih untuk membuat mood kamu lebih baik.\n\nCobalah untuk membuat target jangka pendek atau jangka panjang yang jelas dapat membuat kita lebih terarah dalam bekerja dan akan membuat kita lebih bersemangat dan termotivasi dalam menjalani hidup.")))
                     case 5:
-                        completion(.success(Summary(overallMoodImage: UIImage(named: "Sad")!.pngData(), overallTitleMood: "Sad", overallSuggestion: "")))
+                        completion(.success(Summary(overallMoodImage: UIImage(named: "Sad")!.pngData(), overallTitleMood: "Sad", overallSuggestion: "Hei, kamu keliatannya lagi sedih ya, aku juga jadi ikutan sedih nih ngeliat kamu yang lagi bersedih.. Aku punya beberapa tips nih untuk melawan sedih, inget sedih merupakan hal yang wajar.\n\nKetika suasana hati sedang buruk, sebaiknya menjauh sebentar dari lingkungan yang membuat suasana hati kita buruk, alihkan perhatian dan pikiran pada hal yang lebih menyenangkan. Banyak melakukan aktivitas fisik seperti olahraga dapat membuat mood menjadi lebih baik. Olahraga akan membuat tubuh menghasilkan hormon endorfin yang membuat pikiran menjadi lebih rileks.")))
                     default:
                         print("print?")
                     }

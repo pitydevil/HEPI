@@ -205,7 +205,7 @@
 				4B78DB1328EAD72D00744386 /* Providers */,
 				4B78DB0C28EAD70600744386 /* Components */,
 				4B78DB0928EAD6F000744386 /* Services */,
-				4B78DB0628EAD6C000744386 /* View Model */,
+				4B78DB0628EAD6C000744386 /* ViewModels */,
 				4B78DB0328EAD6B500744386 /* Views */,
 				4B78DB3B28EC1ABE00744386 /* Storyboard */,
 				4B4CDEA328E4A44B00253B2F /* Utils */,
@@ -380,7 +380,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4B78DB0628EAD6C000744386 /* View Model */ = {
+		4B78DB0628EAD6C000744386 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				4B622DBD2944D8BF00E42DAE /* Quote */,
@@ -388,7 +388,7 @@
 				4B622DBA2944D88F00E42DAE /* Summary */,
 				4BB4935228EC362800F3A482 /* MainViewModel.swift */,
 			);
-			path = "View Model";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		4B78DB0928EAD6F000744386 /* Services */ = {

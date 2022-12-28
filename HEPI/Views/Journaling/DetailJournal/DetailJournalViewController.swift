@@ -165,3 +165,5 @@ class DetailJournalViewController: UIViewController {
         }.disposed(by: bags)
     }
 }
+
+

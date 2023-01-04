@@ -1,8 +1,8 @@
 //
 //  ModalCheckInOutViewController.swift
-//  Fluffy
+//  HEPI
 //
-//  Created by Zacky Ilahi Azmi on 21/10/22.
+//  Created by Mikhael Adiputra on 21/10/22.
 //
 
 import UIKit

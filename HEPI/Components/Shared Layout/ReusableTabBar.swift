@@ -1,11 +1,9 @@
 //
 //  ReusableTabBar.swift
-//  Fluffy
+//  HEPI
 //
-//  Created by Zacky Ilahi Azmi on 07/10/22.
+//  Created by Mikhael Adiputra on 07/10/22.
 //
-//  DONT FORGET TO ADD THIS CODE TO YOUR VIEW
-//  ReusableTabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor)
 
 import UIKit
 
@@ -13,19 +11,16 @@ class ReusableTabBar: UIView {
 
     var barBtn = ReusableButton(titleBtn: "", styleBtn: .normal)
     
-    let pilihSemuaText = ReuseableLabel(labelText: "Pilih Semua", labelType: .bodyP2, labelColor: .primaryMain)
+    private let pilihSemuaText = ReuseableLabel(labelText: "Pilih Semua", labelType: .bodyP2, labelColor: .primaryMain)
+    private let hewanDipilih = ReuseableLabel(labelText: "Semua hewan dipilih", labelType: .bodyP2, labelColor: .grey)
+    private let lineView = UIView()
     
-    let hewanDipilih = ReuseableLabel(labelText: "Semua hewan dipilih", labelType: .bodyP2, labelColor: .grey1)
-    
-    let lineView = UIView()
-    
-    let boxBtn = UIButton()
-    let checkedImage = UIImage(systemName: "checkmark.square.fill")
-    let uncheckedImage = UIImage(systemName: "square")
-    var isChecked = false
+    private let boxBtn = UIButton()
+    private let checkedImage = UIImage(systemName: "checkmark.square.fill")
+    private let uncheckedImage = UIImage(systemName: "square")
+    private var isChecked = false
     
     enum textBox {
-        case show
         case notShow
     }
     
@@ -37,10 +32,7 @@ class ReusableTabBar: UIView {
         self.showText = showText
         
         super.init(frame: .zero)
-        
-        
         self.configureLayout()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -49,14 +41,12 @@ class ReusableTabBar: UIView {
     
     private func configureLayout() {
         switch showText {
-        case .show:
-            boxBtn.tintColor = UIColor(named: "primaryMain")
-            boxBtn.setImage(uncheckedImage, for: .normal)
-        case .notShow:
-            pilihSemuaText.text = ""
-            hewanDipilih.text = ""
-            boxBtn.setImage(UIImage(), for: .normal)
+            case .notShow:
+                pilihSemuaText.text = ""
+                hewanDipilih.text = ""
+                boxBtn.setImage(UIImage(), for: .normal)
         }
+        
         barBtn.configuration?.attributedTitle = AttributedString(btnText, attributes: AttributeContainer([NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .bold)]))
         
         lineView.backgroundColor = UIColor(named: "grey2")

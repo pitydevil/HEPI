@@ -31,6 +31,10 @@ class LoginViewController: UIViewController {
         //MARK: - Download Tensorflow Lite Model From Firebase Server
         /// Download tflite model from firebase server.
         bgCard.setLoginCard()
+        
+        //MARK: - Download Tensorflow Lite Model From Firebase Server
+        /// Download tflite model from firebase server.
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewDidLoad() {

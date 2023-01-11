@@ -8,6 +8,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import SVProgressHUD
 
 @available(iOS 16.0, *)
 class JournalingViewController: UIViewController {
@@ -27,13 +28,13 @@ class JournalingViewController: UIViewController {
     
     //MARK: - View Will Appear
     override func viewWillAppear(_ animated: Bool) {
+        SVProgressHUD.show(withStatus: "Fetching Journal")
         journalViewModel.getAllJournal()
     }
     
     //MARK: - View Will Layout Subviews
     override func viewWillLayoutSubviews() {
         tableView.separatorStyle = .none
-        tableView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -52,14 +53,25 @@ class JournalingViewController: UIViewController {
         tableView.register(UINib(nibName: "JournalingTableViewCell", bundle: nil), forCellReuseIdentifier: "journalingCell")
  
         //MARK: - Get Misc Information from ViewModel
-        navigationController?.navigationBar.topItem?.title = "Welcome, \(journalViewModel.getUsername())!"
+        navigationController?.navigationBar.topItem?.title = "Hi There!"
         
         //MARK: - Observe Journal Array
         /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes
         journalViewModel.journalModelArrayObserver.subscribe(onNext: { [self] (value) in
             journalList.accept(value)
             DispatchQueue.main.async { [self] in
+                SVProgressHUD.dismiss()
                 resultLabel.text = "Showing \(value.count) Results for: \(changeDateIntoDDMM(checkFinalObject.value.checkInDate)) - \(changeDateIntoDDMM(checkFinalObject.value.checkOutDate))"
+            }
+        },onError: { error in
+            self.present(errorAlert(), animated: true)
+        }).disposed(by: bags)
+        
+        //MARK: - Error Firebase Model
+        /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes
+        journalViewModel.journalObjectErrorObserver.skip(1).subscribe(onNext: { (value) in
+            DispatchQueue.main.async { [self] in
+                present(genericAlert(titleAlert: "Terjadi kesalahan saat mengambil data buku harian!", messageAlert: "\(value)", buttonText: "Ok"), animated: true)
             }
         },onError: { error in
             self.present(errorAlert(), animated: true)
@@ -71,6 +83,20 @@ class JournalingViewController: UIViewController {
             cell.configureCell(journal: model)
         }.disposed(by: bags)
         
+        //MARK: - RESPONSE TABLE VIEW DIDSELECT DELEGATE FUNCTION
+        /// - Parameters:
+        ///     - allowedCharacter: character subset that's allowed to use on the textfield
+        ///     - text: set of character/string that would like  to be checked.
+        tableView.rx.itemSelected.subscribe(onNext: { [self] (indexPath) in
+            tableView.deselectRow(at: indexPath, animated: true)
+            detailController?.journalObject = BehaviorRelay(value: Journal())
+            detailController?.journalObject!.accept(journalList.value[indexPath.row])
+            detailController?.journalObjectObservable.subscribe(onNext: { [self]  _ in
+                tableView.reloadData()
+            }).disposed(by: bags)
+            navigationController?.pushViewController(detailController ?? DetailJournalViewController(), animated: true)
+        }).disposed(by: bags)
+        
         //MARK: - Journal Button Response Function
         /// Segue to Detail Journal View Controller.
         addButton.rx.tap.bind { [self] in
@@ -81,9 +107,9 @@ class JournalingViewController: UIViewController {
         //MARK: - Journal Button Response Function
         /// Segue to Detail Journal View Controller.
         dateSearchCard.searchButton.rx.tap.bind { [self] in
+            SVProgressHUD.show(withStatus: "Fetching Journal")
             journalViewModel.getSummaryMood(checkFinalObject.value.checkInDate, checkFinalObject.value.checkOutDate)
         }.disposed(by: bags)
-        
     }
     
     //MARK: - Bind Did Select Row with Rx Item Selected
@@ -105,46 +131,7 @@ class JournalingViewController: UIViewController {
         },onError: { error in
             self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
-        self.present(vc, animated: true)
-    }
-}
-
-extension JournalingViewController : UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-    
-        let delete = UIContextualAction(style: .destructive, title: "Hapus") { [self] (action, sourceView, completionHandler) in
-            //MARK: - Delete Journal Provider Function
-            /// Returns summaryGenerate Enumeration
-            /// - Parameters:
-            ///     - dateCreated: date object that's gonna be passed to the provider, so the provider can query the journal based on the given date.
-            popupAlert(title: "Apakah anda ingin menghapus jurnal ini?", message: nil, actionTitles: ["Hapus", "Batal"], actionsStyle: [UIAlertAction.Style.destructive, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
-                detailJournalViewModel.deleteJournal(journalList.value[indexPath.row].dateCreated!) { result in
-                    DispatchQueue.main.async { [self] in
-                        switch result {
-                        case .success:
-                            popupAlert(title: "Sukses", message: "Berhasil Menghapus Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [nil])
-                        case .gagalAddData:
-                            present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Menghapus Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
-                        default:
-                            print("gagal")
-                        }
-                    }
-                }
-            },nil])
-        }
-        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
-        return swipeActionConfig
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        detailController?.journalObject = BehaviorRelay(value: Journal())
-        detailController?.journalObject!.accept(journalList.value[indexPath.row])
-        detailController?.journalObjectObservable.subscribe(onNext: {  _ in
-            tableView.reloadData()
-        }).disposed(by: bags)
-        navigationController?.pushViewController(detailController ?? DetailJournalViewController(), animated: true)
+        present(vc, animated: true)
     }
 }
 

@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SVProgressHUD
 
 class SummaryViewController: UIViewController {
 
@@ -48,6 +49,7 @@ class SummaryViewController: UIViewController {
             ///     - journalList: array of journal thatt the function will use to determine mood summary.
             summaryViewModel.calculateSummary(value) { (result) in
                 DispatchQueue.main.async { [self] in
+                    SVProgressHUD.dismiss()
                     switch result {
                     case .success(let summary):
                         moodImageView.image = UIImage(data: summary.overallMoodImage ?? Data())
@@ -62,6 +64,16 @@ class SummaryViewController: UIViewController {
             self.present(errorAlert(), animated: true)
         }).disposed(by: bags)
         
+        //MARK: - Error Firebase Model
+        /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes
+        summaryViewModel.journalObjectErrorObserver.skip(1).subscribe(onNext: { (value) in
+            DispatchQueue.main.async { [self] in
+                present(genericAlert(titleAlert: "Terjadi kesalahan saat mengambil data buku harian!", messageAlert: "\(value)", buttonText: "Ok"), animated: true)
+            }
+        },onError: { error in
+            self.present(errorAlert(), animated: true)
+        }).disposed(by: bags)
+        
         //MARK: - Search Button Response Function
         dateSearchCard.searchButton.rx.tap.bind { [self] in
             //MARK: - Summary View Model Get Summary Mood Function
@@ -70,20 +82,8 @@ class SummaryViewController: UIViewController {
             /// - Parameters:
             ///     - startDate: date object that determine starting date for the date interval query
             ///     - endDate: date object that determine ending date for the date interval query
-            summaryViewModel.getSummaryMood(checkFinalObject.value.checkInDate, checkFinalObject.value.checkOutDate) { [self] (result) in
-                DispatchQueue.main.async { [self] in
-                    switch result {
-                    case .dataTidakAda(errorMessage: ""):
-                        present(genericAlert(titleAlert: "Data Tidak Ada!", messageAlert: "Kamu tidak membuat journal direntang hari tersebut.", buttonText: "Ok"), animated: true)
-                    case .tanggalLebihTua(errorMessage: ""):
-                        present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal Akhir tidak bisa lebih muda daripada tanggal awalannya.", buttonText: "Ok"), animated: true)
-                    case .tanggalLebihMuda(errorMessage: ""):
-                        present(genericAlert(titleAlert: "Tanggal Tidak Valid!", messageAlert: "Tanggal awal tidak bisa lebih tua daripada tanggal akhirannya.", buttonText: "Ok"), animated: true)
-                    default:
-                        print("test")
-                    }
-                }
-            }
+            SVProgressHUD.show(withStatus: "Fetching Journal")
+            summaryViewModel.getSummaryMood(checkFinalObject.value.checkInDate, checkFinalObject.value.checkOutDate)
         }.disposed(by: bags)
     }
     

@@ -14,7 +14,12 @@ target 'HEPI' do
   pod 'FirebaseCore'
   pod 'FirebaseMLModelDownloader', '9.3.0-beta'
   pod 'TensorFlowLiteTaskText', '~> 0.2.0'
-
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'SVProgressHUD'
+  pod 'SwiftyRSA'
+  
   target 'HEPITests' do
     inherit! :search_paths
     # Pods for testing
@@ -26,10 +31,12 @@ target 'HEPI' do
 
 end
 
-post_install do |pi|
-   pi.pods_project.targets.each do |t|
-       t.build_configurations.each do |bc|
-          bc.build_settings['ARCHS[sdk=iphonesimulator*]'] =  `uname -m`
-       end
-   end
+
+post_install do |installer_representation|
+    installer_representation.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+            config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+        end
+    end
 end

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		133D38D320DCD3EE6A23FCB1 /* Pods_HEPI_HEPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FE6747AE7789083F1D3AC5 /* Pods_HEPI_HEPIUITests.framework */; };
+		3F2367189B341E9DD12A9F0D /* Pods_HEPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8511406B39350E54A00A12 /* Pods_HEPITests.framework */; };
+		4B00BAA8296E5758008FB05C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B00BAA7296E5758008FB05C /* Account.storyboard */; };
+		4B00BAAD296E8399008FB05C /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B00BAAC296E8399008FB05C /* AccountTableViewController.swift */; };
+		4B00BAB0296E8525008FB05C /* AccountTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B00BAAF296E8525008FB05C /* AccountTableViewModel.swift */; };
+		4B00BB42296E95FA008FB05C /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B00BB41296E95FA008FB05C /* RSAUtils.swift */; };
 		4B194F3128ED904B00F17FC9 /* Quote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F3028ED904B00F17FC9 /* Quote.storyboard */; };
 		4B194F3628ED919200F17FC9 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B194F3428ED919200F17FC9 /* QuoteTableViewCell.swift */; };
 		4B194F3728ED919200F17FC9 /* QuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F3528ED919200F17FC9 /* QuoteTableViewCell.xib */; };
@@ -26,6 +32,7 @@
 		4B19F60528E49E0600A72B5C /* HEPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B19F60428E49E0600A72B5C /* HEPIUITestsLaunchTests.swift */; };
 		4B45754228EC2C99007DB4A0 /* JournalingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45754028EC2C99007DB4A0 /* JournalingTableViewCell.swift */; };
 		4B45754328EC2C99007DB4A0 /* JournalingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B45754128EC2C99007DB4A0 /* JournalingTableViewCell.xib */; };
+		4B49684A296D428F006C2EF1 /* LeftPaddedTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B496849296D428F006C2EF1 /* LeftPaddedTextfield.swift */; };
 		4B50DEA128EC844E00EC0290 /* DetailJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50DEA028EC844E00EC0290 /* DetailJournalViewController.swift */; };
 		4B50DEA528EC909A00EC0290 /* DetailJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B50DEA428EC909A00EC0290 /* DetailJournalViewModel.swift */; };
 		4B622DAC294455DF00E42DAE /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B622DAB294455DF00E42DAE /* CheckIn.swift */; };
@@ -58,9 +65,11 @@
 		4BB80B76293C61F3001FEC01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */; };
 		4BB80B7A293C7EC5001FEC01 /* ClassificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */; };
 		4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC80EE828EC33E5005C19FF /* MainViewController.swift */; };
-		8368F6FEFB0ED14246014FBE /* Pods_HEPI_HEPIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4037C54FC73DEB42860DD078 /* Pods_HEPI_HEPIUITests.framework */; };
-		A2C2A496C40C59E34276CC3C /* Pods_HEPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E3552AC80D0DA2B56D7813 /* Pods_HEPITests.framework */; };
-		D14E50E8C27003A4103CF6A0 /* Pods_HEPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB85CABC0C2E06D4808DE094 /* Pods_HEPI.framework */; };
+		4BDE55D1296DB2170004DFBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE55D0296DB2170004DFBB /* LoginViewController.swift */; };
+		4BDE55D3296DB3270004DFBB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE55D2296DB3270004DFBB /* SignUpViewController.swift */; };
+		4BEB3155296DBDA500F46404 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB3154296DBDA500F46404 /* LoginViewModel.swift */; };
+		4BEB3157296DBDB000F46404 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB3156296DBDB000F46404 /* SignUpViewModel.swift */; };
+		B14FA3BD86E352D2A1DCE77E /* Pods_HEPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377EB13AA3CFF0FF2CCE5C21 /* Pods_HEPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +90,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		326E58000799E665838F7AE6 /* Pods-HEPI-HEPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4037C54FC73DEB42860DD078 /* Pods_HEPI_HEPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI_HEPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43AA7C71DA3AE73FAF05C998 /* Pods-HEPI-HEPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.release.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		061D4F6FBFB702F92184ECBC /* Pods-HEPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.debug.xcconfig"; sourceTree = "<group>"; };
+		326BB86F891A77FDDE3F6E8E /* Pods-HEPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.release.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.release.xcconfig"; sourceTree = "<group>"; };
+		377EB13AA3CFF0FF2CCE5C21 /* Pods_HEPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B00BAA7296E5758008FB05C /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		4B00BAAC296E8399008FB05C /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
+		4B00BAAF296E8525008FB05C /* AccountTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewModel.swift; sourceTree = "<group>"; };
+		4B00BB41296E95FA008FB05C /* RSAUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RSAUtils.swift; path = ../../../../Documents/RSAUtils.swift; sourceTree = "<group>"; };
 		4B194F3028ED904B00F17FC9 /* Quote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quote.storyboard; sourceTree = "<group>"; };
 		4B194F3428ED919200F17FC9 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
 		4B194F3528ED919200F17FC9 /* QuoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -107,6 +120,7 @@
 		4B19F60428E49E0600A72B5C /* HEPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4B45754028EC2C99007DB4A0 /* JournalingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalingTableViewCell.swift; sourceTree = "<group>"; };
 		4B45754128EC2C99007DB4A0 /* JournalingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = JournalingTableViewCell.xib; path = ../JournalingTableViewCell.xib; sourceTree = "<group>"; };
+		4B496849296D428F006C2EF1 /* LeftPaddedTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextfield.swift; sourceTree = "<group>"; };
 		4B50DEA028EC844E00EC0290 /* DetailJournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJournalViewController.swift; sourceTree = "<group>"; };
 		4B50DEA428EC909A00EC0290 /* DetailJournalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJournalViewModel.swift; sourceTree = "<group>"; };
 		4B622DAB294455DF00E42DAE /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
@@ -139,12 +153,16 @@
 		4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationResult.swift; sourceTree = "<group>"; };
 		4BC80EE828EC33E5005C19FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		9C29EBD61C4032B1E189FA62 /* Pods-HEPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.release.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.release.xcconfig"; sourceTree = "<group>"; };
-		AB85CABC0C2E06D4808DE094 /* Pods_HEPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B065A671F230869EC6B89E0A /* Pods-HEPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.debug.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.debug.xcconfig"; sourceTree = "<group>"; };
-		BD5C5EC0530E19A13AE6DB83 /* Pods-HEPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C7E3552AC80D0DA2B56D7813 /* Pods_HEPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2A5F226BC29FC94378D0FE9 /* Pods-HEPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPITests.release.xcconfig"; path = "Target Support Files/Pods-HEPITests/Pods-HEPITests.release.xcconfig"; sourceTree = "<group>"; };
+		4BDE55D0296DB2170004DFBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4BDE55D2296DB3270004DFBB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		4BEB3154296DBDA500F46404 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4BEB3156296DBDB000F46404 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		50FE6747AE7789083F1D3AC5 /* Pods_HEPI_HEPIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPI_HEPIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CD93ED96B5756AE2FF5BFA /* Pods-HEPI-HEPIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.release.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8F8EECDC1C2D3A22F6D39432 /* Pods-HEPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.debug.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.debug.xcconfig"; sourceTree = "<group>"; };
+		CA8511406B39350E54A00A12 /* Pods_HEPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HEPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74D33CAB48080B459E9D72D /* Pods-HEPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI.release.xcconfig"; path = "Target Support Files/Pods-HEPI/Pods-HEPI.release.xcconfig"; sourceTree = "<group>"; };
+		DBF35E6B7665AE1A04EB97AE /* Pods-HEPI-HEPIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HEPI-HEPIUITests.debug.xcconfig"; path = "Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D14E50E8C27003A4103CF6A0 /* Pods_HEPI.framework in Frameworks */,
+				B14FA3BD86E352D2A1DCE77E /* Pods_HEPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2C2A496C40C59E34276CC3C /* Pods_HEPITests.framework in Frameworks */,
+				3F2367189B341E9DD12A9F0D /* Pods_HEPITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,13 +186,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8368F6FEFB0ED14246014FBE /* Pods_HEPI_HEPIUITests.framework in Frameworks */,
+				133D38D320DCD3EE6A23FCB1 /* Pods_HEPI_HEPIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B00BAA9296E836E008FB05C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				4B00BAAC296E8399008FB05C /* AccountTableViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		4B00BAAE296E8515008FB05C /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				4B00BAAF296E8525008FB05C /* AccountTableViewModel.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		4B19F5D528E49E0500A72B5C = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +217,7 @@
 				4B19F60128E49E0600A72B5C /* HEPIUITests */,
 				4B19F5DF28E49E0500A72B5C /* Products */,
 				FF14E35A278343EA30FF23A5 /* Pods */,
-				5494BF917C3A0FBDDFA76EE5 /* Frameworks */,
+				4EEE0F1138E79F116237A89F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +287,7 @@
 				4B6A8F5A28EC42F80088960F /* HelperFunction.swift */,
 				4B6A8F5C28EC44BC0088960F /* Enum.swift */,
 				4B6A8F6528EC50C60088960F /* Protocol.swift */,
+				4B00BB41296E95FA008FB05C /* RSAUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -372,6 +407,8 @@
 		4B78DB0328EAD6B500744386 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B00BAA9296E836E008FB05C /* Account */,
+				4BDE55CF296DB1D00004DFBB /* Main */,
 				4B622DB82944D86C00E42DAE /* Summary */,
 				4B622DB72944D85A00E42DAE /* Quotes */,
 				4B622DA9294455C200E42DAE /* Journaling */,
@@ -383,6 +420,8 @@
 		4B78DB0628EAD6C000744386 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4B00BAAE296E8515008FB05C /* Account */,
+				4BEB3153296DBD9C00F46404 /* Main */,
 				4B622DBD2944D8BF00E42DAE /* Quote */,
 				4B622DBB2944D89600E42DAE /* Journaling */,
 				4B622DBA2944D88F00E42DAE /* Summary */,
@@ -420,6 +459,7 @@
 				4B194F3428ED919200F17FC9 /* QuoteTableViewCell.swift */,
 				4B78DB4228EC27F500744386 /* RoundedCard.swift */,
 				4B952E8E294373E300A7616A /* dateSearchCard.swift */,
+				4B496849296D428F006C2EF1 /* LeftPaddedTextfield.swift */,
 			);
 			path = "Shared Layout";
 			sourceTree = "<group>";
@@ -448,6 +488,7 @@
 				4B78DB3E28EC1F7200744386 /* Journal.storyboard */,
 				4B194F3028ED904B00F17FC9 /* Quote.storyboard */,
 				4B194F4028EDBADA00F17FC9 /* Summary.storyboard */,
+				4B00BAA7296E5758008FB05C /* Account.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -478,12 +519,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5494BF917C3A0FBDDFA76EE5 /* Frameworks */ = {
+		4BDE55CF296DB1D00004DFBB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				AB85CABC0C2E06D4808DE094 /* Pods_HEPI.framework */,
-				4037C54FC73DEB42860DD078 /* Pods_HEPI_HEPIUITests.framework */,
-				C7E3552AC80D0DA2B56D7813 /* Pods_HEPITests.framework */,
+				4BDE55D0296DB2170004DFBB /* LoginViewController.swift */,
+				4BDE55D2296DB3270004DFBB /* SignUpViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4BEB3153296DBD9C00F46404 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4BEB3154296DBDA500F46404 /* LoginViewModel.swift */,
+				4BEB3156296DBDB000F46404 /* SignUpViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4EEE0F1138E79F116237A89F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				377EB13AA3CFF0FF2CCE5C21 /* Pods_HEPI.framework */,
+				50FE6747AE7789083F1D3AC5 /* Pods_HEPI_HEPIUITests.framework */,
+				CA8511406B39350E54A00A12 /* Pods_HEPITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -491,12 +550,12 @@
 		FF14E35A278343EA30FF23A5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B065A671F230869EC6B89E0A /* Pods-HEPI.debug.xcconfig */,
-				9C29EBD61C4032B1E189FA62 /* Pods-HEPI.release.xcconfig */,
-				326E58000799E665838F7AE6 /* Pods-HEPI-HEPIUITests.debug.xcconfig */,
-				43AA7C71DA3AE73FAF05C998 /* Pods-HEPI-HEPIUITests.release.xcconfig */,
-				BD5C5EC0530E19A13AE6DB83 /* Pods-HEPITests.debug.xcconfig */,
-				F2A5F226BC29FC94378D0FE9 /* Pods-HEPITests.release.xcconfig */,
+				8F8EECDC1C2D3A22F6D39432 /* Pods-HEPI.debug.xcconfig */,
+				D74D33CAB48080B459E9D72D /* Pods-HEPI.release.xcconfig */,
+				DBF35E6B7665AE1A04EB97AE /* Pods-HEPI-HEPIUITests.debug.xcconfig */,
+				89CD93ED96B5756AE2FF5BFA /* Pods-HEPI-HEPIUITests.release.xcconfig */,
+				061D4F6FBFB702F92184ECBC /* Pods-HEPITests.debug.xcconfig */,
+				326BB86F891A77FDDE3F6E8E /* Pods-HEPITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -508,11 +567,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B19F60828E49E0600A72B5C /* Build configuration list for PBXNativeTarget "HEPI" */;
 			buildPhases = (
-				0262622E4D28AA24E5C4B0B4 /* [CP] Check Pods Manifest.lock */,
+				AB38376B1DE8B51922523639 /* [CP] Check Pods Manifest.lock */,
 				4B19F5DA28E49E0500A72B5C /* Sources */,
 				4B19F5DB28E49E0500A72B5C /* Frameworks */,
 				4B19F5DC28E49E0500A72B5C /* Resources */,
-				CF050FC9BBA88B437CC67D3D /* [CP] Embed Pods Frameworks */,
+				C9543CE2125C27965B6E43AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -527,7 +586,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B19F60B28E49E0600A72B5C /* Build configuration list for PBXNativeTarget "HEPITests" */;
 			buildPhases = (
-				54633B1785F313EDA47ADD15 /* [CP] Check Pods Manifest.lock */,
+				93725E0A70CA20609F2F195B /* [CP] Check Pods Manifest.lock */,
 				4B19F5F028E49E0600A72B5C /* Sources */,
 				4B19F5F128E49E0600A72B5C /* Frameworks */,
 				4B19F5F228E49E0600A72B5C /* Resources */,
@@ -546,11 +605,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B19F60E28E49E0600A72B5C /* Build configuration list for PBXNativeTarget "HEPIUITests" */;
 			buildPhases = (
-				3ADAB1ABB4A87731DE52205B /* [CP] Check Pods Manifest.lock */,
+				81EE86C669283DCF2924EF04 /* [CP] Check Pods Manifest.lock */,
 				4B19F5FA28E49E0600A72B5C /* Sources */,
 				4B19F5FB28E49E0600A72B5C /* Frameworks */,
 				4B19F5FC28E49E0600A72B5C /* Resources */,
-				7B26E568B40840DDC392024A /* [CP] Embed Pods Frameworks */,
+				4659ED4A8F2B43E738301FF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -620,6 +679,7 @@
 				4B952E8D294371D100A7616A /* dateSearchCard.xib in Resources */,
 				4B19F5EB28E49E0600A72B5C /* Assets.xcassets in Resources */,
 				4B194F3728ED919200F17FC9 /* QuoteTableViewCell.xib in Resources */,
+				4B00BAA8296E5758008FB05C /* Account.storyboard in Resources */,
 				4B194F4128EDBADA00F17FC9 /* Summary.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,29 +701,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0262622E4D28AA24E5C4B0B4 /* [CP] Check Pods Manifest.lock */ = {
+		4659ED4A8F2B43E738301FF9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HEPI-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3ADAB1ABB4A87731DE52205B /* [CP] Check Pods Manifest.lock */ = {
+		81EE86C669283DCF2924EF04 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -685,7 +740,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54633B1785F313EDA47ADD15 /* [CP] Check Pods Manifest.lock */ = {
+		93725E0A70CA20609F2F195B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -707,24 +762,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7B26E568B40840DDC392024A /* [CP] Embed Pods Frameworks */ = {
+		AB38376B1DE8B51922523639 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HEPI-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HEPI-HEPIUITests/Pods-HEPI-HEPIUITests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF050FC9BBA88B437CC67D3D /* [CP] Embed Pods Frameworks */ = {
+		C9543CE2125C27965B6E43AB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -753,6 +813,8 @@
 				4B6A8F5928EC42720088960F /* SharedObjects.swift in Sources */,
 				4B194F4328EEAD1300F17FC9 /* SummaryViewController.swift in Sources */,
 				4BB4935328EC362800F3A482 /* MainViewModel.swift in Sources */,
+				4BEB3155296DBDA500F46404 /* LoginViewModel.swift in Sources */,
+				4B00BAAD296E8399008FB05C /* AccountTableViewController.swift in Sources */,
 				4B50DEA128EC844E00EC0290 /* DetailJournalViewController.swift in Sources */,
 				4B622DB12944597F00E42DAE /* ReusableTabBar.swift in Sources */,
 				4B194F3B28EDAAC400F17FC9 /* QuoteViewModel.swift in Sources */,
@@ -772,19 +834,25 @@
 				4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */,
 				4B78DB0B28EAD6FC00744386 /* ApiService.swift in Sources */,
 				4B6A8F5F28EC4A1C0088960F /* JournalViewModel.swift in Sources */,
+				4BDE55D1296DB2170004DFBB /* LoginViewController.swift in Sources */,
 				4B78DB4128EC230700744386 /* CustomNavigationController.swift in Sources */,
 				4B194F4528EEADD900F17FC9 /* Summary.swift in Sources */,
+				4B49684A296D428F006C2EF1 /* LeftPaddedTextfield.swift in Sources */,
 				4B622DB32944599600E42DAE /* ReusableButton.swift in Sources */,
+				4B00BB42296E95FA008FB05C /* RSAUtils.swift in Sources */,
 				4B194F3F28EDB09F00F17FC9 /* Quote.swift in Sources */,
 				4B6A8F5B28EC42F80088960F /* HelperFunction.swift in Sources */,
 				4B19F5E428E49E0500A72B5C /* SceneDelegate.swift in Sources */,
 				4B622DB5294459B700E42DAE /* ReuseableLabel.swift in Sources */,
+				4BEB3157296DBDB000F46404 /* SignUpViewModel.swift in Sources */,
 				4B194F3628ED919200F17FC9 /* QuoteTableViewCell.swift in Sources */,
+				4BDE55D3296DB3270004DFBB /* SignUpViewController.swift in Sources */,
 				4B78DB1828EAD77600744386 /* StyleGuides.swift in Sources */,
 				4B622DAF2944582600E42DAE /* ModalCheckInOutViewController.swift in Sources */,
 				4B45754228EC2C99007DB4A0 /* JournalingTableViewCell.swift in Sources */,
 				4B952E8F294373E300A7616A /* dateSearchCard.swift in Sources */,
 				4B6A8F6828EC51170088960F /* BaseProviders.swift in Sources */,
+				4B00BAB0296E8525008FB05C /* AccountTableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,7 +1018,7 @@
 		};
 		4B19F60928E49E0600A72B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B065A671F230869EC6B89E0A /* Pods-HEPI.debug.xcconfig */;
+			baseConfigurationReference = 8F8EECDC1C2D3A22F6D39432 /* Pods-HEPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -985,7 +1053,7 @@
 		};
 		4B19F60A28E49E0600A72B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C29EBD61C4032B1E189FA62 /* Pods-HEPI.release.xcconfig */;
+			baseConfigurationReference = D74D33CAB48080B459E9D72D /* Pods-HEPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1020,7 +1088,7 @@
 		};
 		4B19F60C28E49E0600A72B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD5C5EC0530E19A13AE6DB83 /* Pods-HEPITests.debug.xcconfig */;
+			baseConfigurationReference = 061D4F6FBFB702F92184ECBC /* Pods-HEPITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1041,7 +1109,7 @@
 		};
 		4B19F60D28E49E0600A72B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2A5F226BC29FC94378D0FE9 /* Pods-HEPITests.release.xcconfig */;
+			baseConfigurationReference = 326BB86F891A77FDDE3F6E8E /* Pods-HEPITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1062,7 +1130,7 @@
 		};
 		4B19F60F28E49E0600A72B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 326E58000799E665838F7AE6 /* Pods-HEPI-HEPIUITests.debug.xcconfig */;
+			baseConfigurationReference = DBF35E6B7665AE1A04EB97AE /* Pods-HEPI-HEPIUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1081,7 +1149,7 @@
 		};
 		4B19F61028E49E0600A72B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43AA7C71DA3AE73FAF05C998 /* Pods-HEPI-HEPIUITests.release.xcconfig */;
+			baseConfigurationReference = 89CD93ED96B5756AE2FF5BFA /* Pods-HEPI-HEPIUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -79,23 +79,29 @@ class DetailJournalViewController: UIViewController {
             /// - Parameters:
             ///     - dateCreated: date object that's gonna be passed to the provider, so the provider can query the journal based on the given date.
             popupAlert(title: "Apakah anda ingin menghapus jurnal ini?", message: nil, actionTitles: ["Hapus", "Batal"], actionsStyle: [UIAlertAction.Style.destructive, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
-                detailJournalViewModel.deleteJournal(journalObject!.value.dateCreated!) { result in
-                    DispatchQueue.main.async { [self] in
-                        switch result {
-                        case .success:
-                            popupAlert(title: "Sukses", message: "Berhasil Menghapus Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
-                                navigationController?.popViewController(animated: true)
-                            }])
-                        case .gagalAddData:
-                            present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Menghapus Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
-                        default:
-                            print("gagal")
-                        }
-                    }
-                }
+                detailJournalViewModel.deleteJournal(journalObject!.value.documentRef!)
             },nil])
         }.disposed(by: bags)
   
+        //MARK: - Delete Button Response Function
+        detailJournalViewModel.typeErrorObjectObservable.skip(1).subscribe(onNext: { [self] (value) in
+            DispatchQueue.main.async { [self] in
+                switch value {
+                    case .success(let typeSukses):
+                        popupAlert(title: "Sukses", message: "Berhasil \(typeSukses) Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
+                            navigationController?.popViewController(animated: true)
+                        }])
+                    case .firebaseError(let firebaseMessage):
+                        present(genericAlert(titleAlert: "Terjadi kesalahan pada firebase!", messageAlert: "\(firebaseMessage)", buttonText: "Ok"), animated: true)
+                    case .inputTidakLengkap:
+                        present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
+                    default:
+                        present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
+                    }
+                }
+        }).disposed(by: bags)
+        
+        
         //MARK: - Write Button Response Function
         writeButtonPressed.rx.tap.bind { [self] in
             //MARK: - Check Journal Object State
@@ -109,22 +115,7 @@ class DetailJournalViewController: UIViewController {
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
                 popupAlert(title: "Apakah anda ingin menyimpan buku harian ini?", message: nil, actionTitles: ["Simpan", "Batal"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
-                    detailJournalViewModel.addJournal(journalTitleTextfield.text ?? "", descriptionTextview.text) { (result) in
-                        DispatchQueue.main.async { [self] in
-                            switch result {
-                                case .success:
-                                popupAlert(title: "Sukses", message: "Berhasil Menambah Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
-                                    navigationController?.popViewController(animated: true)
-                                }])
-                                case .gagalAddData:
-                                    present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
-                                case .inputTidakLengkap:
-                                    present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
-                                default:
-                                    present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
-                                }
-                            }
-                        }
+                    detailJournalViewModel.addUpdateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, false, nil)
                 },nil])
             }else {
                 //MARK: - Detail Journal View Model Update Function
@@ -136,22 +127,7 @@ class DetailJournalViewController: UIViewController {
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
                 popupAlert(title: "Apakah anda ingin menyunting buku harian ini?", message: nil, actionTitles: ["Simpan", "Batal"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
-                    detailJournalViewModel.updateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, journalObject!.value.dateCreated!) { result in
-                        DispatchQueue.main.async { [self] in
-                            switch result {
-                                case .success:
-                                popupAlert(title: "Sukses", message: "Berhasil Menyunting Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
-                                    navigationController?.popViewController(animated: true)
-                                }])
-                                case .gagalAddData:
-                                    present(genericAlert(titleAlert: "Gagal!", messageAlert: "Telah Terjadi Kesalahan Dalam Melakukan Pembaharuan Data, Silahkan Coba Lagi!", buttonText: "Ok"), animated: true)
-                                case .inputTidakLengkap:
-                                    present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
-                                default:
-                                    present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Pembaharuan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
-                            }
-                        }
-                    }
+                    detailJournalViewModel.addUpdateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, true, journalObject!.value.documentRef)
                 },nil])
             }
         }.disposed(by: bags)

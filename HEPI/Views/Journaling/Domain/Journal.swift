@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Journal: Identifiable, Encodable, Decodable {
-    var id    : Int32?
+struct Journal {
+    var userUUID     : String?
     var titleJournal : String?
     var moodDesc     : String?
     var descJournal  : String?
     var dateCreated  : Date?
-    var moodImage    : Data?
+    var documentRef  : String?
 }

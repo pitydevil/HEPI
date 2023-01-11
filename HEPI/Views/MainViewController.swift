@@ -41,16 +41,16 @@ class MainViewController: UIViewController {
         //MARK: - Sign Up Button Response Function
         /// Check Sign In state from view model function.
         signUpButton.rx.tap.bind { [self] in
-            mainViewModel.setupUserName(nameTextfield.text ?? "") { [self] (result) in
-                switch result {
-                    case .success:
-                        mainViewModel.isSignedUp.accept(true)
-                    case .tidakAdaText:
-                        present(genericAlert(titleAlert: "Nama Tidak Ada!" , messageAlert: "Silahkan isi nama anda terlebih dahulu", buttonText: "Ok"), animated: true)
-                    default:
-                        print("tidak ada")
-                }
-            }
+//            mainViewModel.setupUserName(nameTextfield.text ?? "") { [self] (result) in
+//                switch result {
+//                    case .success:
+//                        mainViewModel.isSignedUp.accept(true)
+//                    case .tidakAdaText:
+//                        present(genericAlert(titleAlert: "Nama Tidak Ada!" , messageAlert: "Silahkan isi nama anda terlebih dahulu", buttonText: "Ok"), animated: true)
+//                    default:
+//                        print("tidak ada")
+//                }
+//            }
         }.disposed(by: bags)
     }
 }

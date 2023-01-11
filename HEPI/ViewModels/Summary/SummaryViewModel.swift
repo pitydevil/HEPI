@@ -15,6 +15,7 @@ class SummaryViewModel {
     private var provider = BaseProviders()
     private var journalArray: Observable<[Journal]>?
     private let journalModelArray = BehaviorRelay<[Journal]>(value: [])
+    private var journalErrorObject = BehaviorRelay<String>(value: String())
     var dateObject : BehaviorRelay<Date> = BehaviorRelay(value: Date())
     
     //MARK: - Object Observation Declaration
@@ -25,10 +26,9 @@ class SummaryViewModel {
     var journalModelArrayObserver: Observable<[Journal]> {
         return journalModelArray.asObservable()
     }
-
-    //MARK: - Init Class
-    init() {
-        self.provider = { return BaseProviders()}()
+    
+    var journalObjectErrorObserver: Observable<String> {
+        return journalErrorObject.asObservable()
     }
     
     //MARK: - Get Mood Summary Function
@@ -37,27 +37,32 @@ class SummaryViewModel {
     /// - Parameters:
     ///     - startDate: date object that determine starting date for the date interval query
     ///     - endDate: date object that determine ending date for the date interval query
-    func getSummaryMood(_ startDate : Date, _ endDate : Date, completion: @escaping(_ result : summaryError) ->Void )  {
+    func getSummaryMood(_ startDate : Date, _ endDate : Date)  {
         if startDate > endDate || endDate < startDate{
             if startDate > endDate {
-                completion(.tanggalLebihMuda(errorMessage: "tanggal mulai lebih tua daripada end date"))
+                journalErrorObject.accept("Tanggal awal lebih tua daripada tanggal akhir")
             }else {
-                completion(.tanggalLebihTua(errorMessage: "tanggal end date lebih muda daripada start date"))
+                journalErrorObject.accept("Tanggal akhir lebih muda daripada tanggal awal")
             }
         }else {
-            journalArray = provider.querySummary(startDate, endDate)
-            journalArray?.subscribe(onNext: { (value) in
-                var journalModel = [Journal]()
-                for index in 0..<value.count {
-                    let user = value[index]
-                    journalModel.append(user)
+            baseDiaryDir.whereField("userUUID", isEqualTo: uuidUser ?? "").getDocuments(completion: { [self] querySnapshot, error in
+                if error != nil {
+                    journalErrorObject.accept(String(describing: error))
+                }else {
+                    var journalModel = [Journal]()
+                    if querySnapshot!.documents.isEmpty {
+                        journalErrorObject.accept("Kamu tidak membuat jurnal direntang hari tersebut!")
+                    }else {
+                        querySnapshot?.documents.forEach({ element in
+                            let journal = Journal(userUUID: element.data()["userUUID"] as? String, titleJournal: element.data()["titleJournal"] as? String, moodDesc: element.data()["moodDesc"] as? String, descJournal: element.data()["descJournal"] as? String, dateCreated: changeDateFromString(dateString: (element.data()["dateCreated"] as? String)!), documentRef: element.documentID)
+                            if journal.dateCreated! >= startDate && journal.dateCreated! <= endDate {
+                                journalModel.append(journal)
+                            }
+                        })
+                        journalModelArray.accept(journalModel)
+                    }
                 }
-                self.journalModelArray.accept(journalModel)
-            }, onError: { (error) in
-                _ = self.journalModelArrayObserver.catch { (error) in
-                    Observable.empty()
-                }
-            }).disposed(by: bags)
+            })
         }
     }
     

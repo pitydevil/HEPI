@@ -8,9 +8,15 @@
 import Foundation
 import RxSwift
 import TensorFlowLiteTaskText
+import FirebaseAuth
+import FirebaseFirestore
 
 //MARK: - Object Declaration
 public let bags = DisposeBag()
 public var classifier: TFLNLClassifier?
 public let nameKeys = "namaUser"
 public let defaults = UserDefaults.standard
+public let namaEmailUser = Auth.auth().currentUser?.email
+public let uuidUser = Auth.auth().currentUser?.uid
+public let db = Firestore.firestore()
+public let baseDiaryDir = db.collection("journal").document("user").collection("list")

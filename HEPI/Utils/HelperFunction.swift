@@ -51,6 +51,30 @@ public func changeDateIntoDDMM(_ Date : Date) -> String {
     return dateF.string(from: Date)
 }
 
+//MARK: - Change Date Into DD MM
+/// Returns string date in dd MMM YYYY format
+/// from the given components.
+/// - Parameters:
+///     - Date: date object that's gonna be converted to string
+public func createTodayObject() -> String{
+    let date = Date()
+    let dateF = DateFormatter()
+    dateF.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    return dateF.string(from: date)
+}
+
+//MARK: - Change String Into Date
+/// Returns string date in dd MMM YYYY format
+/// from the given components.
+/// - Parameters:
+///     - DateString: string that's converted to date
+public func changeDateFromString(dateString : String) -> Date {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    let pastDateInvoice: Date? = dateFormatter.date(from: dateString)
+    return pastDateInvoice!
+}
+
 //MARK: - Error Alert Function
 /// Returns Error UIAlert Controller
 public func errorAlert() -> UIAlertController {
@@ -59,3 +83,4 @@ public func errorAlert() -> UIAlertController {
     alert.addAction(cancel)
     return alert
 }
+

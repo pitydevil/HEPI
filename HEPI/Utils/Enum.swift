@@ -17,8 +17,8 @@ enum emotionCase : String {
   case Sad     = "5"
 }
 
-enum typeError {
-  case tidakAdaText, success, inputTidakLengkap, gagalAddData
+enum typeError : Error{
+    case tidakAdaText, success(typeMessage : String), inputTidakLengkap, gagalAddData, emailTidakAda, passwordTidakAda, emailPassTidakAda, firebaseError(firebaseMessage: String)
 }
 
 enum summaryError : Error {

@@ -8,12 +8,19 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import FirebaseFirestore
 
 class DetailJournalViewModel {
     
     //MARK: - Object Declaration
     private var provider = BaseProviders()
-   
+    private var typeErrorObject : BehaviorRelay<typeError> = BehaviorRelay(value: typeError.gagalAddData)
+    
+    //MARK: - Object Observation Declaration
+    var typeErrorObjectObservable: Observable<typeError> {
+        return typeErrorObject.asObservable()
+    }
+    
     //MARK: - Init Class
     init() {
         self.provider = { return BaseProviders()}()
@@ -27,7 +34,7 @@ class DetailJournalViewModel {
     ///     - descJournal: journal description for the journal object
     ///     - moodDesc: journal mood description for the journal object
     ///     - moodImage: journal mood image for the journal object
-    func addJournal(_ titleJournal : String, _ descJournal : String , completion: @escaping(_ result: typeError)-> Void ) {
+    func addUpdateJournal(_ titleJournal : String, _ descJournal : String, _ isUpdate : Bool, _ documentRefID : String? ) {
         if titleJournal.count != 0 && descJournal.count != 0 {
             //MARK: - Add Journal Provider Function
             /// Returns summaryGenerate enumeration
@@ -39,49 +46,34 @@ class DetailJournalViewModel {
             ///     - moodImage: journal mood image for the journal object
             ///     - dateCreated: journal date creatiion for the journal object
             let classifiedMood = String(describing: classify(text: descJournal))
-            provider.addJournal(titleJournal, descJournal, Date(), UIImage(named: classifiedMood)!.pngData()!, classifiedMood) { result in
-                switch result {
-                    case true:
-                        completion(.success)
-                    case false:
-                        completion(.gagalAddData)
+            db.runTransaction({ (transaction, errorPointer) -> Any? in
+                let mainData : [String : Any] = [
+                    "userUUID" : String(uuidUser ?? ""),
+                    "titleJournal" : titleJournal,
+                    "descJournal" : descJournal,
+                    "moodDesc" : classifiedMood,
+                    "dateCreated" : createTodayObject()
+                ]
+                if isUpdate {
+                    transaction.updateData(mainData, forDocument: baseDiaryDir.document(documentRefID ?? ""))
+                }else {
+                    transaction.setData(mainData, forDocument: baseDiaryDir.document())
                 }
-            }
+                    
+                return nil
+            }) { [self] (object, error) in
+                 if error != nil {
+                     typeErrorObject.accept(.firebaseError(firebaseMessage: error?.localizedDescription ?? ""))
+                 } else {
+                     if isUpdate {
+                         typeErrorObject.accept(.success(typeMessage: "Mengupdate"))
+                     }else {
+                         typeErrorObject.accept(.success(typeMessage: "Menambahkan"))
+                     }
+                 }
+             }
         }else {
-            completion(.inputTidakLengkap)
-        }
-    }
-    
-    //MARK: - Update Journal Function
-    /// Returns  typeError Enumeration
-    /// from the given components.
-    /// - Parameters:
-    ///     - titleJournal: journal title for the journal title
-    ///     - descJournal: journal description for the journal object
-    ///     - moodDesc: journal mood description for the journal object
-    ///     - moodImage: journal mood image for the journal object
-    func updateJournal(_ titleJournal : String, _ descJournal : String, _ date : Date, completion: @escaping(_ result: typeError)-> Void ) {
-        if titleJournal.count != 0 && descJournal.count != 0 {
-            //MARK: - Update Existing Provider Function
-            /// Returns summaryGenerate enumeration
-            /// from the given components.
-            /// - Parameters:
-            ///     - titleJournal:  journal title for the journal title
-            ///     - descJournal: journal description for the journal object
-            ///     - moodDesc: journal mood description for the journal object
-            ///     - moodImage: journal mood image for the journal object
-            ///     - dateCreated: journal date creatiion for the journal object
-            let classifiedMood = String(describing: classify(text: descJournal))
-            provider.updateExisting(titleJournal, descJournal, date, UIImage(named: classifiedMood)!.pngData()!, classifiedMood) { result in
-                switch result {
-                    case true:
-                        completion(.success)
-                    case false:
-                        completion(.gagalAddData)
-                }
-            }
-        }else {
-            completion(.inputTidakLengkap)
+            typeErrorObject.accept(.inputTidakLengkap)
         }
     }
     
@@ -90,20 +82,22 @@ class DetailJournalViewModel {
     /// from the given components.
     /// - Parameters:
     ///     - dateCreated: date object that's gonna be used as the main query for the nspredicate object on provider delete function
-    func deleteJournal(_ dateCreated : Date , completion: @escaping(_ result: typeError)-> Void ) {
+    func deleteJournal(_ documentRef : String) {
         //MARK: - Provider Delete Journal Function
         /// Returns summaryGeneration Enumeration
         /// from the given components.
         /// - Parameters:
         ///     - dateCreated: date object that's gonna be used as the main query for the nspredicate object on provider delete function
-        provider.deleteJournal(dateCreated) { result in
-            switch result {
-                case true:
-                    completion(.success)
-                case false:
-                    completion(.gagalAddData)
-            }
-        }
+        db.runTransaction({ (transaction, errorPointer) -> Any? in
+             transaction.deleteDocument(baseDiaryDir.document(documentRef))
+             return nil
+        }) { [self] (object, error) in
+             if error != nil {
+                 typeErrorObject.accept(.firebaseError(firebaseMessage: error?.localizedDescription ?? ""))
+             } else {
+                 typeErrorObject.accept(.success(typeMessage: "Menghapus"))
+             }
+         }
     }
     
     //MARK: - Classify Function

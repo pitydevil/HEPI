@@ -51,12 +51,12 @@ class MainViewModel {
     /// from the given components.
     /// - Parameters:
     ///     - username: character subset that's gonna be saved on to user defaults,
-    func setupUserName(_ username : String, completion: @escaping(_ result: typeError)-> Void) {
-        if username.isEmpty {
-            completion(.tidakAdaText)
-        }else {
-            defaults.set(username, forKey: nameKeys)
-            completion(.success)
-        }
-    }
+//    func setupUserName(_ username : String, completion: @escaping(_ result: typeError)-> Void) {
+//        if username.isEmpty {
+//            completion(.tidakAdaText)
+//        }else {
+//            defaults.set(username, forKey: nameKeys)
+//            completion(.success)
+//        }
+//    }
 }

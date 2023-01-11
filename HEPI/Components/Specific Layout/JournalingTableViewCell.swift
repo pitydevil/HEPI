@@ -39,7 +39,7 @@ class JournalingTableViewCell: UITableViewCell {
     
     func configureCell(journal : Journal) {
         self.journalDateLabel.text  = changeDateIntoStringDate(Date: journal.dateCreated!)
-        self.moodImageView.image    = UIImage(data: journal.moodImage!)
+        self.moodImageView.image    = UIImage(named: "\(journal.moodDesc ?? "Joy")") ?? UIImage(data: Data())
         self.subtitleLabel.text     = journal.descJournal!
         self.journalTitleLabel.text = journal.titleJournal
     }

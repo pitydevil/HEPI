@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import FirebaseAuth
 
 class AccountTableViewController: UITableViewController {
 
@@ -61,6 +62,7 @@ extension AccountTableViewController  {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2{
             popupAlert(title: "Are you sure want to logout?", message: nil, actionTitles: ["Logout", "Cancel"], actionsStyle: [UIAlertAction.Style.destructive, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+                SVProgressHUD.show(withStatus: "Logging Out")
                 accountTableViewModel.logoutFunction()
             },nil])
         }

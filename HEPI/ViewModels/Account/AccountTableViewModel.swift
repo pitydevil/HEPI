@@ -23,7 +23,12 @@ class AccountTableViewModel {
     //MARK: - Check User Sign In Status
     /// Observe sign up status from view model, and segue to main view controller if there are any changes.
     func logoutFunction() {
-         try? Auth.auth().signOut()
-         typeErrorObject.accept(.success(typeMessage: "melakukan"))
+        do {
+            try Auth.auth().signOut()
+            typeErrorObject.accept(.success(typeMessage: "melakukan"))
+        }
+        catch {
+            typeErrorObject.accept(.firebaseError(firebaseMessage: error.localizedDescription))
+        }
     }
 }

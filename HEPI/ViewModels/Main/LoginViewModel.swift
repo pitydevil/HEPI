@@ -67,6 +67,8 @@ class LoginViewModel {
                     }
                 }else {
                     typeErrorObject.accept(.success(typeMessage: "Login"))
+                    namaEmailUser = user?.user.email
+                    uuidUser      = user?.user.uid
                     isSignedUp.accept(true)
                 }
             }

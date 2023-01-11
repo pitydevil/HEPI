@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CryptoSwift
 
 //MARK: - Segue To Main Function
 /// Change UIStoryBoard to main programatically
@@ -82,5 +83,34 @@ public func errorAlert() -> UIAlertController {
     let cancel = UIAlertAction(title: "Ok", style: .cancel)
     alert.addAction(cancel)
     return alert
+}
+
+//MARK: - Error Alert Function
+/// Returns Error UIAlert Controller
+public func decodeRabbitData(_ encryptedText : String, _ key : String) -> String? {
+    if let base64cipher = try? Rabbit(key: key) {
+        let decrypted = try? encryptedText.decryptBase64ToString(cipher: base64cipher)
+        return decrypted
+    }else {
+        return ""
+    }
+}
+
+//MARK: - Error Alert Function
+/// Returns Error UIAlert Controller
+public func encodeRabbitData(_ encryptedText : String, _ key: String) -> String? {
+    if let base64cipher = try? Rabbit(key: key) {
+        let encrypted = try? encryptedText.encryptToBase64(cipher: base64cipher)
+        return encrypted
+    }else {
+        return ""
+    }
+}
+
+//MARK: - Error Alert Function
+/// Returns Error UIAlert Controller
+public func randomKeyString(length: Int) -> String {
+  let letters = "0123456789"
+  return String((0..<length).map{ _ in letters.randomElement()! })
 }
 

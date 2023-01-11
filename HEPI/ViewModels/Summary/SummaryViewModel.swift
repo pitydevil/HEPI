@@ -53,7 +53,8 @@ class SummaryViewModel {
                         journalErrorObject.accept("Kamu tidak membuat jurnal direntang hari tersebut!")
                     }else {
                         querySnapshot?.documents.forEach({ element in
-                            let journal = Journal(userUUID: element.data()["userUUID"] as? String, titleJournal: element.data()["titleJournal"] as? String, moodDesc: element.data()["moodDesc"] as? String, descJournal: element.data()["descJournal"] as? String, dateCreated: changeDateFromString(dateString: (element.data()["dateCreated"] as? String)!), documentRef: element.documentID)
+                            let key = (element.data()["key"] as? String)!
+                            let journal = Journal(userUUID: element.data()["userUUID"] as? String, titleJournal: decodeRabbitData((element.data()["titleJournal"] as? String)!, key), moodDesc:  decodeRabbitData((element.data()["moodDesc"] as? String)!, key), descJournal:  decodeRabbitData((element.data()["descJournal"] as? String)!, key), dateCreated: changeDateFromString(dateString: (element.data()["dateCreated"] as? String)!), documentRef: element.documentID, key: key)
                             if journal.dateCreated! >= startDate && journal.dateCreated! <= endDate {
                                 journalModel.append(journal)
                             }

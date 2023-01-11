@@ -18,7 +18,7 @@ target 'HEPI' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'SVProgressHUD'
-  pod 'SwiftyRSA'
+  pod 'CryptoSwift', '~> 1.6.0'
   
   target 'HEPITests' do
     inherit! :search_paths

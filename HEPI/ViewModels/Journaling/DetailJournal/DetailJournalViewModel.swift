@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import FirebaseFirestore
+import CryptoSwift
 
 class DetailJournalViewModel {
     
@@ -41,19 +42,21 @@ class DetailJournalViewModel {
             ///     - dateCreated: journal date creatiion for the journal object
             let classifiedMood = String(describing: classify(text: descJournal))
             db.runTransaction({ (transaction, errorPointer) -> Any? in
+                let randomStri = randomKeyString(length: 16)
                 let mainData : [String : Any] = [
                     "userUUID" : String(uuidUser ?? ""),
-                    "titleJournal" : titleJournal,
-                    "descJournal" : descJournal,
-                    "moodDesc" : classifiedMood,
+                    "titleJournal" : encodeRabbitData(titleJournal, randomStri)!,
+                    "descJournal" : encodeRabbitData(descJournal, randomStri)!,
+                    "moodDesc" : encodeRabbitData(classifiedMood, randomStri)!,
+                    "key"      : randomStri,
                     "dateCreated" : createTodayObject()
                 ]
+                
                 if isUpdate {
                     transaction.updateData(mainData, forDocument: baseDiaryDir.document(documentRefID ?? ""))
                 }else {
                     transaction.setData(mainData, forDocument: baseDiaryDir.document())
                 }
-                    
                 return nil
             }) { [self] (object, error) in
                  if error != nil {

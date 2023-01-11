@@ -36,10 +36,14 @@ class JournalingViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         tableView.separatorStyle = .none
     }
+   
     
+    let base64String = "MIGeMA0GCSqGSIb3DQEBAQUAA4GMADCBiAKBgEzBEi248ysKZ3F69PbzChOY9TOLd3y0RQ0HzuWS0aA2iB6RJ0jQ0IshfdgkKgtQo1kSddx5LanEtY+5pIO9wZZoO+b636BLhGpwHPH3oef99PX41SkVLO26Om0KChElDoDDQlx5fQLjgx8aa8wnS8INP/M1dCmBDxPMH8Ro7RxbAgMBAAE="
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//
+            
         //MARK: - Set Touch Responder to Textfield
         dateSearchCard.dateTextfield.addTarget(self, action: #selector(responseTanggal), for: .allTouchEvents)
         

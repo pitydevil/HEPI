@@ -61,7 +61,6 @@
 		4BB80B74293C60AC001FEC01 /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B73293C60AC001FEC01 /* ModelLoader.swift */; };
 		4BB80B76293C61F3001FEC01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */; };
 		4BB80B7A293C7EC5001FEC01 /* ClassificationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */; };
-		4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC80EE828EC33E5005C19FF /* MainViewController.swift */; };
 		4BDE55D1296DB2170004DFBB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE55D0296DB2170004DFBB /* LoginViewController.swift */; };
 		4BDE55D3296DB3270004DFBB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE55D2296DB3270004DFBB /* SignUpViewController.swift */; };
 		4BEB3155296DBDA500F46404 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB3154296DBDA500F46404 /* LoginViewModel.swift */; };
@@ -146,7 +145,6 @@
 		4BB80B73293C60AC001FEC01 /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
 		4BB80B75293C61F3001FEC01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BB80B79293C7EC4001FEC01 /* ClassificationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationResult.swift; sourceTree = "<group>"; };
-		4BC80EE828EC33E5005C19FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4BDE55D0296DB2170004DFBB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4BDE55D2296DB3270004DFBB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4BEB3154296DBDA500F46404 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -404,7 +402,6 @@
 				4B622DB82944D86C00E42DAE /* Summary */,
 				4B622DB72944D85A00E42DAE /* Quotes */,
 				4B622DA9294455C200E42DAE /* Journaling */,
-				4BC80EE828EC33E5005C19FF /* MainViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -812,7 +809,6 @@
 				4B194F3928EDAA6100F17FC9 /* QuotesViewController.swift in Sources */,
 				4B78DB4328EC27F500744386 /* RoundedCard.swift in Sources */,
 				4B622DAC294455DF00E42DAE /* CheckIn.swift in Sources */,
-				4BC80EE928EC33E5005C19FF /* MainViewController.swift in Sources */,
 				4B78DB0B28EAD6FC00744386 /* ApiService.swift in Sources */,
 				4B6A8F5F28EC4A1C0088960F /* JournalViewModel.swift in Sources */,
 				4BDE55D1296DB2170004DFBB /* LoginViewController.swift in Sources */,

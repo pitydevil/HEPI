@@ -14,4 +14,5 @@ struct Journal {
     var descJournal  : String?
     var dateCreated  : Date?
     var documentRef  : String?
+    var key          : String?
 }

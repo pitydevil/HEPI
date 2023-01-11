@@ -13,7 +13,6 @@ import FirebaseFirestore
 class DetailJournalViewModel {
     
     //MARK: - Object Declaration
-    private var provider = BaseProviders()
     private var typeErrorObject : BehaviorRelay<typeError> = BehaviorRelay(value: typeError.gagalAddData)
     
     //MARK: - Object Observation Declaration
@@ -21,11 +20,6 @@ class DetailJournalViewModel {
         return typeErrorObject.asObservable()
     }
     
-    //MARK: - Init Class
-    init() {
-        self.provider = { return BaseProviders()}()
-    }
-        
     //MARK: - Add Journal Function
     /// Returns  typeError Enumeration
     /// from the given components.

@@ -13,7 +13,6 @@ import FirebaseFirestore
 class JournalViewModel {
     
     //MARK: - Object Declaration
-    private var provider = BaseProviders()
     private var journalArray: Observable<[Journal]>?
     private let journalModelArray = BehaviorRelay<[Journal]>(value: [])
     private var journalErrorObject = BehaviorRelay<String>(value: String())
@@ -27,10 +26,6 @@ class JournalViewModel {
         return journalErrorObject.asObservable()
     }
 
-    //MARK: - Init Class
-    init() {
-        self.provider = { return BaseProviders()}()
-    }
     
     //MARK: - Get All Journal Function
     /// Returns array of journal object, that's gonna be pased on journalModelArray observer

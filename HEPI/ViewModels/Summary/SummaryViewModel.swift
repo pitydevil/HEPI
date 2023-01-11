@@ -12,7 +12,6 @@ import RxCocoa
 class SummaryViewModel {
     
     //MARK: - Object Declaration
-    private var provider = BaseProviders()
     private var journalArray: Observable<[Journal]>?
     private let journalModelArray = BehaviorRelay<[Journal]>(value: [])
     private var journalErrorObject = BehaviorRelay<String>(value: String())

@@ -12,7 +12,6 @@
 		4B00BAA8296E5758008FB05C /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B00BAA7296E5758008FB05C /* Account.storyboard */; };
 		4B00BAAD296E8399008FB05C /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B00BAAC296E8399008FB05C /* AccountTableViewController.swift */; };
 		4B00BAB0296E8525008FB05C /* AccountTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B00BAAF296E8525008FB05C /* AccountTableViewModel.swift */; };
-		4B00BB42296E95FA008FB05C /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B00BB41296E95FA008FB05C /* RSAUtils.swift */; };
 		4B194F3128ED904B00F17FC9 /* Quote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F3028ED904B00F17FC9 /* Quote.storyboard */; };
 		4B194F3628ED919200F17FC9 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B194F3428ED919200F17FC9 /* QuoteTableViewCell.swift */; };
 		4B194F3728ED919200F17FC9 /* QuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B194F3528ED919200F17FC9 /* QuoteTableViewCell.xib */; };
@@ -92,7 +91,6 @@
 		4B00BAA7296E5758008FB05C /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		4B00BAAC296E8399008FB05C /* AccountTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewController.swift; sourceTree = "<group>"; };
 		4B00BAAF296E8525008FB05C /* AccountTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewModel.swift; sourceTree = "<group>"; };
-		4B00BB41296E95FA008FB05C /* RSAUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RSAUtils.swift; path = ../../../../Documents/RSAUtils.swift; sourceTree = "<group>"; };
 		4B194F3028ED904B00F17FC9 /* Quote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quote.storyboard; sourceTree = "<group>"; };
 		4B194F3428ED919200F17FC9 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
 		4B194F3528ED919200F17FC9 /* QuoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableViewCell.xib; sourceTree = "<group>"; };
@@ -277,7 +275,6 @@
 				4B6A8F5A28EC42F80088960F /* HelperFunction.swift */,
 				4B6A8F5C28EC44BC0088960F /* Enum.swift */,
 				4B6A8F6528EC50C60088960F /* Protocol.swift */,
-				4B00BB41296E95FA008FB05C /* RSAUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -816,7 +813,6 @@
 				4B194F4528EEADD900F17FC9 /* Summary.swift in Sources */,
 				4B49684A296D428F006C2EF1 /* LeftPaddedTextfield.swift in Sources */,
 				4B622DB32944599600E42DAE /* ReusableButton.swift in Sources */,
-				4B00BB42296E95FA008FB05C /* RSAUtils.swift in Sources */,
 				4B194F3F28EDB09F00F17FC9 /* Quote.swift in Sources */,
 				4B6A8F5B28EC42F80088960F /* HelperFunction.swift in Sources */,
 				4B19F5E428E49E0500A72B5C /* SceneDelegate.swift in Sources */,

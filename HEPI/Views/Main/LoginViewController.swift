@@ -88,9 +88,9 @@ class LoginViewController: UIViewController {
                     case .emailPassTidakAda:
                         present(genericAlert(titleAlert: "Email dan Password Kosong!", messageAlert: "Silahkan isi email dan password terlebih dahulu", buttonText: "Ok"), animated: true)
                     case .passwordTidakAda:
-                        present( genericAlert(titleAlert: "Password Kosong!", messageAlert: "Silahkan isi password terlebih dahulu", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "Password Kosong!", messageAlert: "Silahkan isi password terlebih dahulu", buttonText: "Ok"), animated: true)
                     case .emailTidakAda:
-                        present(   genericAlert(titleAlert: "Email Kosong!", messageAlert: "Silahkan isi email terlebih dahulu", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "Email Kosong!", messageAlert: "Silahkan isi email terlebih dahulu", buttonText: "Ok"), animated: true)
                     default:
                         print("testt")
                 }

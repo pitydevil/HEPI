@@ -26,7 +26,6 @@ class JournalViewModel {
         return journalErrorObject.asObservable()
     }
 
-    
     //MARK: - Get All Journal Function
     /// Returns array of journal object, that's gonna be pased on journalModelArray observer
     /// from the given components.

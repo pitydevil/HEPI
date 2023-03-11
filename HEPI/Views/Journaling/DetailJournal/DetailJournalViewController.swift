@@ -22,6 +22,7 @@ class DetailJournalViewController: UIViewController {
     
     //MARK: Object Declaration
     private let detailJournalViewModel = DetailJournalViewModel()
+    
     var journalObject : BehaviorRelay<Journal>?
     
     //MARK: Object Observer Declaration
@@ -71,6 +72,13 @@ class DetailJournalViewController: UIViewController {
         //MARK: - Responder to Dismiss any Keyboard Event
         hideKeyboardWhenTappedAround()
         
+        //MARK: - Observe Journal Textfield and descriptionTextGView
+        Observable.combineLatest(journalTitleTextfield.rx.text.orEmpty, descriptionTextview.rx.text.orEmpty)
+            .subscribe(on: MainScheduler.instance)
+            .map { !$0.0.isEmpty && !$0.1.isEmpty }
+            .bind(to: writeButtonPressed.rx.isEnabled)
+            .disposed(by: bags)
+        
         //MARK: - Delete Button Response Function
         deleteButtonPressed.rx.tap.bind { [self] in
             
@@ -78,7 +86,7 @@ class DetailJournalViewController: UIViewController {
             /// Returns summaryGenerate Enumeration
             /// - Parameters:
             ///     - dateCreated: date object that's gonna be passed to the provider, so the provider can query the journal based on the given date.
-            popupAlert(title: "Apakah anda ingin menghapus jurnal ini?", message: nil, actionTitles: ["Hapus", "Batal"], actionsStyle: [UIAlertAction.Style.destructive, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+            popupAlert(title: "Do you want to remove this diary?", message: nil, actionTitles: ["Delete", "Cancel"], actionsStyle: [UIAlertAction.Style.destructive, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
                 detailJournalViewModel.deleteJournal(journalObject!.value.documentRef!)
             },nil])
         }.disposed(by: bags)
@@ -88,15 +96,15 @@ class DetailJournalViewController: UIViewController {
             DispatchQueue.main.async { [self] in
                 switch value {
                     case .success(let typeSukses):
-                        popupAlert(title: "Sukses", message: "Berhasil \(typeSukses) Jurnal!", actionTitles: ["OK"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
+                        popupAlert(title: "Success", message: "Successfully \(typeSukses) Journal!", actionTitles: ["Okay"], actionsStyle: [UIAlertAction.Style.default], actions: [{ [self] (action1) in
                             navigationController?.popViewController(animated: true)
                         }])
                     case .firebaseError(let firebaseMessage):
-                        present(genericAlert(titleAlert: "Terjadi kesalahan pada firebase!", messageAlert: "\(firebaseMessage)", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "There's something wrong with the firebase server, please try again later!", messageAlert: "\(firebaseMessage)", buttonText: "Okay"), animated: true)
                     case .inputTidakLengkap:
-                        present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Input Tidak Lengkap, silahkan melengkapi input terlebih dahulu!", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "Invalid Input!", messageAlert: "Missing input, do input all of the textfields first!", buttonText: "Okay"), animated: true)
                     default:
-                        present(genericAlert(titleAlert: "Error!", messageAlert: "Terjadi Kesalahan Dalam Melakukan Penyimpanan Data, Silahkan Coba Lagi", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "Error!", messageAlert: "There's something wrong with the firebase server, please try again later!", buttonText: "Okay"), animated: true)
                     }
                 }
         }).disposed(by: bags)
@@ -114,7 +122,7 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                popupAlert(title: "Apakah anda ingin menyimpan buku harian ini?", message: nil, actionTitles: ["Simpan", "Batal"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+                popupAlert(title: "Do you want to save the journal?", message: nil, actionTitles: ["Save", "Cancel"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
                     detailJournalViewModel.addUpdateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, false, nil)
                 },nil])
             }else {
@@ -126,11 +134,13 @@ class DetailJournalViewController: UIViewController {
                 ///     - descJournal: journal description for the journal object
                 ///     - moodDesc: journal mood description for the journal object
                 ///     - moodImage: journal mood image for the journal object
-                popupAlert(title: "Apakah anda ingin menyunting buku harian ini?", message: nil, actionTitles: ["Simpan", "Batal"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
+                popupAlert(title: "Do you want to edit this journal?", message: nil, actionTitles: ["Save", "Cancel"], actionsStyle: [UIAlertAction.Style.default, UIAlertAction.Style.cancel] ,actions:[{ [self] (action1) in
                     detailJournalViewModel.addUpdateJournal(journalTitleTextfield.text ?? "", descriptionTextview.text, true, journalObject!.value.documentRef)
                 },nil])
             }
         }.disposed(by: bags)
+        
+        
         
         //MARK: - Detail Journal View Model Update Function
         /// Returns  typeError Enumeration
@@ -141,5 +151,3 @@ class DetailJournalViewController: UIViewController {
         }.disposed(by: bags)
     }
 }
-
-

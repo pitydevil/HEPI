@@ -56,7 +56,7 @@ class SummaryViewController: UIViewController {
                         descTextView.text  = summary.overallSuggestion ?? ""
                         titleLabel.text    = summary.overallTitleMood ?? ""
                     case .failure(_):
-                        present(genericAlert(titleAlert: "Data Inkonklusif!", messageAlert: "Data yang diberikan tidak dapat ditarik kesimpulan.", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "Inconclusive Data!", messageAlert: "Can't generate summary based on the input date!", buttonText: "Okay"), animated: true)
                     }
                 }
             }
@@ -68,7 +68,7 @@ class SummaryViewController: UIViewController {
         /// Observe journal view model's journal array in case there's any changes, and will update array of journal if there are any changes
         summaryViewModel.journalObjectErrorObserver.skip(1).subscribe(onNext: { (value) in
             DispatchQueue.main.async { [self] in
-                present(genericAlert(titleAlert: "Terjadi kesalahan saat mengambil data buku harian!", messageAlert: "\(value)", buttonText: "Ok"), animated: true)
+                present(genericAlert(titleAlert: "There's something wrong with the server, please try again later.", messageAlert: "\(value)", buttonText: "Okay"), animated: true)
             }
         },onError: { error in
             self.present(errorAlert(), animated: true)

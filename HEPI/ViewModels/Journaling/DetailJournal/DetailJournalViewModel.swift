@@ -63,9 +63,9 @@ class DetailJournalViewModel {
                      typeErrorObject.accept(.firebaseError(firebaseMessage: error?.localizedDescription ?? ""))
                  } else {
                      if isUpdate {
-                         typeErrorObject.accept(.success(typeMessage: "Mengupdate"))
+                         typeErrorObject.accept(.success(typeMessage: "edit"))
                      }else {
-                         typeErrorObject.accept(.success(typeMessage: "Menambahkan"))
+                         typeErrorObject.accept(.success(typeMessage: "add"))
                      }
                  }
              }
@@ -92,7 +92,7 @@ class DetailJournalViewModel {
              if error != nil {
                  typeErrorObject.accept(.firebaseError(firebaseMessage: error?.localizedDescription ?? ""))
              } else {
-                 typeErrorObject.accept(.success(typeMessage: "Menghapus"))
+                 typeErrorObject.accept(.success(typeMessage: "delete"))
              }
          }
     }

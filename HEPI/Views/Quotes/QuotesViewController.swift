@@ -21,7 +21,6 @@ class QuotesViewController: UIViewController {
     }()
     
     //MARK: - Object Declaration
-    private let apiService = ApiService()
     private let quoteList = BehaviorRelay<[Quote]>(value: [])
     private var quoteViewModel = QuoteViewModel()
 

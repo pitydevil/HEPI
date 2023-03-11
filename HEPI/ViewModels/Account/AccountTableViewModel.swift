@@ -25,7 +25,7 @@ class AccountTableViewModel {
     func logoutFunction() {
         do {
             try Auth.auth().signOut()
-            typeErrorObject.accept(.success(typeMessage: "melakukan"))
+            typeErrorObject.accept(.success(typeMessage: ""))
         }
         catch {
             typeErrorObject.accept(.firebaseError(firebaseMessage: error.localizedDescription))

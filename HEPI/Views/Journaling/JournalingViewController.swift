@@ -20,7 +20,6 @@ class JournalingViewController: UIViewController {
     @IBOutlet var addButton: UIBarButtonItem!
     
     //MARK: Object Declaration
-    private let detailJournalViewModel = DetailJournalViewModel()
     private let journalViewModel = JournalViewModel()
     private let journalList = BehaviorRelay<[Journal]>(value: [])
     private var detailController : DetailJournalViewController?

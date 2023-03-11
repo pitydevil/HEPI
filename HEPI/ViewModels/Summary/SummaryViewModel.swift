@@ -39,9 +39,9 @@ class SummaryViewModel {
     func getSummaryMood(_ startDate : Date, _ endDate : Date)  {
         if startDate > endDate || endDate < startDate{
             if startDate > endDate {
-                journalErrorObject.accept("Tanggal awal lebih tua daripada tanggal akhir")
+                journalErrorObject.accept("Start Date is older than the end date.")
             }else {
-                journalErrorObject.accept("Tanggal akhir lebih muda daripada tanggal awal")
+                journalErrorObject.accept("End Date is earlier than the start date.")
             }
         }else {
             baseDiaryDir.whereField("userUUID", isEqualTo: uuidUser ?? "").getDocuments(completion: { [self] querySnapshot, error in
@@ -50,7 +50,7 @@ class SummaryViewModel {
                 }else {
                     var journalModel = [Journal]()
                     if querySnapshot!.documents.isEmpty {
-                        journalErrorObject.accept("Kamu tidak membuat jurnal direntang hari tersebut!")
+                        journalErrorObject.accept("You haven't made any entries during this period.")
                     }else {
                         querySnapshot?.documents.forEach({ element in
                             let key = (element.data()["key"] as? String)!

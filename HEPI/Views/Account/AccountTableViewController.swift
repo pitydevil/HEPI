@@ -34,11 +34,11 @@ class AccountTableViewController: UITableViewController {
                 SVProgressHUD.dismiss()
                 switch value {
                     case  .success(let typeMessage):
-                        popupAlert(title: "Berhasil \(typeMessage) logout!", message: nil, actionTitles: ["Ok"], actionsStyle: [UIAlertAction.Style.default] ,actions:[{ [self] (action1) in
+                        popupAlert(title: "Successfully logout!", message: nil, actionTitles: ["Okay"], actionsStyle: [UIAlertAction.Style.default] ,actions:[{ [self] (action1) in
                             view.window?.rootViewController?.dismiss(animated: true, completion: nil)
                         }])
                     default:
-                        present(genericAlert(titleAlert: "Terjadi kegagalan dalam logout!", messageAlert: "Silahkan coba beberapa saat lagi!.", buttonText: "Ok"), animated: true)
+                        present(genericAlert(titleAlert: "Can't Logout!", messageAlert: "There's something wrong with the server, please try again later.", buttonText: "Okay"), animated: true)
                 }
             }
         }).disposed(by: bags)
